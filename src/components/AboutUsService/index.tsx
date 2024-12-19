@@ -7,7 +7,7 @@ const AboutUsService = () => {
   return (
     <div>
       <div className="container relative z-10">
-        <div className="relative flex ipadMini:flex-row flex-col w-full ml-5 ipadMini:ml-0 items-center justify-center gap-y-10 px-5 ipadMini:px-0">
+        <div className="relative flex ipadMini:flex-row flex-col w-full  ipadMini:ml-0 items-center justify-center gap-y-10 px-5 ipadMini:px-0">
           <div className="mx-auto ipadMini:ml-0 ipadMini:text-left text-center">
             <p className="text-vividpink text-base leading-5 font-semibold mb-4  ipadMini:text-left">
               About Us

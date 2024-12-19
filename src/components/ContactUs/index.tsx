@@ -6,7 +6,7 @@ import React from "react";
 const ContactUs = () => {
   return (
     <>
-      <div className="container relative mt-[150px] flex  ipadMini:flex-row z-30 mb-[69.66px] gap-x-[100px] px-5 ipadMini:px-0 ">
+      <div className="container relative mt-[150px] flex  ipadMini:flex-row z-30 mb-[69.66px] gap-x-[100px]  ipadMini:px-0 ">
         <div className="mt-[160px] hidden ipadMini:block">
           <Image
             src="/ContactAnimations.png"
@@ -15,7 +15,7 @@ const ContactUs = () => {
             height={614}
           />
         </div>
-        <div className="mx-auto flex flex-col text-center ipadMini:text-left px-5 ipadMini:px-0">
+        <div className="mx-auto flex flex-col text-center ipadMini:text-left ipadMini:px-0">
           <p className="text-[#FF64AE] leading-[20px] text-lg font-semibold mb-3 ">
             Contact Us
           </p>

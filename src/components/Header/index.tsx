@@ -35,21 +35,21 @@ export const Header = () => {
                 height={10}
               />
             </div>
-            <Link className="text-xs text-darkgray" href="#">
+            <Link className="text-base text-darkgray" href="#">
               About
             </Link>
-            <Link className="text-xs text-darkgray" href="#">
+            <Link className="text-base text-darkgray" href="#">
               Service
             </Link>
-            <Link className="text-xs text-darkgray" href="#">
+            <Link className="text-base text-darkgray" href="#">
               Gallery
             </Link>
-            <Link className="text-xs text-darkgray" href="#">
+            <Link className="text-base text-darkgray" href="#">
               Blog
             </Link>
             <Link
               className="bg-vividpink text-white text-center leading-[54px] h-[54px] 
-                        cursor-pointer  rounded-full w-[158px] tracking-[2px]"
+                        cursor-pointer text-base  rounded-full w-[158px] tracking-[2px]"
               href="#"
             >
               Contact
@@ -67,7 +67,7 @@ export const Header = () => {
             />
           </div>
         </div>
-        <div className="flex mt-[159px]  ipadMini:flex-row flex-col px-5 w-full items-center  gap-y-10 text-center ipadMini:text-left gap-x-[29px]">
+        <div className="flex mt-[159px] desktop:justify-center  ipadMini:flex-row flex-col px-5 w-full items-center  gap-y-10 text-center ipadMini:text-left gap-x-[29px]">
           <div className="flex flex-col desktop:ml-[39px]">
             <p className=" font-semibold text-5xl leading-[60px] ipadMini:max-w-[430px] max-w-[100%]  ">
               Clinic & beauty consultant
