@@ -94,10 +94,10 @@ export const Header = () => {
           </div>
         </div>
       </header>
-
+   <div className="w-full relative">
       <div
         ref={ref}
-        className={`fixed  z-30 right-0 w-[300px] px-10 pt-10 bg-white transition-all  duration-500 top-0 bottom-0 ${
+        className={`fixed  z-50 right-0 w-[30%] px-10 pt-10 bg-white transition-all  duration-500 top-0 bottom-0 ${
           isComponentVisible ? "translate-x-0 " : "translate-x-full "
         }`}
       >
@@ -124,6 +124,12 @@ export const Header = () => {
             <Link href="#">Contact</Link>
           </li>
         </ul>
+      </div>
+      <div
+        className={`fixed  z-50 left-0 w-[70%] opacity-75 ipadMini:hidden bg-gray-200 transition-all  duration-500 top-0 bottom-0 ${
+          isComponentVisible ? "translate-x-0" : " -translate-x-full "
+        }`}
+      ></div>
       </div>
       <BgHeader />
     </div>
