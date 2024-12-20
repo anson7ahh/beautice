@@ -5,7 +5,7 @@ import { Button } from "../commons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useClickOutSide } from "./components/hooks";
+import { useClickOutSide } from "./hooks";
 
 export const Header = () => {
   const { ref, isComponentVisible, setIsComponentVisible } =

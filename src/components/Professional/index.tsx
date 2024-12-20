@@ -1,39 +1,8 @@
 import { ProfessionalItems } from "./components";
 import React from "react";
+import {items} from "./constans"
 
-interface Item {
-  id: number;
-  imgSrc: string;
-  title: string;
-  description: string;
-  name: string;
-}
-const Items: Item[] = [
-  {
-    id: 1,
-    imgSrc: "/professionalSurgeon.png",
-    title: "Briyan Nevalli",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit",
-    name: "Surgeon",
-  },
-  {
-    id: 2,
-    imgSrc: "/professionalBella.png",
-    title: "Bella sebastian",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit",
-    name: "Dermatologist",
-  },
-  {
-    id: 3,
-    imgSrc: "/professionalLilly.png",
-    title: "Lilly Adams",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit",
-    name: "Stylist expert",
-  },
-];
+
 const Professional = () => {
   return (
     <div>
@@ -50,14 +19,10 @@ const Professional = () => {
           </p>
         </div>
         <div className="relative z-30 mt-[87px] gap-x-14 justify-center items-start mb-[134.4px] flex flex-col ipadMini:flex-row">
-          {Items.map((item) => (
+          {items.map((item) => (
             <ProfessionalItems
               key={item.id}
-              name={item.name}
-              description={item.description}
-              id={item.id}
-              title={item.title}
-              imgSrc={item.imgSrc}
+              {...item}
             />
           ))}
         </div>

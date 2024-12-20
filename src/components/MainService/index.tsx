@@ -1,35 +1,8 @@
 import { MainServiceItem } from "./components";
 import React from "react";
+import {items} from "./constans"
 
-interface Item {
-  id: number;
-  imgSrc: string;
-  title: string;
-  description: string;
-}
-const Items: Item[] = [
-  {
-    id: 1,
-    imgSrc: "/Animation1.png",
-    title: "Beauty consultation",
-    description:
-      "Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
-  },
-  {
-    id: 2,
-    imgSrc: "/Animation2.png",
-    title: "Skin treatments",
-    description:
-      "Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
-  },
-  {
-    id: 3,
-    imgSrc: "/Animation3.png",
-    title: "Beauty product",
-    description:
-      " Non parturient amet, feugiat tellus sagittis, scelerisque eget nulla turpis.",
-  },
-];
+
 const MainService = () => {
   return (
     <>
@@ -48,13 +21,11 @@ const MainService = () => {
           </p>
         </div>
         <div className="relative z-30 mt-[87px] gap-[56px] justify-center items-center mb-[134.4px] mx-auto flex flex-col w-[30%] tablet:flex tablet:flex-row   tablet:w-full ">
-          {Items.map((item) => (
+          {items.map((item) => (
             <MainServiceItem
               key={item.id}
               className="bg-white flex flex-col rounded-[42px] shadow-[0px_25px_50px_25px_rgba(246,247,255,1)] ipadMini:min-w-[343px] tablet:min-w-[25%] min-w-[343px]"
-              imgSrc={item.imgSrc}
-              title={item.title}
-              description={item.description}
+            {...item}
             />
           ))}
         </div>

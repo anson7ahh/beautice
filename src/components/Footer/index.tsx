@@ -5,76 +5,8 @@ import Item from "./components/Item";
 import Icon from "./components/Icon";
 import FooterBG from "./components/FooterBG";
 import BottomBG from "./components/BottomBG";
+import {items,icons} from "./constans"
 
-interface Item {
-  src: string;
-  alt: string;
-  name?: string;
-}
-
-interface GroupedItems {
-  pages: Item[];
-  Infomation: Item[];
-}
-const Items: GroupedItems = {
-  pages: [
-    {
-      src: "/Vector.svg",
-      name: "Home",
-      alt: "Vector",
-    },
-    {
-      src: "/Vector.svg",
-      name: "About",
-      alt: "Vector",
-    },
-    {
-      src: "/Vector.svg",
-      name: "Services",
-      alt: "Vector",
-    },
-    {
-      src: "/Vector.svg",
-      name: "Gallery",
-      alt: "Vector",
-    },
-    {
-      src: "/Vector.svg",
-      name: "Team",
-      alt: "Vector",
-    },
-  ],
-  Infomation: [
-    {
-      src: "/Vector.svg",
-      name: "Terms & conditions",
-      alt: "Vector",
-    },
-    {
-      src: "/Vector.svg",
-      name: "Privacy policy",
-      alt: "Vector",
-    },
-    {
-      src: "/Vector.svg",
-      name: "Blog",
-      alt: "Vector",
-    },
-    {
-      src: "/Vector.svg",
-      name: "Contact",
-      alt: "Vector",
-    },
-  ],
-};
-
-const Icons: Item[] = [
-  { src: "/facebook-f.svg", alt: "facebook" },
-  { src: "/twitter.svg", alt: "twitter" },
-  { src: "/linkedin-in.svg", alt: "linkedin-in" },
-  { src: "/youtube.svg", alt: "youtube" },
-  { src: "/instagram.svg", alt: "Instagram" },
-];
 const Footer = () => {
   return (
     <footer className=" relative mt-[100.66px] tablet:bg-darkblue tablet:w-full w-full ">
@@ -113,12 +45,10 @@ const Footer = () => {
               Pages
             </span>
             <div className="flex flex-col gap-y-[11px] items-start ">
-              {Items.pages.map((item, index) => (
+              {items.pages.map((item, index) => (
                 <Item
                   key={index}
-                  src={item.src}
-                  alt={item.alt}
-                  name={item.name}
+                  {...item}
                 />
               ))}
             </div>
@@ -129,12 +59,10 @@ const Footer = () => {
               Informations
             </span>
             <div className="flex flex-col gap-y-[11px] items-start">
-              {Items.Infomation.map((item, index) => (
+              {items.infomation.map((item, index) => (
                 <Item
                   key={index}
-                  src={item.src}
-                  alt={item.alt}
-                  name={item.name}
+                {...item}
                 />
               ))}
             </div>
@@ -142,7 +70,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-center  tablet:mb-10  flex-col tablet:flex-row mobile:mx-auto tablet:mx-0 tablet:gap-x-[200px]  ">
           <div className="flex mx-auto flex-row ipadMini:ml-[30px] ipadMini:justify-between gap-x-[41px] desktop:mr-[160px] mobile:mx-auto tablet:mx-0 mobile:mb-5">
-            {Icons.map((icon, index) => (
+            {icons.map((icon, index) => (
               <Icon key={index} src={icon.src} alt={icon.alt} />
             ))}
           </div>
