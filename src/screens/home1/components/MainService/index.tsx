@@ -1,7 +1,6 @@
 import { MainServiceItem } from "./components";
 import React from "react";
-import {items} from "./constans"
-
+import { items } from "./constants";
 
 const MainService = () => {
   return (
@@ -25,7 +24,7 @@ const MainService = () => {
             <MainServiceItem
               key={item.id}
               className="bg-white flex flex-col rounded-[42px] shadow-[0px_25px_50px_25px_rgba(246,247,255,1)] ipadMini:min-w-[343px] tablet:min-w-[25%] min-w-[343px]"
-            {...item}
+              {...item}
             />
           ))}
         </div>

@@ -6,5 +6,5 @@ export interface item {
 
 export interface groupedItems {
   pages: item[];
-  infomation: item[];
+  information: item[];
 }

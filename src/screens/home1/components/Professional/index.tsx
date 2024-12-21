@@ -1,7 +1,6 @@
 import { ProfessionalItems } from "./components";
 import React from "react";
-import {items} from "./constans"
-
+import { items } from "./constants";
 
 const Professional = () => {
   return (
@@ -20,10 +19,7 @@ const Professional = () => {
         </div>
         <div className="relative z-30 mt-[87px] gap-x-14 justify-center items-start mb-[134.4px] flex flex-col ipadMini:flex-row">
           {items.map((item) => (
-            <ProfessionalItems
-              key={item.id}
-              {...item}
-            />
+            <ProfessionalItems key={item.id} {...item} />
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 
 import type { Metadata } from "next";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

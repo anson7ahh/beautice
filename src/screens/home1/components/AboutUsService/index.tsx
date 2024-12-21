@@ -1,5 +1,6 @@
+import { Button } from "@/components";
 import { BgAboutUs } from "./components/BgAboutUs";
-import { Button } from "../commons";
+
 import Image from "next/image";
 import React from "react";
 

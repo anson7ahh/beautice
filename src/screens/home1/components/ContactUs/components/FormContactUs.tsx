@@ -1,8 +1,7 @@
-import { Button } from "@/components/commons";
+import { Button } from "@/components";
 import React from "react";
 
 export const FormContactUs = () => {
- 
   return (
     <div>
       <form className="" action="">

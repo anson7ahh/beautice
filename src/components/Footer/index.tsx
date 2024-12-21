@@ -1,11 +1,10 @@
-
 import Image from "next/image";
 import React from "react";
 import Item from "./components/Item";
 import Icon from "./components/Icon";
 import FooterBG from "./components/FooterBG";
 import BottomBG from "./components/BottomBG";
-import {items,icons} from "./constans"
+import { items, icons } from "./constants";
 
 const Footer = () => {
   return (
@@ -46,10 +45,7 @@ const Footer = () => {
             </span>
             <div className="flex flex-col gap-y-[11px] items-start ">
               {items.pages.map((item, index) => (
-                <Item
-                  key={index}
-                  {...item}
-                />
+                <Item key={index} {...item} />
               ))}
             </div>
           </div>
@@ -59,11 +55,8 @@ const Footer = () => {
               Informations
             </span>
             <div className="flex flex-col gap-y-[11px] items-start">
-              {items.infomation.map((item, index) => (
-                <Item
-                  key={index}
-                {...item}
-                />
+              {items.information.map((item, index) => (
+                <Item key={index} {...item} />
               ))}
             </div>
           </div>

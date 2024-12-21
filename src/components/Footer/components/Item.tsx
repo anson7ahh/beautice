@@ -8,7 +8,6 @@ interface Props {
   name?: string;
 }
 const Item: React.FC<Props> = ({ src, alt, name }) => {
-  
   return (
     <div className="flex gap-x-1 ">
       {" "}

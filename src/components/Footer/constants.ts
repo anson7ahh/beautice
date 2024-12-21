@@ -52,9 +52,9 @@ export const items: groupedItems = {
   ],
 };
 export const icons: item[] = [
-    { src: "/facebook-f.svg", alt: "facebook" },
-    { src: "/twitter.svg", alt: "twitter" },
-    { src: "/linkedin-in.svg", alt: "linkedin-in" },
-    { src: "/youtube.svg", alt: "youtube" },
-    { src: "/instagram.svg", alt: "Instagram" },
-  ];
+  { src: "/facebook-f.svg", alt: "facebook" },
+  { src: "/twitter.svg", alt: "twitter" },
+  { src: "/linkedin-in.svg", alt: "linkedin-in" },
+  { src: "/youtube.svg", alt: "youtube" },
+  { src: "/instagram.svg", alt: "Instagram" },
+];
