@@ -4,7 +4,7 @@ import React from "react";
 const FooterBG = () => {
   return (
     <>
-      <div className="absolute z-20 top-[61px] w-full h-full mobile:h-full  tablet:hidden ">
+      <div className="absolute z-10 top-[61px] w-full h-full mobile:h-full  tablet:hidden ">
         <Image
           className="w-full h-full"
           src="/FooterBG.png"

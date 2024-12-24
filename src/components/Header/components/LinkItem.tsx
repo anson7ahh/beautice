@@ -7,7 +7,7 @@ interface Props {
 }
 const LinkItem: FC<Props> = ({ name, active }) => {
   return (
-    <li>
+    <div>
       <Link
         className={`flex flex-row items-center gap-x-1 font-medium leading-6 tracking-wide text-darkgray ${
           active ? "text-white font-semibold " : ""
@@ -19,7 +19,7 @@ const LinkItem: FC<Props> = ({ name, active }) => {
           <Image src="/PlusIcon.svg" alt="PlusIcon" width={7} height={7} />
         )}
       </Link>
-    </li>
+    </div>
   );
 };
 

@@ -4,8 +4,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className=" container mt-[501px] relative z-0">
-      <div className="flex gap-x-[167px] ">
+    <div className="container desktop:mt-[651px] relative z-0 mt-[500px]">
+      <div className="flex tablet:gap-x-[167px] flex-col justify-center items-center gap-y-[100px] tablet:flex-row  ">
         <div>
           <Image
             src="/Illustration-1.png"
@@ -14,11 +14,11 @@ const AboutUs = () => {
             height={302.67}
           />
         </div>
-        <div className="flex flex-col  ">
-          <span className="text-base font-semibold leading-5 text-left text-vividpink">
+        <div className="flex flex-col text-center tablet:text-left  ">
+          <span className="text-base font-semibold leading-5  text-vividpink ">
             About Us
           </span>
-          <span className="text-darkblue text-4xl font-semibold leading-[45px] text-left max-w-[460px] mt-[11px]">
+          <span className="text-darkblue text-4xl font-semibold leading-[45px]  desktop:max-w-[460px] desktop:mt-[11px]">
             We are the best beauty clinic
           </span>
           <span className="text-base font-normal leading-6 tracking-[1.6px] text-[#8B8B8B] max-w-[483px] mt-[10px]">

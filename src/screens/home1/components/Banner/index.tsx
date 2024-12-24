@@ -4,7 +4,7 @@ import BgHeader from "./components/BgHeader";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useClickOutSide } from "./hooks";
+import { useClickOutSide } from "../../../../components/Header/hooks";
 import { Button } from "@/components";
 
 export const Banner = () => {

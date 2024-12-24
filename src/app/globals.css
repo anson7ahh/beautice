@@ -3,10 +3,7 @@
 @tailwind utilities;
 @layer base {
   html {
-    font-family:
-     Poppins,
-      system-ui,
-      sans-serif;
+    font-family: Poppins, system-ui, sans-serif;
     font-size: 16px;
   }
 }
@@ -17,10 +14,25 @@
   border-width: 0;
   border-style: solid;
 }
- .placeholder-custom::placeholder {
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 1.6px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-  }
+.placeholder-custom::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+img,
+video {
+  max-width: initial !important;
+  height: revert-layer !important;
+}

@@ -12,16 +12,16 @@ export default {
       screens: {
         mobile: "572px",
         tablet: "995px",
-        ipadMini: "1200px",
+        ipadMini: "1150px",
         desktop: "1440px",
       },
       container: {
         center: true,
         screens: {
           mobile: "572px",
-          tablet: "990px",
+          tablet: "980px",
           ipadMini: "1200px",
-          desktop: "1440px",
+          desktop: "1140px",
         },
       },
 

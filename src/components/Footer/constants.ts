@@ -28,7 +28,7 @@ export const items: groupedItems = {
       alt: "Vector",
     },
   ],
-  infomation: [
+  information: [
     {
       src: "/Vector.svg",
       name: "Terms & conditions",

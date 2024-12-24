@@ -7,21 +7,21 @@ const Banner = () => {
       <div className="relative">
         <div className="container relative  z-10">
           <Header />
-          <div className="mt-[216px] flex text-white gap-x-[198px]">
-            <div className="flex flex-col">
-              <span className="text-5xl font-semibold leading-[60px] text-left max-w-[502px] pb-[13px]">
+          <div className=" container mt-[190px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
+            <div className="flex flex-col text-center ipadMini:text-left  mx-auto ipadMini:text-white ipadMini:mx-0">
+              <span className="text-5xl font-semibold leading-[60px] ipadMini:text-left max-w-[502px] pb-[13px]">
                 Your beauty center place
               </span>
-              <span className="max-w-[501px] text-base font-medium  tracking-[0.1em] text-left mb-[37px] text-[#D8DCFF]">
+              <span className="max-w-[501px] text-base font-medium  tracking-[0.1em] ipadMini:text-left mb-[37px] text-[#D8DCFF]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Commodo, massa pellentesque arcu fusce et magna consequat neque
                 vitae lobortis.
               </span>
-              <Button className=" border border-white w-[179px] text-center py-[14.5px] w rounded-xl text-base font-semibold leading-6 tracking-[0.1em]  ">
+              <Button className="mx-auto ipadMini:mx-0 border ipadMini:border-white w-[179px] text-center py-[14.5px] w rounded-xl text-base font-semibold leading-6 tracking-[0.1em]  ">
                 More Details
               </Button>
             </div>
-            <div className=" flex items-center gap-x-[28px]">
+            <div className=" ipadMini:flex items-center gap-x-[28px] hidden">
               <Image
                 className=" object-contain "
                 src="/PlayBottomHeader.png"
@@ -35,8 +35,9 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="absolute z-0 top-0">
+        <div className="absolute z-0 top-0 w-full  tablet:block">
           <Image
+            className="w-full object-fill"
             src="/BackgroundSlider.png"
             alt="logo"
             width={1440}

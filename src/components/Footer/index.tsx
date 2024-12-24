@@ -8,8 +8,8 @@ import { items, icons } from "./constants";
 
 const Footer = () => {
   return (
-    <footer className=" relative mt-[100.66px] tablet:bg-darkblue tablet:w-full w-full ">
-      <div className="container w-full relative z-30  flex flex-col tablet:px-10 ">
+    <footer className=" relative mt-[100.66px] tablet:bg-darkblue tablet:w-full w-full z-20 ">
+      <div className="container w-full relative z-20  flex flex-col tablet:px-10 ">
         <div className="flex justify-center mb-10 pt-20  tablet:gap-x-[150px] tablet:mb-[150px] desktop:gap-x-0 mobile:mb-10 ">
           <div className="desktop:mr-[155px] mobile:mx-auto tablet:mx-0 mobile:pt-20 tablet:pt-0">
             <Image
