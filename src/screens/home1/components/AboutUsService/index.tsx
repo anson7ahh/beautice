@@ -36,13 +36,13 @@ const AboutUsService = () => {
               </Button>
               <div className="mt-[5px] flex items-center leading-6 tracking-[1.6px] text-base font-semibold text-darkgray ml-[44px]">
                 <Image
-                  className="mr-[13px]"
+                  className=" mobile:mr-4"
                   src="/Play_button.svg"
                   alt="IconWathVideo"
                   width={49}
                   height={49}
                 />
-                <p className="videoText">Watch Video</p>
+                <p className="">Watch Video</p>
               </div>
             </div>
           </div>

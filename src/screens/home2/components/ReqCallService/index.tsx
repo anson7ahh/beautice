@@ -12,7 +12,7 @@ const ReqCallService = () => {
               Request call services
             </span>
             <p className="text-base font-normal leading-6 tracking-[0.1em]  text-darkgray max-w-[391px]">
-              Lorem ipsum dolor sit amet, consect adipiscing elit
+              Lorem ipsum dolor sit amet, consect adipiscing elit{" "}
               <span className="text-base font-semibold leading-6 tracking-[0.1em]  text-darkblue">
                 Contact Us.
               </span>

@@ -9,9 +9,10 @@ interface BackgroundImgProps {
   children?: ReactNode;
   className?: string;
   classNameImg?: string;
+  overlay?: ReactNode;
 }
 
-const BgMainService: FC<BackgroundImgProps> = ({
+const Background: FC<BackgroundImgProps> = ({
   src,
   alt,
   width,
@@ -19,28 +20,29 @@ const BgMainService: FC<BackgroundImgProps> = ({
   children,
   className,
   classNameImg,
+  overlay,
 }) => {
   return (
     <>
-      <div className={`relative ${className}`}>
-        <div className="relative z-30 inset-0 pt-[90px] tablet:pt-[0px]">
-          {children}
+      <div className={`relative w-full `}>
+        <div className={`relative   ${className} w-full `}>{children}</div>
+        <div className={`absolute  top-0 w-full ${classNameImg}`}>
+          <div className="relative">
+            <div className="absolute -z-10 w-full">
+              <Image
+                className="w-full "
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+              />
+            </div>
+            <div className="absolute -z-10 top-0 w-full">{overlay}</div>
+          </div>
         </div>
-        <div
-          className={`absolute z-0 top-0 w-full hidden tablet:block ${classNameImg}`}
-        >
-          <Image
-            className="w-full object-fill"
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-          />
-        </div>
-        <div className="bg-darkblue w-full absolute z-0 top-0 h-[500px] tablet:hidden"></div>
       </div>
     </>
   );
 };
 
-export default BgMainService;
+export default Background;

@@ -13,7 +13,7 @@ export const Banner = () => {
   return (
     <div>
       <header className="container font-medium w-full relative overflow-hidden ">
-        <div className="ipadMini:pt-[50px]  flex  items-center h-[63px] gap-x-[190px] relative z-10  pt-10  ">
+        <div className="ipadMini:pt-[50px]  flex  items-center h-[63px]  relative z-10  pt-10  ">
           <div className="w-full">
             <Image
               className="object-contain"
@@ -26,7 +26,7 @@ export const Banner = () => {
 
           <nav className=" ipadMini:flex gap-x-10 items-center hidden ">
             <div className="flex gap-x-1 items-center">
-              <span className="text-base text-darkslateblue">Home</span>
+              <span className="text-base text-darkblue">Home</span>
               <Image
                 className="object-contain "
                 src="/PlusIcon.png"
@@ -35,7 +35,7 @@ export const Banner = () => {
                 height={10}
               />
             </div>
-            <Link className="text-base text-darkgray" href="#">
+            <Link className="text-base text-darkgray" href="/about">
               About
             </Link>
             <Link className="text-base text-darkgray" href="#">
@@ -83,9 +83,9 @@ export const Banner = () => {
               More Details
             </Button>
           </div>
-          <div className="   ">
+          <div className=" w-full  ">
             <Image
-              className=""
+              className="object-contain w-full"
               src="/banner.png"
               alt="banner"
               width={601.5}

@@ -39,17 +39,20 @@ const MainService = () => {
         width={1440}
         height={697.5}
       >
-        <div className="container ipadMini:pt-[276px] flex flex-col tablet:flex-row pl-[34px] tablet:pt-[262px] gap-y-5">
-          <div className="ipadMini:mr-[139px] pt-[15px] text-center tablet:text-left ">
+        <div
+          className="ipadMini:pt-[276px] pt-[80px] tablet:bg-inherit tablet:text-left text-center flex flex-col 
+        tablet:flex-row mobile:pl-[34px] tablet:pt-[262px] px-2 gap-y-5 mx-auto w-full"
+        >
+          <div className="ipadMini:mr-[139px] pt-[40px] mobile:pl-[154px] ">
             <div className="text-4xl font-semibold leading-[45px]  mb-[21px] text-white  ">
               Why choosing us?
             </div>
-            <div className="max-w-[486px] text-base font-normal  tracking-[0.1em]  text-[#D8DCFF]">
+            <div className="max-w-[486px] text-base font-normal mx-auto tracking-[0.1em]  text-[#D8DCFF]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
               aliquam, purus sit amet luctus venenatis.
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-x-[70px] gap-y-[43px]">
+          <div className="grid grid-cols-2 gap-x-[20px] mobile:gap-x-[70px] gap-y-[43px] mb-20 mx-auto ">
             {iconItems.map((item, index) => (
               <Item key={index} {...item} />
             ))}

@@ -8,6 +8,7 @@ const AboutUs = () => {
       <div className="flex tablet:gap-x-[167px] flex-col justify-center items-center gap-y-[100px] tablet:flex-row  ">
         <div>
           <Image
+            className="w-full"
             src="/Illustration-1.png"
             alt="Illustration"
             width={490}

@@ -4,7 +4,7 @@ import React from "react";
 export const FormContactUs = () => {
   return (
     <div>
-      <form className="" action="">
+      <form className="w-full" action="">
         <div className="flex flex-col gap-[38.32px] ">
           <div className="flex flex-col gap-y-5 w-auto  justify-between mobile:flex-row">
             <input
@@ -29,7 +29,7 @@ export const FormContactUs = () => {
             placeholder="Subject message"
           />
           <textarea
-            className="border border-[rgba(217,221,254,1)] p-[25.32px_267px_186.16px_24px] w-[520px] h-[239.47px] rounded-[15px]"
+            className="border border-[rgba(217,221,254,1)] placeholder:w-[300px] pt-[25.32px] pr[267px] pb-[186.16px] pl-6 mobile:w-[520px] h-[239.47px] rounded-[15px]"
             placeholder="Your inquiry here"
           ></textarea>
         </div>

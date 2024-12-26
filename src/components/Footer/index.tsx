@@ -8,10 +8,10 @@ import { items, icons } from "./constants";
 
 const Footer = () => {
   return (
-    <footer className=" relative mt-[100.66px] tablet:bg-darkblue tablet:w-full w-full z-20 ">
+    <footer className=" relative mt-[100.66px] bg-darkblue ipadMini:bg-none desktop:bg-darkblue  w-full z-20 mobile:bg-none ">
       <div className="container w-full relative z-20  flex flex-col tablet:px-10 ">
         <div className="flex justify-center mb-10 pt-20  tablet:gap-x-[150px] tablet:mb-[150px] desktop:gap-x-0 mobile:mb-10 ">
-          <div className="desktop:mr-[155px] mobile:mx-auto tablet:mx-0 mobile:pt-20 tablet:pt-0">
+          <div className="desktop:mr-[155px] mobile:mx-auto tablet:mx-0 mobile:pt-[100px] tablet:pt-0 pt-[130px]">
             <Image
               className="mb-[34px] mt-4 mobile:mx-auto tablet:mx-0 mx-auto"
               src="/FooterLogo.png"
@@ -61,20 +61,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center  tablet:mb-10  flex-col tablet:flex-row mobile:mx-auto tablet:mx-0 tablet:gap-x-[200px]  ">
+        <div className="flex justify-center text-center tablet:text-left mb-10  flex-col tablet:flex-row mobile:mx-auto tablet:mx-0 tablet:gap-x-[200px]  ">
           <div className="flex mx-auto flex-row ipadMini:ml-[30px] ipadMini:justify-between gap-x-[41px] desktop:mr-[160px] mobile:mx-auto tablet:mx-0 mobile:mb-5">
             {icons.map((icon, index) => (
               <Icon key={index} src={icon.src} alt={icon.alt} />
             ))}
           </div>
-          <div className="text-white text-base font-normal  tracking-[1.6px] text-left max-w-full mx-auto tablet:mx-0 ">
-            <p className="whitespace-nowrap w-full ">
+          <div className="text-white text-base font-normal  tracking-[1.6px]  max-w-full mx-auto tablet:mx-0 mt-[20px] mobile:mt-0">
+            <p className="tablet:whitespace-nowrap w-full max-w-[230px] whitespace-normal ">
               © AltDesain Studio 2021 - All right reserved.
             </p>
           </div>
         </div>
         <div
-          className="absolute top-[287px] right-[50px] ipadMini:right-[175.6px] ipadMini:top-[366.34px] desktop:top-[347.34px]
+          className="absolute top-[439px] right-[50px] ipadMini:right-[175.6px] ipadMini:top-[366.34px] desktop:top-[347.34px]
                  desktop:right-0 mobile:top-[360px] mobile:right-[0px] tablet:top-[333px] tablet:right-[39px] "
         >
           <Image

@@ -5,7 +5,7 @@ import { items } from "./constants";
 const Professional = () => {
   return (
     <div>
-      <div className="container  text-center max-w-[1085px] mx-auto mt-[90.2px] px-5 ipadMini:px-0 ">
+      <div className="container relative z-30  text-center max-w-[1085px] mx-auto mt-[90.2px] px-5 ipadMini:px-0 ">
         <div className="flex text-center items-center flex-col">
           <p className="text-[#FF64AE] text-base font-semibold leading-5 mb-4">
             Professional Teams

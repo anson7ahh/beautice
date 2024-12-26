@@ -9,10 +9,12 @@ interface Props {
 }
 export const Item: FC<Props> = ({ src, alt, title, description, active }) => {
   return (
-    <div className="flex gap-x-2">
-      <Image src={src} alt={alt} height={64} width={64} />
+    <div className="flex gap-x-2 w-[30%] ">
+      <div className="">
+        <Image src={src} alt={alt} height={64} width={64} />
+      </div>
       <div className="flex flex-col text-white">
-        <span className="text-4xl font-semibold leading-[45px] text-left">
+        <span className="text-3xl mobile:text-4xl font-semibold leading-[45px] text-left">
           {title}
         </span>
         <span

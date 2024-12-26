@@ -16,7 +16,7 @@ const Blog = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </span>
       </div>
-      <div className="flex gap-x-[47px] mt-[87px] justify-center px-4 ipadMini:px-0 flex-col tablet:flex-row mx-auto gap-y-10 ipadMini:mx-0">
+      <div className="flex gap-x-[47px] mt-[87px] justify-center  ipadMini:px-0 flex-col tablet:flex-row mx-auto gap-y-10 ipadMini:mx-0">
         {blogItems.map((item, index) => (
           <BlogItems key={index} {...item} />
         ))}
