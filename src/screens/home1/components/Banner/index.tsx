@@ -24,8 +24,8 @@ export const Banner = () => {
               readable content of a page.
             </p>
             <Button
-              className="mx-auto ipadMini:mx-0 cursor-pointer bg-vividpink text-base rounded-full font-medium w-[200px] h-[58.36px] text-center
-             text-white tracking-[2px] leading-[58.36px] mt-[28px]"
+              className="mx-auto ipadMini:mx-0 cursor-pointer bg-vividpink  rounded-full  w-[200px] h-[58.36px] 
+             text-white   mt-[27px]  text-base font-semibold leading-6 tracking-[0.1em] text-center "
             >
               More Details
             </Button>
