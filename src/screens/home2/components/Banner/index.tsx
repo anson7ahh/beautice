@@ -7,7 +7,7 @@ const Banner = () => {
       <div className="relative">
         <div className="container relative  z-10">
           <Header src="/FooterLogo.png" homeClassName="text-white" />
-          <div className=" container mt-[190px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
+          <div className=" container mt-[235px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
             <div className="flex flex-col text-center ipadMini:text-left  mx-auto ipadMini:text-white ipadMini:mx-0">
               <span className="text-5xl font-semibold leading-[60px] ipadMini:text-left max-w-[502px] pb-[13px]">
                 Your beauty center place

@@ -31,8 +31,3 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: none;
 }
-img,
-video {
-  max-width: initial !important;
-  height: revert-layer !important;
-}

@@ -5,6 +5,7 @@ import Icon from "./components/Icon";
 import FooterBG from "./components/FooterBG";
 import BottomBG from "./components/BottomBG";
 import { items, icons } from "./constants";
+import { ButtonScrollToTop } from "./components";
 
 const Footer = () => {
   return (
@@ -76,17 +77,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div
-          className="absolute top-[355px] right-[27px] ipadMini:right-[175.6px]  desktop:top-[467.34px]
-                 desktop:right-[-85px] mobile:top-[360px] mobile:right-[0px] tablet:top-[333px] tablet:right-[39px] ipadMini:top-[450.34px] "
-        >
-          <Image
-            src="/ToTopButton.svg"
-            alt="ToTopButton"
-            width={36}
-            height={36}
-          />
-        </div>
+        <ButtonScrollToTop />
       </div>
       <FooterBG />
       <BottomBG />
