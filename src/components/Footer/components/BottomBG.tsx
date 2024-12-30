@@ -3,9 +3,12 @@ import React from "react";
 
 const BottomBG = () => {
   return (
-    <div className="absolute z-0 h-[125px] w-full  tablet:hidden desktop:hidden  hidden   ">
+    <div
+      className="absolute z-0 w-full 
+     tablet:hidden desktop:block  hidden ipadMini:block desktop:bottom-[-72px] ipadMini:bottom-[-60px] "
+    >
       <Image
-        className="h-full w-full object-cover"
+        className=" w-full "
         src="/BottomBG.png"
         alt="BottomBG"
         width={1440}

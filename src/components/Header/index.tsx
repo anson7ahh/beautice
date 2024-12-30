@@ -19,11 +19,11 @@ export const Header: FC<Props> = ({
   return (
     <>
       <div
-        className={`ipadMini:pt-[50px]  flex  items-center h-[63px]  relative z-10 pt-10 ${className}  `}
+        className={` container pt-[77px]  flex justify-between  items-center h-[63px]  relative z-10 ${className} px-5 ipadMini:px-0 `}
       >
         <div className="w-full">
           <Image
-            className="object-contain"
+            className=""
             src={src || "/MainLogo.png"}
             alt="logo"
             width={258}
@@ -32,13 +32,16 @@ export const Header: FC<Props> = ({
         </div>
 
         <nav
-          className={` ipadMini:flex gap-x-10 items-center hidden ${navClassName}`}
+          className={` ipadMini:flex gap-x-[52px] items-center hidden mt-[-9px] ${navClassName}`}
         >
           {linkItems.map((item, index) => (
             <LinkItem key={index} {...item} homeClassName={homeClassName} />
           ))}
           <div className="bg-vividpink px-[41px] py-[14px] text-center rounded-[50px]">
-            <Link className="text-white" href="#">
+            <Link
+              className="text-white text-base font-semibold leading-[24px] tracking-[0.1em]"
+              href="#"
+            >
               Contact
             </Link>
           </div>
@@ -58,7 +61,7 @@ export const Header: FC<Props> = ({
       <div className="w-full relative">
         <div
           ref={ref}
-          className={`fixed  z-30 right-0 w-[40%] mobile:w-[30%] px-10 pt-10 bg-white transition-all  duration-500 top-0 bottom-0 ${
+          className={`fixed  z-30 right-0 w-[50%] mobile:w-[30%] px-5 pt-10 bg-white transition-all  duration-500 top-0 bottom-0 ${
             isComponentVisible ? "translate-x-0 " : "translate-x-full "
           }`}
         >
@@ -70,19 +73,19 @@ export const Header: FC<Props> = ({
           </div>
           <ul>
             <li className="mb-2">
-              <Link href="#">Home</Link>
+              <Link href="/home2">Home</Link>
             </li>
             <li className="mb-2">
-              <Link href="#">About</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className="mb-2">
-              <Link href="#">Service</Link>
+              <Link href="/service">Service</Link>
             </li>
             <li className="mb-2">
-              <Link href="#">Gallery</Link>
+              <Link href="/gallery">Gallery</Link>
             </li>
             <li className="mb-2">
-              <Link href="#">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>

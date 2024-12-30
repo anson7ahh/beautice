@@ -4,7 +4,7 @@ import React from "react";
 const BgHeader = () => {
   return (
     <div>
-      <div className="absolute top-0 left-0 z-[-10] hidden ipadMini:flex desktop:hidden">
+      <div className="absolute top-0 left-0 z-[-10] hidden ipadMini:flex ">
         <Image
           className="w-full"
           src="/SlideBackground.svg"

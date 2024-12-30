@@ -3,7 +3,7 @@ import React from "react";
 
 const BgContactUs = () => {
   return (
-    <div className="absolute top-[3238px] z-0 hidden ipadMini:block">
+    <div className="absolute top-[3142px] z-0 hidden ipadMini:block">
       <div className="">
         <Image
           src="/BackgroundBubbleContactUs.png"

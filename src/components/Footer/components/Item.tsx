@@ -9,7 +9,7 @@ interface Props {
 }
 const Item: React.FC<Props> = ({ src, alt, name }) => {
   return (
-    <div className="flex gap-x-1 items-center">
+    <div className="flex gap-x-[13px] items-center">
       {" "}
       <Image src={src} alt={alt} width={4.28} height={7.55} />
       <Link href="#">

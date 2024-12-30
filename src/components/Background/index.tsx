@@ -24,8 +24,8 @@ const Background: FC<BackgroundImgProps> = ({
 }) => {
   return (
     <>
-      <div className={`relative w-full `}>
-        <div className={`relative   ${className} w-full `}>{children}</div>
+      <div className="relative w-full ">
+        <div className={`relative ${className} w-full `}>{children}</div>
         <div className={`absolute  top-0 w-full ${classNameImg}`}>
           <div className="relative">
             <div className="absolute -z-10 w-full">

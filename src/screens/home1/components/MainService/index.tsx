@@ -5,12 +5,12 @@ import { items } from "./constants";
 const MainService = () => {
   return (
     <>
-      <div className="container px-5 ">
-        <div className="flex flex-col items-center text-center mt-[300px]">
-          <p className=" text-vividpink text-base font-semibold leading-5 mb-4">
+      <div className="container px-5 mt-[278px]">
+        <div className="flex flex-col items-center text-center ">
+          <p className=" text-vividpink text-base font-semibold leading-5 mb-[14px]">
             Main Services
           </p>
-          <p className=" text-darkblue text-4xl font-semibold leading-[45px] mb-4 desktop:max-w-[440px] ">
+          <p className=" text-darkblue text-4xl font-semibold leading-[45px] mb-[19px] desktop:max-w-[440px] ">
             Learn services to focus on your beauty
           </p>
           <p className="max-w-[848px] h-[51px] font-normal text-base leading-6 tracking-[1.6px] text-darkgray">
@@ -19,7 +19,7 @@ const MainService = () => {
             eget nulla turpis.
           </p>
         </div>
-        <div className="relative z-30 mt-[87px] gap-[56px] justify-center items-center mb-[134.4px] mx-auto flex flex-col w-[30%] tablet:flex tablet:flex-row   tablet:w-full ">
+        <div className="relative z-30 mt-[81px] gap-[56px] justify-center items-center mb-[134.4px] mx-auto flex flex-col w-[30%] tablet:flex tablet:flex-row   tablet:w-full ">
           {items.map((item) => (
             <MainServiceItem
               key={item.id}

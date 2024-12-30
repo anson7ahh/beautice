@@ -11,8 +11,8 @@ const LinkItem: FC<Props> = ({ name, active, redirect, homeClassName }) => {
   return (
     <div>
       <Link
-        className={`flex flex-row items-center gap-x-1 font-medium leading-6 tracking-wide text-darkgray ${
-          active ? `${homeClassName} font-semibold` : ""
+        className={`flex items-center gap-x-1 font-medium leading-6 tracking-wide text-darkgray ${
+          active ? `${homeClassName} tracking-widest font-semibold` : ""
         } `}
         href={redirect}
       >

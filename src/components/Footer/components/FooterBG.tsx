@@ -4,9 +4,12 @@ import React from "react";
 const FooterBG = () => {
   return (
     <>
-      <div className="absolute z-10 top-0 w-full h-full bottom-[-378px]    desktop:hidden tablet:hidden  hidden">
+      <div
+        className="absolute z-10 desktop:top-[-33px] w-full  
+      desktop:block tablet:hidden  hidden  ipadMini:block ipadMini:top-0 ipadMini: "
+      >
         <Image
-          className="w-full h-full object-contain"
+          className="w-full "
           src="/FooterBG.png"
           alt="FooterBG"
           width={1440}
