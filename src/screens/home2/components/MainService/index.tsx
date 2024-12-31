@@ -40,10 +40,10 @@ const MainService = () => {
         height={697.5}
       >
         <div
-          className="ipadMini:pt-[276px] pt-[80px] tablet:bg-inherit tablet:text-left text-center flex flex-col 
-        tablet:flex-row mobile:pl-[34px] tablet:pt-[262px] px-2 gap-y-5 mx-auto w-full"
+          className="container ipadMini:pt-[250px] tablet:pt-[150px] pt-20 tablet:bg-inherit tablet:text-left text-center flex flex-col 
+        tablet:flex-row  pl-1 gap-y-5  w-full"
         >
-          <div className="ipadMini:mr-[139px] pt-[40px] mobile:pl-[154px] ">
+          <div className="ipadMini:mr-[100px] pt-10  ">
             <div className="text-4xl font-semibold leading-[45px]  mb-[21px] text-white  ">
               Why choosing us?
             </div>
@@ -52,7 +52,7 @@ const MainService = () => {
               aliquam, purus sit amet luctus venenatis.
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-x-[20px] mobile:gap-x-[70px] gap-y-[43px] mb-20 mx-auto ">
+          <div className="grid grid-cols-2 gap-x-[20px] mobile:gap-x-[70px] gap-y-[43px] mb-20 mx-auto mt-[27px] ">
             {iconItems.map((item, index) => (
               <Item key={index} {...item} />
             ))}

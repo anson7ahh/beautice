@@ -24,11 +24,11 @@ const Background: FC<BackgroundImgProps> = ({
 }) => {
   return (
     <>
-      <div className="relative w-full ">
+      <div className="relative w-full bg-darkblue ipadMini:bg-inherit">
         <div className={`relative ${className} w-full `}>{children}</div>
         <div className={`absolute  top-0 w-full ${classNameImg}`}>
           <div className="relative">
-            <div className="absolute -z-10 w-full">
+            <div className="absolute -z-10 w-full hidden ipadMini:block ">
               <Image
                 className="w-full "
                 src={src}
@@ -37,7 +37,9 @@ const Background: FC<BackgroundImgProps> = ({
                 height={height}
               />
             </div>
-            <div className="absolute -z-10 top-0 w-full">{overlay}</div>
+            <div className="absolute -z-10 top-0 w-full hidden ipadMini:block">
+              {overlay}
+            </div>
           </div>
         </div>
       </div>

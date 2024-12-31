@@ -6,18 +6,28 @@ const Banner = () => {
     <header>
       <div className="relative">
         <div className="container relative  z-10">
-          <Header src="/FooterLogo.png" homeClassName="text-white" />
-          <div className=" container mt-[235px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
+          <Header
+            src="/FooterLogo.png"
+            homeClassName="text-white"
+            className="!tablet:pt-[71px] !pt-4"
+          />
+          <div className=" container ipadMini:mt-[235px] mt-5 tablet:mt-[100px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
             <div className="flex flex-col text-center ipadMini:text-left  mx-auto ipadMini:text-white ipadMini:mx-0">
-              <span className="text-5xl font-semibold leading-[60px] ipadMini:text-left max-w-[502px] pb-[13px]">
+              <span
+                className="tablet:text-5xl tablet:font-semibold tablet:leading-[60px] 
+              mb-1 ipadMini:text-left max-w-[502px] tablet:pb-[13px] text-2xl"
+              >
                 Your beauty center place
               </span>
-              <span className="max-w-[501px] text-base font-medium  tracking-[0.1em] ipadMini:text-left mb-[37px] text-[#D8DCFF]">
+              <span className="max-w-[501px] mobile:text-base text-xs font-medium  mobile:tracking-[0.1em] mb-1 ipadMini:text-left mobile:mb-[37px] text-[#D8DCFF]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Commodo, massa pellentesque arcu fusce et magna consequat neque
                 vitae lobortis.
               </span>
-              <Button className="mx-auto ipadMini:mx-0 border ipadMini:border-white w-[179px] text-center py-[14.5px] w rounded-xl text-base font-semibold leading-6 tracking-[0.1em]  ">
+              <Button
+                className="mx-auto ipadMini:mx-0 border ipadMini:border-white mobile:w-[179px] w-[130px] 
+              py-[5px] text-center mobile:py-[14.5px] text-xs rounded-xl mobile:text-base font-semibold leading-6 tracking-[0.1em]  "
+              >
                 More Details
               </Button>
             </div>

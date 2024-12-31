@@ -3,7 +3,7 @@ import React from "react";
 
 const WaveLineBottom = () => {
   return (
-    <div className="absolute top-[674px] right-0  hidden ipadMini:block">
+    <div className="absolute top-[664px] right-0  hidden ipadMini:block ">
       <Image
         className=""
         src="/WaveLine2.png"

@@ -3,7 +3,7 @@ import React from "react";
 
 const BgReqCall = () => {
   return (
-    <div className="absolute top-0 hidden tablet:block ">
+    <div className="absolute top-[-132px] hidden tablet:block w-[316.98px]">
       <Image
         src="/BG-Elements.png"
         alt="BG-Elements"

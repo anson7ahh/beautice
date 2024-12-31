@@ -11,7 +11,7 @@ const MainServiceItem: FC<Prop> = ({ src, alt, description, title }) => {
   return (
     <div className="flex flex-col border rounded-[25px] px-[36px] pt-[31px] bg-white tablet:text-left text-center mx-auto tablet:mx-0">
       <Image
-        className="mb-[25px] mx-auto tablet:mx-0"
+        className="mb-[24px] mx-auto tablet:mx-0"
         src={src}
         alt={alt}
         width={64}
@@ -20,10 +20,10 @@ const MainServiceItem: FC<Prop> = ({ src, alt, description, title }) => {
       <span className="text-lg font-semibold leading-[22.5px]  text-darkblue mb-[14px] ">
         {title}
       </span>
-      <span className="text-sm font-normal leading-[21px] tracking-[0.1em]   text-darkgray max-w-[189px] mb-[17px]">
+      <span className="text-sm font-normal leading-[21px] tracking-[0.1em]   text-darkgray max-w-[189px] mb-[18px]">
         {description}
       </span>
-      <Button className="flex mb-[47px] text-vividpink items-center gap-x-2 text-sm font-semibold leading-[17.5px] mx-auto tablet:mx-0">
+      <Button className="flex mb-[47px] text-vividpink items-center gap-x-[9px] text-sm font-semibold leading-[17.5px] mx-auto tablet:mx-0">
         Learn more
         <Image
           src="/angle-double-right.svg"

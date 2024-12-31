@@ -13,7 +13,7 @@ export const Button: FC<ButtonProps> = ({
   className = "",
 }) => {
   return (
-    <button type={type} className={`${className}`}>
+    <button type={type} className={className}>
       {children}
     </button>
   );
