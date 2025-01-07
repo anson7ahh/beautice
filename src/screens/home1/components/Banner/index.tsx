@@ -12,7 +12,7 @@ export const Banner = () => {
       <header className="container font-medium w-full relative overflow-hidden  ">
         <Header homeClassName="!text-darkblue" />
         <div
-          className="flex mt-[182px]   ipadMini:flex-row flex-col px-5 ipadMini:px-0 w-full items-center  gap-y-10 text-center ipadMini:text-left 
+          className="flex mt-[182px] ipadMini:flex-row flex-col px-5 ipadMini:px-0 w-full items-center  gap-y-10 text-center ipadMini:text-left 
         gap-x-[22px] "
         >
           <div className="flex flex-col ipadMini:ml-[39px] ipadMini:mt-[-15px] w-full max-w-[474px]">

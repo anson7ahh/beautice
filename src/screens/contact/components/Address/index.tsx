@@ -8,7 +8,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import React from "react";
 export default function Address() {
   return (
-    <div className="w-full h-[418px] overflow-hidden">
+    <div className="w-full h-[418px] overflow-hidden mt-[111px]">
       <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -30,11 +30,11 @@ export const FormContactUs = () => {
             placeholder="Subject message"
           />
           <textarea
-            className="border w-full  ipadMini:w-[520px] border-[rgba(217,221,254,1)] placeholder:w-[300px] pt-[25.32px]  pb-[186.16px] pl-[23px]  h-[239.47px] rounded-[15px] placeholder:font-normal placeholder:leading-[24px] placeholder:tracking-[0.1em]"
+            className="border w-full   ipadMini:w-[520px] border-[rgba(217,221,254,1)] placeholder:w-[300px] pt-[25.32px]  pb-[186.16px] pl-[23px]  h-[239.47px] rounded-[15px] placeholder:font-normal placeholder:leading-[24px] placeholder:tracking-[0.1em]"
             placeholder="Your inquiry here"
           ></textarea>
         </div>
-        <Button className="shadow-[0px_17px_22px_0px_rgba(255,237,246,1)] w-[248px] px-[21px] py-[18px] bg-[#FF64AE] rounded-full text-white text-center font-semibold text-base leading-[24px] tracking-[1.6px] mt-[53.84px]">
+        <Button className="shadow-[0px_17px_22px_0px_rgba(255,237,246,1)]  w-[248px] px-[21px] py-[18px] bg-[#FF64AE] rounded-full text-white text-center font-semibold text-base leading-[24px] tracking-[1.6px] mt-[53.84px]">
           Send Message
         </Button>
       </form>
