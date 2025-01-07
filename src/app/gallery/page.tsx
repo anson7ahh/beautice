@@ -4,7 +4,7 @@ import QuotaOverview from "@/screens/gallery/components/QuotaOverview";
 import Video from "@/screens/gallery/components/Video";
 import React from "react";
 
-const page = () => {
+const Gallery = () => {
   return (
     <div>
       <Banner />
@@ -15,4 +15,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Gallery;

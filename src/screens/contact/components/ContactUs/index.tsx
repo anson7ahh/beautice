@@ -1,3 +1,4 @@
+"use client";
 import Description from "@/components/Description";
 import SubTitle from "@/components/SubTitle";
 import Title from "@/components/Title";

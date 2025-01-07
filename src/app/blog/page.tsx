@@ -2,7 +2,7 @@ import Banner from "@/screens/blog/components/Banner";
 import ServiceDetails from "@/screens/blog/components/ServiceDetails";
 import React from "react";
 
-const Blog = () => {
+const About = () => {
   return (
     <div>
       <Banner />
@@ -11,4 +11,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default About;
