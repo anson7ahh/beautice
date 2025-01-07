@@ -13,7 +13,7 @@ const FormReqCall = () => {
           placeholder="Insert your phone number here ..."
         />
 
-        <Button className="bg-vividpink pl-[14px] pr-[21px] pt-[18px] pb-[17px] w-auto rounded-tr-[25px] tablet:w-[113px] rounded-br-[25px] flex items-center justify-center ml-[-1px] ">
+        <Button className="bg-vividpink pl-[14px] pr-[21px] pt-[18px] pb-[17px] w-auto rounded-tr-[25px] tablet:w-[130px] rounded-br-[25px] flex items-center justify-center ml-[-1px] ">
           <Image
             src="/phone-volume.svg"
             alt="phone-volume"

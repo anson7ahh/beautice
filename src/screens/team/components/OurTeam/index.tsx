@@ -13,7 +13,7 @@ const OurTeam = () => {
         <div className="flex flex-col text-center ipadMini:ml-[-79px]  px-5 ">
           <SubTitle className="" subTitle="Our Team" />
           <Title
-            className=" mt-[9px] !text-3xl mobile:text-4xl leading-[42px] !max-w-full"
+            className=" mt-[9px]   !mobile:text-4xl leading-[42px] !max-w-full"
             title="We are Professional"
           />
           <Description

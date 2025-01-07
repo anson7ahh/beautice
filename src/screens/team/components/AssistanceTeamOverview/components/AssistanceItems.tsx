@@ -10,7 +10,7 @@ interface Props {
 const AssistanceItems: FC<Props> = ({ src, alt, name, career }) => {
   return (
     <div className="flex gap-x-[172px] flex-col ipadMini:flex-row ">
-      <div className=" mobile:min-w-[398px] h-[253px]  w-full ">
+      <div className=" mobile:min-w-[398px] h-[253px]  ">
         <Image
           className="w-full h-[253px]"
           src={src}

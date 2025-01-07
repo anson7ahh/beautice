@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const About = () => {
+const AboutUs = () => {
   return (
     <>
       <div className="container px-2 desktop:px-0 mt-[153px]">
@@ -42,4 +42,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutUs;

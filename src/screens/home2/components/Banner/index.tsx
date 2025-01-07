@@ -9,17 +9,18 @@ const Banner = () => {
           <Header
             src="/FooterLogo.png"
             homeClassName="text-white"
-            className="!tablet:pt-[71px] !pt-4"
+            className="!pt-[71px]"
           />
-          <div className=" container ipadMini:mt-[235px] mt-5 tablet:mt-[100px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
+
+          <div className=" container ipadMini:mt-[237px] mt-5 tablet:mt-[100px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
             <div className="flex flex-col text-center ipadMini:text-left  mx-auto ipadMini:text-white ipadMini:mx-0">
               <span
                 className="tablet:text-5xl tablet:font-semibold tablet:leading-[60px] 
-              mb-1 ipadMini:text-left max-w-[502px] tablet:pb-[13px] text-2xl"
+              mb-[13px] ipadMini:text-left max-w-[502px] tablet:pb-[13px] ipadMini:pb-0 text-2xl"
               >
                 Your beauty center place
               </span>
-              <span className="max-w-[501px] mobile:text-base text-xs font-medium  mobile:tracking-[0.1em] mb-1 ipadMini:text-left mobile:mb-[37px] text-[#D8DCFF]">
+              <span className="max-w-[501px] mobile:text-base text-xs font-medium   mobile:tracking-[0.1em] mb-1 ipadMini:text-left mobile:mb-[37px] text-[#D8DCFF]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Commodo, massa pellentesque arcu fusce et magna consequat neque
                 vitae lobortis.

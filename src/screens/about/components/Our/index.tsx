@@ -10,7 +10,7 @@ import BubbleBGOur from "./components/BubbleBGOur";
 const Our = () => {
   return (
     <div className="relative ">
-      <div className="container flex flex-col gap-y-[147px] mt-[298px]  relative z-10 px-3 ipadMini:px-0 mb-[256.66px] ">
+      <div className="container flex flex-col gap-y-[147px] mt-[298px]  relative z-10 px-3 ipadMini:px-0 mb-[155.66px ] ">
         <div className="flex flex-col gap-y-[143px]">
           <div className="flex flex-col ipadMini:flex-row gap-x-[234px]">
             <div className="ipadMini:min-w-[373.51px] min-w-full mt-[27px] ipadMini:ml-14 ml-0 mx-auto ipadMini:mx-0">
@@ -54,13 +54,13 @@ const Our = () => {
                 moreDescription="Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in suspendisse placerat."
               />
             </div>
-            <div className="ipadMini:min-w-[430.28px] min-w-full h-[251.24px] mt-[27px] ">
+            <div className="ipadMini:min-w-[420.28px] min-w-full h-[261.24px] mt-[13px] ">
               <Image
                 className="w-full h-full"
                 src="/Illustration.png"
                 alt="Illustration"
-                width={430.28}
-                height={251.24}
+                width={420.28}
+                height={261.24}
               />
             </div>
           </div>

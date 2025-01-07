@@ -21,14 +21,14 @@ const Information: FC<Props> = ({ title, subTitle, src, alt }) => {
           height={453}
         />
       </div>
-      <div className="flex flex-col ipadMini:ml-[77px] ml-0 mt-[56px] px-5 ipadMini:px-0">
+      <div className="flex flex-col ipadMini:ml-[75px] ml-0 mt-[56px] px-5 ipadMini:px-0">
         <div className="flex items-center gap-x-[15px]">
           <Image src="/Folder.svg" alt="Folder" width={25} height={25} />
           <p className="text-base font-semibold leading-5 text-left text-vividpink">
             {subTitle}
           </p>
         </div>
-        <Title title={title} className="mt-[18px] max-w-[612px]" />
+        <Title title={title} className="mt-4 max-w-[612px]" />
         <Description
           className="mt-[22px] max-w-[592px]"
           description="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the…"

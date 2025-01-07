@@ -8,7 +8,7 @@ const ServiceFaq = () => {
   const { sectionIndex, handClickSection } = useServiceFaqLogic();
   return (
     <>
-      <div className="container flex flex-col justify-center items-center text-center max-w-[972px] mt-[300px] mb-[247.66px]">
+      <div className="container flex flex-col justify-center items-center text-center max-w-[972px] mt-[300px] mb-[151.66px]">
         <span className=" text-4xl font-semibold leading-[45px] text-darkblue  ml-[11px]">
           Services FAQ’s
         </span>
@@ -23,7 +23,7 @@ const ServiceFaq = () => {
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col mt-[38px] px-5 ipadMini:px-0"
+              className="flex flex-col mt-[37px] px-5 ipadMini:px-0"
             >
               <div className="flex justify-between mr-[22px] text-left">
                 <div

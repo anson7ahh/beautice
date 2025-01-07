@@ -11,7 +11,7 @@ import Card from "./components/Card";
 
 const ServiceDetails = () => {
   return (
-    <div className="container flex flex-col ipadMini:flex-row mt-[107px] mb-[74px] gap-x-[62px] px-5 ipadMini:px-0 tablet:items-center ipadMini:items-start">
+    <div className="container flex flex-col ipadMini:flex-row mt-[107px] mb-[81px] gap-x-[62px] px-5 ipadMini:px-0 tablet:items-center ipadMini:items-start">
       <div>
         <div className="flex flex-col gap-y-[131px]">
           {Items.map((item, index) => (
@@ -46,7 +46,7 @@ const ServiceDetails = () => {
           </Card>
         </div>
         <div className="flex flex-col border rounded-[25px]  border-transparent shadow-2xl ">
-          <Card title="Cloud Tags" titleClassName="ml-[48px] mt-[54px]">
+          <Card title="Cloud Tags" titleClassName="ml-[48px] mt-[52px]">
             <div className="grid grid-cols-3 grid-rows-3  justify-between ml-[43px] pr-[35px] mt-6 gap-y-[19px] mb-[57px]">
               {Tags.map((tag, index) => (
                 <CloudTags key={index} {...tag} />

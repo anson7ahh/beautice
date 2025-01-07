@@ -8,7 +8,7 @@ import BackgroundBubbleGallery from "./components/BackgroundBubbleGallery";
 const QuotaOverview = () => {
   return (
     <div className=" relative z-0   ">
-      <div className=" container relative  pt-[117px] mb-[232.66px] px-5 ipadMini:px-0 flex flex-col  ipadMini:flex-row mx-auto items-center text-center ipadMini:items-start ipadMini:text-left gap-x-[126px] ">
+      <div className=" container relative  pt-[119px] mb-[133.66px] px-5 ipadMini:px-0 flex flex-col  ipadMini:flex-row mx-auto items-center text-center ipadMini:items-start ipadMini:text-left gap-x-[126px] ">
         <div className="flex flex-col ">
           <SubTitle subTitle="Get The Quota" />
           <Title

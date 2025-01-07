@@ -1,4 +1,4 @@
-"use client"; // <===== REQUIRED
+"use client";
 
 import React from "react";
 

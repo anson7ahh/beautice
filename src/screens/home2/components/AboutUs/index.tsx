@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <div className="container desktop:mt-[471px] relative z-0 mobile:mt-[471px] mt-[180px] px-2 tablet:px-0">
       <div className="flex tablet:gap-x-[167px] flex-col justify-center items-center ipadMini:mx-0  gap-y-[100px] tablet:flex-row  ">
-        <div className="ipadMini:w-[490px] w-[90%]">
+        <div className="ipadMini:w-[490px] w-[90%] mt-[-54px]">
           <Image
             className="w-full"
             src="/Illustration-1.png"

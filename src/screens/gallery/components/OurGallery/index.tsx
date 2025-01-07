@@ -14,7 +14,7 @@ const OurGallery = () => {
             <SubTitle subTitle="Our Gallery" />
             <Title
               title="Check out the collection pictures from our clinic"
-              className="ipadMini:min-w-[615px] mt-[11px] min-w-full"
+              className="ipadMini:max-w-[615px] mt-[11px] max-w-full"
             />
           </div>
           <div className="mt-[31px]">
