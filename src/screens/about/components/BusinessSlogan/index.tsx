@@ -4,7 +4,7 @@ import React from "react";
 
 const BusinessSlogan = () => {
   return (
-    <div className="mb-[400px]">
+    <div className=" mt-[-5px]">
       <Background
         classNameImg="-z-20 w-full"
         className="z-40 top-0"
@@ -22,7 +22,7 @@ const BusinessSlogan = () => {
           />
         }
       >
-        <div className="flex flex-col text-center mx-auto pt-[168.5px]  ">
+        <div className="flex flex-col text-center mx-auto ipadMini:pt-[168.5px] pt-[100px] pb-[100px] ipadMini:pb-0">
           <span className="text-base font-semibold leading-4 text-[#ABB4FF]">
             Business Slogan
           </span>

@@ -5,48 +5,41 @@ interface Props {
   className: string;
   src: string;
   alt: string;
-  width: number;
-  height: number;
   title: string;
   subtitle: string;
   description: string;
   moreDescription?: string;
   haveButton?: boolean;
+  imgClassName?: string;
+  contentClassName?: string;
 }
 const ContentWithIllustration: React.FC<Props> = ({
   className,
   src,
   alt,
-  width,
-  height,
   title,
   subtitle,
   description,
   moreDescription,
   haveButton,
+  imgClassName,
 }) => {
   return (
-    <div className={` ${className}  gap-x-[234px]   mx-auto`}>
-      <div>
-        <Image
-          className="mt-[25px] w-full object-contain"
-          src={src}
-          alt={alt}
-          height={height}
-          width={width}
-        />
+    <div className={` ${className}     `}>
+      <div className={` ${imgClassName} relative`}>
+        <Image className="mt-[26px] w-full" src={src} alt={alt} fill />
       </div>
-      <div className="flex flex-col tablet:text-left text-center justify-center">
+      <div className="flex flex-col tablet:text-left ">
         <span className="text-vividpink mb-[11px] mt-10 tablet:mt-0 text-base font-semibold leading-5">
           {subtitle}
         </span>
-        <span className="text-4xl font-semibold leading-[45px] text-darkblue mb-[15px] max-w-[411px]">
+        <span className="text-4xl font-semibold leading-[45px] text-darkblue mb-[15px] ">
           {title}
         </span>
-        <span className="max-w-[450px] text-base font-normal  tracking-widest text-darkgray mb-6">
+        <span className=" text-base font-normal  tracking-widest text-darkgray mb-6">
           {description}
         </span>
-        <span className="max-w-[450px] text-base font-normal  text-darkgray tracking-widest">
+        <span className=" text-base font-normal  text-darkgray tracking-widest">
           {moreDescription}
         </span>
         {haveButton && (

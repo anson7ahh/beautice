@@ -1,38 +1,96 @@
 import Image from "next/image";
 import React from "react";
-import { ContentWithIllustrations, Logo } from "./constrants";
-import ContentWithIllustration from "@/components/ContentWithIllustration";
+import { Logo } from "./constrants";
+import SubTitle from "@/components/SubTitle";
+import Title from "@/components/Title";
+import Description from "@/components/Description";
+import MoreDescription from "@/components/MoreDescription";
+import BubbleBGOur from "./components/BubbleBGOur";
 
 const Our = () => {
   return (
-    <div className="container flex flex-col gap-y-[117px] justify-center items-center px-3">
-      {ContentWithIllustrations.map((item, index) => (
-        <ContentWithIllustration key={index} {...item} />
-      ))}
-      <div className="flex flex-col gap-y-[100px] w-full">
-        <div className="flex flex-col mx-auto text-center">
-          <span className="text-base font-semibold leading-5 text-vividpink mb-[11px]">
-            Our Clients
-          </span>
-          <span className="text-3xl font-semibold leading-[45px] text-darkblue tracking-[3.5px] mb-[20px] max-w-[80%]">
-            Well-known agencies
-          </span>
-          <span className="text-darkgray text-base font-normal  tracking-widest">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </span>
+    <div className="relative ">
+      <div className="container flex flex-col gap-y-[147px] mt-[298px]  relative z-10 px-3 ipadMini:px-0 mb-[256.66px] ">
+        <div className="flex flex-col gap-y-[143px]">
+          <div className="flex flex-col ipadMini:flex-row gap-x-[234px]">
+            <div className="ipadMini:min-w-[373.51px] min-w-full mt-[27px] ipadMini:ml-14 ml-0 mx-auto ipadMini:mx-0">
+              <Image
+                className="w-full object-fill"
+                src="/Illustration-1.png"
+                alt="Illustration-1"
+                width={373.51}
+                height={234}
+              />
+            </div>
+            <div className="w-full flex flex-col mx-auto">
+              <SubTitle className="" subTitle="Our Vision" />
+              <Title
+                className="ipadMini:max-w-[411px] mt-[9px] max-w-full"
+                title="Be the best and go international"
+              />
+              <Description
+                className="max-w-[475px] mt-[14px]"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet. Egestas volutpat facilisi eu libero."
+              />
+              <MoreDescription
+                className="mt-[25px]"
+                moreDescription="Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in suspendisse placerat."
+              />
+            </div>
+          </div>
+          <div className="flex flex-col ipadMini:flex-row gap-x-[165px]">
+            <div className=" flex flex-col">
+              <SubTitle className="" subTitle="Our Mission" />
+              <Title
+                className="max-w-[525px] mt-[9px]"
+                title="Special & premium service to any clients"
+              />
+              <Description
+                className="max-w-[475px] mt-[14px]"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet. Egestas volutpat facilisi eu libero."
+              />
+              <MoreDescription
+                className="mt-[25px] max-w-[475px]"
+                moreDescription="Nunc, ipsum ornare mauris sit quam quis enim. Varius tellus in suspendisse placerat."
+              />
+            </div>
+            <div className="ipadMini:min-w-[430.28px] min-w-full h-[251.24px] mt-[27px] ">
+              <Image
+                className="w-full h-full"
+                src="/Illustration.png"
+                alt="Illustration"
+                width={430.28}
+                height={251.24}
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap  ipadMini:justify-between  px-0 tablet:px-[133px] w-full justify-center">
-          {Logo.map((item, index) => (
-            <Image
-              key={index}
-              src={item.src}
-              alt={item.alt}
-              height={80}
-              width={147}
-            />
-          ))}
+        <div className="flex flex-col gap-y-[100px] mx-auto w-full">
+          <div className="flex flex-col ml-0 ipadMini:ml-[135px] text-center w-full  ipadMini:w-[848px]">
+            <span className="text-base font-semibold leading-5 text-vividpink mb-[11px] mx-auto">
+              Our Clients
+            </span>
+            <span className="text-3xl font-semibold leading-[45px] text-darkblue mx-auto tracking-[3.5px]  max-w-[80%]">
+              Well-known agencies
+            </span>
+            <span className="text-darkgray text-base font-normal mx-auto  tracking-widest mt-[20px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </span>
+          </div>
+          <div className="flex flex-wrap  ipadMini:justify-between  px-0 tablet:px-[89px] w-full justify-center  ">
+            {Logo.map((item, index) => (
+              <Image
+                key={index}
+                src={item.src}
+                alt={item.alt}
+                height={80}
+                width={147}
+              />
+            ))}
+          </div>
         </div>
       </div>
+      <BubbleBGOur />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import React from "react";
 const ContactUs = () => {
   return (
     <>
-      <div className="container relative mt-[-10px] flex  ipadMini:flex-row z-30 mb-[69.66px] gap-x-[100px] px-2 ipadMini:px-0 ">
+      <div className="container relative mt-[-10px] flex  ipadMini:flex-row z-30  gap-x-[100px] px-2 ipadMini:px-0 mb-[170px]">
         <div className="mt-[160px] hidden ipadMini:block ">
           <Image
             src="/ContactAnimations.png"

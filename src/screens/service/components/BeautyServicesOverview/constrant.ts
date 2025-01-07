@@ -2,11 +2,10 @@ import { Types } from "./types";
 
 export const BeautyServices: Types[] = [
   {
-    className: "flex",
+    className: "flex gap-x-[187px] ipadMini:flex-row ",
+    imgClassName: "tablet:min-w-[475px] h-[314px] w-full mt-[-30px]",
     src: "/Animation1Beauty.png",
     alt: "Animation1Beauty",
-    height: 314,
-    width: 475,
     subtitle: "Beauty Consultation",
     title: "We services beauty consultation",
     description:
@@ -14,25 +13,23 @@ export const BeautyServices: Types[] = [
     haveButton: true,
   },
   {
-    className: "flex flex-row-reverse",
+    className: "flex ipadMini:flex-row-reverse gap-x-[187px]",
+    imgClassName: "tablet:min-w-[475px] h-[314px] object-contain mt-[-30px]",
     src: "/Animation2Beauty.png",
     alt: "Animation2Beauty",
-    height: 314,
-    width: 475,
-    subtitle: "Beauty Consultation",
-    title: "We services beauty consultation",
+    subtitle: "Skin Treatements",
+    title: "Skin care and treatment by expert",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet. Egestas volutpat facilisi eu libero.",
     haveButton: true,
   },
   {
-    className: "flex",
+    className: "flex gap-x-[187px] ipadMini:flex-row ",
+    imgClassName: " tablet:min-w-[475px] h-[314px] mt-[-30px]",
     src: "/Animation3Beauty.png",
     alt: "Animation3Beauty",
-    height: 314,
-    width: 475,
-    subtitle: "Beauty Consultation",
-    title: "We services beauty consultation",
+    subtitle: "Beauty Product",
+    title: "We present quality beauty products",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet. Egestas volutpat facilisi eu libero.",
     haveButton: true,

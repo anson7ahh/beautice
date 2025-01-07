@@ -10,8 +10,8 @@ const FooterBG = () => {
       >
         <Image
           className="w-full "
-          src="/FooterBG.png"
-          alt="FooterBG"
+          src="/BgFooter.png"
+          alt="BgFooter"
           width={1440}
           height={705.34}
         />

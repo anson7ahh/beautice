@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        custom: "0px 4px 17px 0px rgba(238, 240, 255, 1)",
+      },
       screens: {
         mobile: "572px",
         tablet: "995px",

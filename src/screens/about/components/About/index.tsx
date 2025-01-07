@@ -4,8 +4,8 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <div className="container px-2">
-        <div className="flex flex-col text-left mt-[125px]">
+      <div className="container px-2 desktop:px-0 mt-[153px]">
+        <div className="flex flex-col text-left ">
           <span className="text-base font-semibold leading-5 text-vividpink  ">
             About
           </span>
@@ -18,16 +18,16 @@ const About = () => {
           </span>
         </div>
         <div className="relative z-10 w-full">
-          <div className="mobile:mt-[64px] relative z-0">
+          <div className="mobile:mt-[68px] relative z-0">
             <Image
-              className="w-full max-w-[90%] mx-auto object-scale-down"
+              className="desktop:w-full h-[540px] object-contain "
               src="/aboutBanner.png"
               alt="aboutBanner"
               width={1140}
               height={540}
             />
           </div>
-          <div className="absolute z-20 top-[180px] left-1/2 transform -translate-x-1/2">
+          <div className="absolute z-20 top-[230px] ipadMini:top-[184px] left-1/2 transform -translate-x-1/2">
             <Image
               className="object-contain w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[176px] lg:h-[176px]"
               src="/PlayButtonAbout.svg"

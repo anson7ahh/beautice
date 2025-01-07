@@ -40,7 +40,7 @@ export const Header: FC<Props> = ({
           <div className="bg-vividpink px-[41px] py-[14.9px] text-center rounded-[50px] mt-[-4px]">
             <Link
               className="text-white text-base font-semibold leading-[24px] tracking-[0.1em]"
-              href="#"
+              href="contact"
             >
               Contact
             </Link>

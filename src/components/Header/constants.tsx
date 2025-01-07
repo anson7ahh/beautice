@@ -8,6 +8,6 @@ export const linkItems: LinkItem[] = [
   },
   { name: "About", active: false, redirect: "/about" },
   { name: "Service", active: false, redirect: "/service" },
-  { name: "Gallery", active: false, redirect: "/service" },
-  { name: "Blog", active: false, redirect: "/service" },
+  { name: "Gallery", active: false, redirect: "/gallery" },
+  { name: "Blog", active: false, redirect: "/blog" },
 ];

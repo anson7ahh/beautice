@@ -1,13 +1,12 @@
-import ContentWithIllustration from "@/components/ContentWithIllustration";
-
 import React from "react";
 import { BeautyServices } from "./constrant";
+import Illustration from "./components/Illustration";
 
 const BeautyServicesOverview = () => {
   return (
-    <div className="container flex flex-col mt-[144px] gap-y-[92px]">
+    <div className="container flex flex-col mt-[171px] px-5  tablet:px-0 gap-y-[122px] gap-x-[187px]">
       {BeautyServices.map((item, index) => (
-        <ContentWithIllustration key={index} {...item} />
+        <Illustration key={index} {...item} />
       ))}
     </div>
   );

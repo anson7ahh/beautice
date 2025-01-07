@@ -2,18 +2,23 @@ import React from "react";
 import { Imgs } from "./contrant";
 import Image from "next/image";
 import BubbleBGOurService from "./components/BubbleBGOurService";
-import PageTitle from "@/components/PageTitle";
+import Title from "@/components/Title";
+import SubTitle from "@/components/SubTitle";
+import Description from "@/components/Description";
 
 const OurService = () => {
   return (
     <div className="relative">
-      <div className="container mt-[150px]">
-        <PageTitle
-          title="We focus on your beauty"
-          subtitle="Our Services"
-          description="Lorem ipsum dolor sit amet"
-        />
-        <div className="flex flex-wrap gap-x-[84px] gap-y-[68px] ml-[50px] mt-[73px] w-full">
+      <div className="container mt-[153px]">
+        <div className="flex flex-col justify-center  items-center text-center ">
+          <SubTitle subTitle="Our Services" />
+          <Title className="mt-3" title="We focus on your beauty" />
+          <Description
+            className="mt-6"
+            description="Lorem ipsum dolor sit amet"
+          />
+        </div>
+        <div className="flex px-5  justify-center ipadMini:justify-start ipadMini:px-0 flex-wrap gap-x-[84px] gap-y-[68px]  ipadMini:mx-0 ipadMini:ml-[21px] mt-[73px] w-full">
           {Imgs.map((img, index) => (
             <Image
               className={img.imgClassName}

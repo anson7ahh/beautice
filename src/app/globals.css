@@ -31,3 +31,34 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: none;
 }
+
+.swiperCustom .swiper-button-prev {
+  position: absolute;
+  left: 181px;
+  top: 322px;
+  background-image: url("/VectorOur.svg");
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+}
+
+.swiperCustom .swiper-button-next {
+  position: absolute;
+  right: 181px;
+  top: 335px;
+  background-image: url("/VectorOur.svg") !important ;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-prev::after {
+  display: none;
+}
+
+.leaflet-container {
+  height: 100% !important;
+  overflow: visible !important;
+}

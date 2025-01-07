@@ -3,15 +3,15 @@ import React from "react";
 import Item from "./components/Item";
 import Icon from "./components/Icon";
 import FooterBG from "./components/FooterBG";
-import BottomBG from "./components/BottomBG";
+
 import { items, icons } from "./constants";
 import { ButtonScrollToTop } from "./components";
 
 const Footer = () => {
   return (
-    <footer className=" relative mt-[100.66px] bg-darkblue ipadMini:bg-transparent desktop:bg-none  w-full z-20 mobile:bg-none ">
+    <footer className=" relative  bg-darkblue ipadMini:bg-transparent desktop:bg-inherit  w-full z-20  ">
       <div className="container w-full relative z-20  flex flex-col ">
-        <div className="flex  mb-10 ipadMini:pt-[153px]  tablet:gap-x-[100px] tablet:mb-[140px] desktop:gap-x-0 mobile:mb-10 mobile:mt-10 ">
+        <div className="flex  mb-10 ipadMini:pt-[153px]  tablet:gap-x-[100px] desktop:mb-[140px] ipadMini:mb-[100px] tablet:mb-[140px] desktop:gap-x-0 mobile:mb-10 mobile:mt-10 ">
           <div className="desktop:mr-[157px] mobile:mx-auto tablet:mx-0 mobile:pt-[100px] tablet:pt-0 pt-[130px] mx-auto">
             <Image
               className="mb-[34px] mt-4 mobile:mx-auto tablet:mx-0 mx-auto"
@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between text-center tablet:text-left mb-10 w-full flex-col tablet:flex-row mobile:mx-auto tablet:mx-0 desktop:mb-0  ">
+        <div className="flex justify-between text-center tablet:text-left ipadMini:mb-0 mb-10 w-full flex-col tablet:flex-row mobile:mx-auto tablet:mx-0 desktop:mb-0  ">
           <div className="flex mx-auto flex-row  gap-x-[45px]  mobile:mx-auto tablet:mx-0 mobile:mb-5">
             {icons.map((icon, index) => (
               <Icon key={index} src={icon.src} alt={icon.alt} />
@@ -79,8 +79,8 @@ const Footer = () => {
         </div>
         <ButtonScrollToTop />
       </div>
+
       <FooterBG />
-      <BottomBG />
     </footer>
   );
 };

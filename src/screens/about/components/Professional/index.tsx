@@ -4,7 +4,7 @@ import BgProfessional from "./components/BgProfessional";
 
 const ProfessionalAbout = () => {
   return (
-    <div className="relative mt-[136px] ">
+    <div className="relative mt-[-8px] ">
       <div className="relative z-30">
         <Professional />
       </div>
