@@ -9,7 +9,7 @@ const Banner = () => {
           <Header
             src="/FooterLogo.png"
             homeClassName="text-white"
-            className="!pt-[71px]"
+            className="!ipadMini:pt-[71px]"
           />
 
           <div className=" container ipadMini:mt-[237px] mt-5 tablet:mt-[100px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">

@@ -19,7 +19,7 @@ export const Header: FC<Props> = ({
   return (
     <>
       <div
-        className={`container pt-[77px]  flex justify-between  items-center h-[63px] relative z-10 ${className} px-5 ipadMini:px-0 `}
+        className={`container ipadMini:pt-[77px] pt-[30px]  flex justify-between  items-center h-[63px] relative z-10 ${className} px-5 ipadMini:px-0 `}
       >
         <div className="mobile:w-full w-[50%]">
           <Image
