@@ -32,7 +32,7 @@ const MainService = () => {
       </div>
 
       <BgMainService
-        className="mt-[128px] "
+        className="mt-[128px] max-h-[697.5px] "
         classNameImg=""
         src="/BackgroundMainService.png"
         alt="BackgroundMainService"

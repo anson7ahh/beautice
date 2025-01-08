@@ -46,9 +46,9 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="absolute z-0 top-0 w-full  tablet:block">
+        <div className="absolute z-0 top-0 w-full  tablet:block max-h-[918px]">
           <Image
-            className="w-full object-fill"
+            className="w-full max-h-[918px]"
             src="/BackgroundSlider.png"
             alt="logo"
             width={1440}
