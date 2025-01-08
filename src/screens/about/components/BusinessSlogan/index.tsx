@@ -6,7 +6,7 @@ const BusinessSlogan = () => {
   return (
     <div className=" mt-[-5px]">
       <Background
-        classNameImg="-z-20 w-full"
+        classNameImg="-z-20 w-full max-h-[529px]"
         className="z-40 top-0"
         src="/SecsionSlogan.png"
         alt="SectionSlogan"
@@ -14,7 +14,7 @@ const BusinessSlogan = () => {
         width={1440}
         overlay={
           <Image
-            className="w-full "
+            className="w-full max-h-[529px] "
             src="/BackgroundMask.png"
             alt="BackgroundMask"
             width={1440}

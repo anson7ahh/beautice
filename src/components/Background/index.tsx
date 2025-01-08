@@ -30,7 +30,7 @@ const Background: FC<BackgroundImgProps> = ({
           <div className="relative">
             <div className="absolute -z-10 w-full hidden ipadMini:block ">
               <Image
-                className="w-full"
+                className={`w-full max-h-[${height}px]`}
                 src={src}
                 alt={alt}
                 width={width}

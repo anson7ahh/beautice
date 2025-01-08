@@ -4,11 +4,12 @@ import Title from "@/components/Title";
 import { FormContactUs } from "@/screens/home1/components/ContactUs/components";
 import Image from "next/image";
 import React from "react";
+import BgBubbleContact from "./components/BgBubbleContact";
 
 const ContactUs = () => {
   return (
     <div className="relative  px-5 ipadMini:px-0">
-      <div className="container flex flex-col items-center  ">
+      <div className="container flex flex-col items-center relative z-10 ">
         <div className=" flex flex-col mt-[153px] gap-x-[100px] ipadMini:flex-row ml-[-18px] text-center ipadMini:text-start">
           <div className="flex flex-col">
             <SubTitle subTitle="Contact Us" />
@@ -36,6 +37,9 @@ const ContactUs = () => {
           </div>
           <FormContactUs />
         </div>
+      </div>
+      <div className="absolute z-0 top-[235px] right-0">
+        <BgBubbleContact />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const CustomerCare = () => {
         height={529}
         overlay={
           <Image
-            className="w-full "
+            className="w-full max-h-[529px] "
             src="/BackgroundMask.png"
             alt="BackgroundMask"
             width={1440}

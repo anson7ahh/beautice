@@ -8,7 +8,7 @@ const Banner = () => {
     <div className="">
       <Header homeClassName="!text-darkblue" />
       <Background
-        className="mt-[63px]"
+        className="mt-[63px] max-h-[285px]"
         src="/BannerBlog.png"
         alt="BannerBlog"
         width={1440}

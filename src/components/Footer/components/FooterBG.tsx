@@ -5,11 +5,11 @@ const FooterBG = () => {
   return (
     <>
       <div
-        className="absolute z-10 desktop:top-[-33px] w-full  
+        className="absolute z-10 desktop:top-[-33px] w-full  max-h-[705.34px]
       desktop:block tablet:hidden  hidden  ipadMini:block ipadMini:top-0 ipadMini: "
       >
         <Image
-          className="w-full "
+          className="w-full  max-h-[705.34px]"
           src="/BgFooter.png"
           alt="BgFooter"
           width={1440}
