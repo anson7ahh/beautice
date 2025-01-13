@@ -9,7 +9,7 @@ import { Button, Header } from "@/components";
 export const Banner = () => {
   return (
     <div>
-      <header className="container font-medium w-full relative overflow-hidden  ">
+      <header className="container font-medium w-full relative   ">
         <Header homeClassName="!text-darkblue" />
         <div
           className="flex mt-[182px] ipadMini:flex-row flex-col px-5 ipadMini:px-0 w-full items-center  gap-y-10 text-center ipadMini:text-left 
