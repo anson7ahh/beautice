@@ -27,7 +27,7 @@ const AssistanceItems: FC<Props> = ({ src, alt, name, career }) => {
           </span>
         </p>
         <Description
-          className="max-w-[434px] mt-[22px]"
+          className="max-w-[434px] mt-[21px]"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id magnis at placerat pulvinar euismod neque."
         />
       </div>

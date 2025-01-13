@@ -7,8 +7,8 @@ import React from "react";
 const AboutUs = () => {
   return (
     <>
-      <div className="container px-5 desktop:px-0 mobile:mt-[153px] mt-[70px]">
-        <div className="flex flex-col text-left ">
+      <div className="container px-5 desktop:px-0 mobile:mt-[150px] mt-[70px]">
+        <div className="flex flex-col text-left  ">
           <SubTitle subTitle="About" />
           <Title
             title="We are a leading beauty clinic that has been around since 2002 "
@@ -21,8 +21,8 @@ const AboutUs = () => {
             className="max-w-[680px]   mt-[20px]"
           ></Description>
         </div>
-        <div className="relative z-10 w-full">
-          <div className="mobile:mt-[68px] relative z-0 mt-10">
+        <div className="relative z-10 w-full ml-[-2px]">
+          <div className="mobile:mt-[66px] relative z-0 mt-10">
             <Image
               className="desktop:w-full  max-h-[540px] object-contain "
               src="/aboutBanner.png"
@@ -31,7 +31,7 @@ const AboutUs = () => {
               height={540}
             />
           </div>
-          <div className="absolute z-20 top-[45px] ipadMini:top-[184px] left-1/2 transform -translate-x-1/2">
+          <div className="absolute z-20 top-[45px] ipadMini:top-[185px] left-[484px]">
             <Image
               className="object-contain w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[176px] lg:h-[176px]"
               src="/PlayButtonAbout.svg"

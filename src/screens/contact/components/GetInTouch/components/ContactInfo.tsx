@@ -31,10 +31,10 @@ const ContactInfo: FC<Props> = ({
       </div>
       <div className="flex flex-col mt-[46px]">
         <SubTitle subTitle={subtitle} />
-        <p className="mt-[15px] text-2xl font-semibold leading-[30px] text-darkblue">
+        <p className="mt-[13px] text-2xl font-semibold leading-[30px] text-darkblue">
           {title}
         </p>
-        <p className="max-w-[270px] mt-[14px] text-sm font-normal leading-[21px] tracking-[0.1em] ">
+        <p className="max-w-[270px] mt-[12px] text-sm font-normal leading-[21px] tracking-[0.1em] ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
           purus sit
         </p>

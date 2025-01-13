@@ -32,17 +32,14 @@ const Illustration: React.FC<Props> = ({
         <Image className=" w-full object-contain" src={src} alt={alt} fill />
       </div>
       <div className="flex flex-col tablet:text-left text-center w-full items-center ipadMini:items-start ">
-        <SubTitle
-          subTitle={subtitle}
-          className="mb-[10px]  mt-10 tablet:mt-0"
-        />
+        <SubTitle subTitle={subtitle} className="mb-[9px] mt-10 tablet:mt-0" />
         <Title
           title={title}
           className="mb-[15px] desktop:max-w-[411px] max-w-full"
         />
         <Description
           description={description}
-          className=" mb-[22px] max-w-full desktop:max-w-[475px] tablet:max-w-[80%] "
+          className=" mb-[23px] max-w-full desktop:max-w-[475px] tablet:max-w-[80%] "
         />
         <MoreDescription moreDescription={moreDescription} />
 
@@ -50,7 +47,7 @@ const Illustration: React.FC<Props> = ({
           type="button"
           className="flex items-center mt-0 mx-auto ipadMini:mx-0"
         >
-          <span className="text-base font-semibold leading-6 tracking-[0.1em] text-[#091156] mr-[13px]">
+          <span className="text-base font-semibold leading-6 tracking-[0.1em] text-[#091156] mr-[16px]">
             Make an Appointment
           </span>
           <Image

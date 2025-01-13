@@ -21,9 +21,9 @@ export const Header: FC<Props> = ({
   return (
     <>
       <div
-        className={`container ipadMini:pt-[77px] pt-[30px]  flex justify-between  items-center h-[63px] relative z-10 ${className} px-5 ipadMini:px-0 `}
+        className={`container  ipadMini:pt-[77px] pt-[30px]  flex justify-between  items-center h-[63px] relative z-10 ${className} px-5 ipadMini:px-0 `}
       >
-        <div className="mobile:w-full w-[50%]">
+        <div className="mobile:max-w-[258px] w-[50%] ml-[-5px] ">
           <Image
             className=""
             src={src || "/MainLogo.png"}
@@ -39,7 +39,7 @@ export const Header: FC<Props> = ({
           {linkItems.map((item, index) => (
             <LinkItem key={index} {...item} homeClassName={homeClassName} />
           ))}
-          <div className="bg-vividpink px-[41px] py-[14.9px] text-center rounded-[50px] mt-[-4px]">
+          <div className="bg-vividpink mr-[2px] min-w-[158px] flex items-center h-[52px] justify-center rounded-[50px] mt-[-1px]">
             <Link
               className="text-white text-base font-semibold leading-[24px] tracking-[0.1em]"
               href="contact"
@@ -81,7 +81,7 @@ export const Header: FC<Props> = ({
             <li className="mb-2">
               <Link href="/gallery">Gallery</Link>
             </li>
-            <li className="mb-2">
+            <li className="mb-2 ">
               <Link href="/contact">Contact</Link>
             </li>
           </ul>

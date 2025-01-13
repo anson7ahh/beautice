@@ -6,7 +6,7 @@ interface Props {
 }
 const Social: FC<Props> = ({ src, alt }) => {
   return (
-    <div className="w-[25px] h-[25px] rounded-full bg-white border border-collapse mx-[14px] my-[9px]">
+    <div className="w-[27px] h-[27px] rounded-full bg-white border border-collapse mx-[14px] my-[9px]">
       <Image
         className="w-full h-full "
         src={src}

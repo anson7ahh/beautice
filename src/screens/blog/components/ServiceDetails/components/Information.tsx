@@ -28,7 +28,7 @@ const Information: FC<Props> = ({ title, subTitle, src, alt }) => {
             {subTitle}
           </p>
         </div>
-        <Title title={title} className="mt-4 max-w-[612px]" />
+        <Title title={title} className="mt-[18px] max-w-[612px]" />
         <Description
           className="mt-[22px] max-w-[592px]"
           description="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the…"

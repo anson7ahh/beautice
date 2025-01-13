@@ -9,7 +9,7 @@ import BubbleBgTeam from "./components/BubbleBgTeam";
 const OurTeam = () => {
   return (
     <div className="relative">
-      <div className="container flex flex-col ipadMini:mt-[154px] mt-[100px]">
+      <div className="container flex flex-col ipadMini:mt-[151px] mt-[100px]">
         <div className="flex flex-col text-center ipadMini:ml-[-79px]  px-5 ">
           <SubTitle className="" subTitle="Our Team" />
           <Title

@@ -10,7 +10,7 @@ const ContactUs = () => {
   return (
     <div className="relative  px-5 ipadMini:px-0">
       <div className="container flex flex-col items-center relative z-10 ">
-        <div className="flex flex-col ipadMini:mt-[153px] mt-[80px] gap-x-[100px] ipadMini:flex-row ipadMini:ml-[-18px] ml-0 text-center ipadMini:text-start">
+        <div className="flex flex-col ipadMini:mt-[151px] mt-[80px] gap-x-[100px] ipadMini:flex-row ipadMini:ml-[-18px] ml-0 text-center ipadMini:text-start">
           <div className="flex flex-col">
             <SubTitle subTitle="Contact Us" />
             <Title

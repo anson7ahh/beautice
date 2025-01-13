@@ -13,7 +13,7 @@ const Banner = () => {
             hambergerIconColor="#FFFFFF"
           />
 
-          <div className=" container ipadMini:mt-[237px] mt-5 tablet:mt-[100px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
+          <div className=" container ipadMini:mt-[233px] mt-5 tablet:mt-[100px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
             <div className="flex flex-col text-center ipadMini:text-left  mx-auto ipadMini:text-white ipadMini:mx-0">
               <span
                 className="tablet:text-5xl tablet:font-semibold tablet:leading-[60px] 

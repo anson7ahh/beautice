@@ -7,17 +7,17 @@ import Image from "next/image";
 
 const OurGallery = () => {
   return (
-    <div className="container ipadMini:mt-[152px] mt-[100px] px-5 ipadMini:px-0">
+    <div className="container ipadMini:mt-[151px] mt-[100px] px-5 ipadMini:px-0">
       <div className="flex flex-col ">
         <div className="flex gap-x-[98px] flex-col ipadMini:flex-row">
           <div className="flex flex-col">
             <SubTitle subTitle="Our Gallery" />
             <Title
               title="Check out the collection pictures from our clinic"
-              className="ipadMini:max-w-[615px] mt-[11px] max-w-full"
+              className="ipadMini:max-w-[615px] mt-[9px] max-w-full"
             />
           </div>
-          <div className="mt-[31px]">
+          <div className="mt-[33px]">
             <Description
               className="max-w-[407px] "
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis"

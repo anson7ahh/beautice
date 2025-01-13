@@ -8,7 +8,7 @@ const ServiceFaq = () => {
   const { sectionIndex, handClickSection } = useServiceFaqLogic();
   return (
     <>
-      <div className="container flex flex-col justify-center items-center text-center max-w-[972px] ipadMini:mt-[300px] mt-[100px] mb-[151.66px]">
+      <div className="container flex flex-col justify-center items-center text-center max-w-[972px] min-h-[552px] ipadMini:mt-[300px] mt-[100px] mb-[143.66px]">
         <span className=" text-4xl font-semibold leading-[45px] text-darkblue  ml-[11px]">
           Services FAQ’s
         </span>
@@ -19,11 +19,11 @@ const ServiceFaq = () => {
           width={41}
           height={4}
         />
-        <div className="flex flex-col mt-[31px] w-full justify-between">
+        <div className="flex flex-col mt-[31px] w-full justify-between min-h-[256px]">
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col mt-[37px] px-5 ipadMini:px-0"
+              className="flex flex-col mt-[39px] px-5 ipadMini:px-0"
             >
               <div className="flex justify-between mr-[22px] text-left">
                 <div
@@ -33,7 +33,7 @@ const ServiceFaq = () => {
                 </div>
                 <button onClick={() => handClickSection(index)}>
                   <Image
-                    className={` -mt-1 transition-all transform duration-500 ${
+                    className={` -mt-[2px] transition-all transform duration-500 ${
                       sectionIndex === index ? "rotate-0" : "rotate-180"
                     } `}
                     src="/Vectorplay.svg"

@@ -2,19 +2,19 @@ import { Item, Props, Title } from "./types";
 
 export const Items: Props[] = [
   {
-    src: "/theBlog1.png",
-    alt: "theBlog1",
+    src: "/BlogService1.png",
+    alt: "BlogService1",
     title: "How much does a consultation cost at our clinic?",
     subTitle: "Consultation",
   },
   {
-    src: "/theBlog2.png",
+    src: "/BlogService2.png",
     alt: "theBlog2",
     title: "Watch out! don't choose the wrong beauty product",
     subTitle: "Beauty",
   },
   {
-    src: "/theBlog3.png",
+    src: "/BlogService3.png",
     alt: "theBlog3",
     title: "About skin care you need to know",
     subTitle: "Treatments",

@@ -16,7 +16,7 @@ import { Datas } from "../constants";
 
 const Slider: React.FC = () => {
   return (
-    <div className="container mt-[176px] px-5 ipadMini:px-0">
+    <div className="container mt-[172px] px-5 ipadMini:px-0">
       <Swiper
         navigation
         pagination={{ type: "bullets", clickable: true }}
@@ -50,7 +50,7 @@ const Slider: React.FC = () => {
               turpis gravida blandit.
             </p>
             <Image
-              className="min-w-[169px] mx-auto mt-[33px] pb-[120px]"
+              className="min-w-[169px] mx-auto mt-[33px] pb-[119px]"
               src="/Star.svg"
               alt="Star"
               height={169}

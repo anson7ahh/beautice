@@ -9,7 +9,7 @@ import Description from "@/components/Description";
 const OurService = () => {
   return (
     <div className="relative">
-      <div className="container ipadMini:mt-[148px] mt-[80px]">
+      <div className="container ipadMini:mt-[150px] mt-[80px]">
         <div className="flex flex-col justify-center  items-center text-center ">
           <SubTitle subTitle="Our Services" />
           <Title className="mt-[9px]" title="We focus on your beauty" />
@@ -18,7 +18,7 @@ const OurService = () => {
             description="Lorem ipsum dolor sit amet"
           />
         </div>
-        <div className="flex px-5  justify-center ipadMini:justify-start ipadMini:px-0 flex-wrap gap-x-[84px] gap-y-[68px]  ipadMini:mx-0 ipadMini:ml-[21px] mt-[73px] w-full">
+        <div className="flex px-5  justify-center ipadMini:justify-start ipadMini:px-0 flex-wrap gap-x-[84px] gap-y-[68px]  ipadMini:mx-0 ipadMini:ml-[20px] mt-[74px] w-full">
           {Imgs.map((img, index) => (
             <Image
               className={img.imgClassName}

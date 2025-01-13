@@ -7,7 +7,7 @@ import AssistanceItems from "./components/AssistanceItems";
 
 const AssistanceTeamOverview = () => {
   return (
-    <div className="container relative z-10 px-5 ipadMini:px-0">
+    <div className="container relative z-10 px-5 ipadMini:px-0 mt-[18px]">
       <div className="flex flex-col ">
         <SubTitle className="text-center" subTitle="Assistance Team" />
         <Title
