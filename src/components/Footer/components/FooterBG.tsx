@@ -6,7 +6,7 @@ const FooterBG = () => {
     <>
       <div
         className="absolute z-10 desktop:top-[-33px] w-full  max-h-[705.34px]
-      desktop:block tablet:hidden  hidden  ipadMini:block ipadMini:top-0 ipadMini: "
+      desktop:block tablet:hidden  hidden  ipadMini:block ipadMini:top-0  "
       >
         <Image
           className="w-full  max-h-[705.34px]"

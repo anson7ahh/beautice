@@ -44,22 +44,22 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="flex  ipadMini:gap-x-[203.5px]  gap-x-[20px] justify-between mt-[40px] ipadMini:mt-0 px-5 ">
-            <div className="desktop:mr-[203.5px]  flex-col gap-y-4    tablet:flex">
+          <div className="flex  ipadMini:gap-x-[203.5px] gap-x-[20px]  mt-[40px] ipadMini:mt-0 ipadMini:px-0 px-5 ">
+            <div className="  flex-col gap-y-4 tablet:flex">
               <span className="text-white text-lg font-semibold tracking-[1.8px] text-left mb-3 ">
                 Pages
               </span>
-              <div className="flex flex-col gap-y-[11px] items-start ml-1 ">
+              <div className="flex flex-col gap-y-[11px] items-start ml-1">
                 {items.pages.map((item, index) => (
                   <Item key={index} {...item} />
                 ))}
               </div>
             </div>
-            <div className="  flex-col gap-y-[28px]  tablet:flex  ">
-              <span className="text-white text-lg font-semibold  tracking-[1.8px] text-left ">
+            <div className="  flex-col gap-y-[28px]  tablet:flex">
+              <span className="text-white text-lg font-semibold tracking-[1.8px] text-left ">
                 Informations
               </span>
-              <div className="flex flex-col gap-y-[11px] items-start  ml-1">
+              <div className="flex flex-col gap-y-[11px] items-start ml-1">
                 {items.information.map((item, index) => (
                   <Item key={index} {...item} />
                 ))}

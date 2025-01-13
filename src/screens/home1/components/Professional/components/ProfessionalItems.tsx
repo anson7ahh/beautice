@@ -3,7 +3,6 @@ import React, { FC } from "react";
 import Image from "next/image";
 
 interface Props {
-  id: number;
   name: string;
   imgSrc: string;
   title: string;
@@ -11,7 +10,6 @@ interface Props {
 }
 
 export const ProfessionalItems: FC<Props> = ({
-  id,
   name,
   imgSrc,
   title,
@@ -19,11 +17,7 @@ export const ProfessionalItems: FC<Props> = ({
 }) => {
   return (
     <div
-      className={`mx-auto flex flex-col  text-center pt-[86px]  pb-[74px]  ${
-        id === 2
-          ? "  w-[40%] rounded-[42px] min-w-[426px] bg-white shadow-[0px_25px_50px_25px_rgba(246,247,255,1)]"
-          : "min-w-[270px]"
-      } `}
+      className={`mx-auto flex flex-col text-center ipadMini:min-w-[380px]  pt-[86px] pb-[96px] hover:bg-white  w-[40%] hover:rounded-[42px]  hover:shadow-[0px_25px_50px_25px_rgba(246,247,255,1)] `}
     >
       <Image
         className="mx-auto  mb-[53px]"

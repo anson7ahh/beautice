@@ -70,7 +70,7 @@ const Our = () => {
             <span className="text-base font-semibold leading-5 text-vividpink mb-[11px] mx-auto">
               Our Clients
             </span>
-            <span className="text-4xl font-semibold  leading-[45px] text-darkblue mx-auto ml-[221px]  max-w-[80%]">
+            <span className="text-4xl font-semibold  leading-[45px] text-darkblue mx-auto ipadMini:ml-[221px]  max-w-[80%]">
               Well-known agencies
             </span>
             <span className="text-darkgray text-base font-normal mx-auto  tracking-widest mt-[20px]">

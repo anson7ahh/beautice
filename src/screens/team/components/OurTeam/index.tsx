@@ -21,7 +21,7 @@ const OurTeam = () => {
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam."
           />
         </div>
-        <div className="relative z-30 mt-[101px] gap-x-[60px] mx-[28px]  items-center mb-[134.4px] flex flex-col ipadMini:flex-row">
+        <div className="relative z-30 mt-[99px] gap-x-[28px] ml-[-29px]  items-center mb-[134.4px] flex flex-col ipadMini:flex-row">
           {items.map((item) => (
             <ProfessionalItems key={item.id} {...item} />
           ))}

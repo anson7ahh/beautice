@@ -5,7 +5,7 @@ import React from "react";
 
 const CustomerSatisfactionGoal = () => {
   return (
-    <div className=" mt-[130px]">
+    <div className=" mt-[128px]">
       <Background
         src="/CustomerSatisfactionGoal.png"
         alt="CustomerSatisfactionGoal"
