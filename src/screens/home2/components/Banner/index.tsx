@@ -9,14 +9,15 @@ const Banner = () => {
           <Header
             src="/FooterLogo.png"
             homeClassName="text-white"
-            className="!ipadMini:pt-[71px]"
+            className="!ipadMini:pt-[71px] "
+            hambergerIconColor="#FFFFFF"
           />
 
           <div className=" container ipadMini:mt-[237px] mt-5 tablet:mt-[100px] flex  text-white ipadMini:gap-x-[198px] gap-x-[100px] ">
             <div className="flex flex-col text-center ipadMini:text-left  mx-auto ipadMini:text-white ipadMini:mx-0">
               <span
                 className="tablet:text-5xl tablet:font-semibold tablet:leading-[60px] 
-              mb-[13px] ipadMini:text-left max-w-[502px] tablet:pb-[13px] ipadMini:pb-0 text-2xl"
+              ipadMini:mb-[13px] ipadMini:text-left max-w-[502px] tablet:pb-[13px] ipadMini:pb-0 text-2xl"
               >
                 Your beauty center place
               </span>

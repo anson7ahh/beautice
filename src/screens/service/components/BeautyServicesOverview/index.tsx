@@ -4,7 +4,7 @@ import Illustration from "./components/Illustration";
 
 const BeautyServicesOverview = () => {
   return (
-    <div className="container flex flex-col mt-[171px] px-5  tablet:px-0 gap-y-[122px] gap-x-[187px]">
+    <div className="container flex flex-col mt-[169px] px-5  tablet:px-0 gap-y-[120px] gap-x-[187px]">
       {BeautyServices.map((item, index) => (
         <Illustration key={index} {...item} />
       ))}

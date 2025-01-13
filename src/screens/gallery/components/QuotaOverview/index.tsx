@@ -21,8 +21,8 @@ const QuotaOverview = () => {
           />
         </div>
         <div>
-          <Button className="bg-vividpink w-[316px] h-[58px] rounded-[50px] text-white mt-[67px]">
-            <span className="text-base font-semibold leading-6 tracking-[0.1em]">
+          <Button className="bg-vividpink ipadMini:w-[316px] w-[260px] h-[58px]  rounded-[50px] text-white mt-[67px]">
+            <span className="ipadMini:text-base text-sm font-semibold leading-6 tracking-[0.1em]">
               Make an Appointment
             </span>
           </Button>

@@ -9,10 +9,10 @@ import Description from "@/components/Description";
 const OurService = () => {
   return (
     <div className="relative">
-      <div className="container mt-[153px]">
+      <div className="container ipadMini:mt-[148px] mt-[80px]">
         <div className="flex flex-col justify-center  items-center text-center ">
           <SubTitle subTitle="Our Services" />
-          <Title className="mt-3" title="We focus on your beauty" />
+          <Title className="mt-[9px]" title="We focus on your beauty" />
           <Description
             className="mt-6"
             description="Lorem ipsum dolor sit amet"

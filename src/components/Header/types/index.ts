@@ -9,4 +9,5 @@ export interface Props {
   src?: string;
   navClassName?: string;
   homeClassName?: string;
+  hambergerIconColor?: string;
 }

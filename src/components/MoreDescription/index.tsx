@@ -1,12 +1,12 @@
 interface Props {
   className?: string;
-  moreDescription: string;
+  moreDescription?: string;
 }
 
 const MoreDescription: React.FC<Props> = ({ className, moreDescription }) => {
   return (
     <span
-      className={`text-base font-normal  tracking-widest text-darkgray  ${className} `}
+      className={`text-base font-normal tracking-widest text-darkgray  ${className} `}
     >
       {moreDescription}
     </span>

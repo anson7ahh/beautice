@@ -50,7 +50,16 @@ input[type="number"] {
   background-size: 100% auto;
   background-position: center;
 }
-
+@media only screen and (max-width: 572px) {
+  .swiperCustom .swiper-button-next {
+    right: 45px;
+    top: 216px;
+  }
+  .swiperCustom .swiper-button-prev {
+    left: 47px;
+    top: 207px;
+  }
+}
 .swiper-button-next::after {
   display: none;
 }

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const OurGallery = () => {
   return (
-    <div className="container mt-[152px] px-5 ipadMini:px-0">
+    <div className="container ipadMini:mt-[152px] mt-[100px] px-5 ipadMini:px-0">
       <div className="flex flex-col ">
         <div className="flex gap-x-[98px] flex-col ipadMini:flex-row">
           <div className="flex flex-col">
@@ -36,7 +36,7 @@ const OurGallery = () => {
           ))}
         </div>
         <div className="mt-[67px]">
-          <p className="max-w-[660px] text-base font-normal  tracking-widest text-darkgray">
+          <p className="max-w-[660px] text-sm ipadMini:text-base font-normal  tracking-widest text-darkgray">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
             purus sit amet luctus venenatis, lectus magna fringilla urna,
             porttitor rhoncus dolor purus non enim,{" "}

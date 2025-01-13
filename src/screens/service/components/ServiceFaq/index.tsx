@@ -8,7 +8,7 @@ const ServiceFaq = () => {
   const { sectionIndex, handClickSection } = useServiceFaqLogic();
   return (
     <>
-      <div className="container flex flex-col justify-center items-center text-center max-w-[972px] mt-[300px] mb-[151.66px]">
+      <div className="container flex flex-col justify-center items-center text-center max-w-[972px] ipadMini:mt-[300px] mt-[100px] mb-[151.66px]">
         <span className=" text-4xl font-semibold leading-[45px] text-darkblue  ml-[11px]">
           Services FAQ’s
         </span>

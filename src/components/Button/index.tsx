@@ -1,20 +1,9 @@
-import React, { FC } from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-type ButtonType = "button" | "submit";
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  type?: ButtonType;
-  className?: string;
 }
 
-export const Button: FC<ButtonProps> = ({
-  children,
-  type = "button",
-  className = "",
-}) => {
-  return (
-    <button type={type} className={className}>
-      {children}
-    </button>
-  );
+export const Button = (props: ButtonProps) => {
+  return <button {...props}>{props.children}</button>;
 };

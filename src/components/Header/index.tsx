@@ -7,11 +7,13 @@ import { useClickOutSide } from "@/components/Header/hooks";
 import { Props } from "./types";
 import { FC } from "react";
 
+import { HamburgerIcon } from "../../../public/svg";
 export const Header: FC<Props> = ({
   navClassName,
   src,
   className,
   homeClassName = "text-darkblue",
+  hambergerIconColor,
 }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useClickOutSide(false);
@@ -50,12 +52,7 @@ export const Header: FC<Props> = ({
           className="ipadMini:hidden"
           onClick={() => setIsComponentVisible(true)}
         >
-          <Image
-            src="/hamburger-menu.svg"
-            alt="hamburger"
-            width={30}
-            height={30}
-          />
+          <HamburgerIcon width={30} height={30} stroke={hambergerIconColor} />
         </div>
       </div>
       <div className="w-full relative">

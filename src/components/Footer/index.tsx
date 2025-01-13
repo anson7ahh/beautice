@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className=" relative  bg-darkblue ipadMini:bg-transparent desktop:bg-inherit  w-full z-20  ">
       <div className="container w-full relative z-20  flex flex-col ">
         <div className="flex  mb-10 ipadMini:pt-[153px]  tablet:gap-x-[100px] desktop:mb-[140px] ipadMini:mb-[100px] tablet:mb-[140px] desktop:gap-x-0 mobile:mb-10 mobile:mt-10 ">
-          <div className="desktop:mr-[157px] mobile:mx-auto tablet:mx-0 mobile:pt-[100px] tablet:pt-0 pt-[130px] mx-auto">
+          <div className="desktop:mr-[157px] mobile:mx-auto tablet:mx-0 mobile:pt-[100px] tablet:pt-0 pt-[80px] mx-auto">
             <Image
               className="mb-[34px] mt-4 mobile:mx-auto tablet:mx-0 mx-auto"
               src="/FooterLogo.png"

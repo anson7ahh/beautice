@@ -4,7 +4,7 @@ import React from "react";
 
 const CustomerCare = () => {
   return (
-    <div className=" mt-[130px]">
+    <div className=" mt-[134px]">
       <Background
         src="/bgCustomerCare.png"
         alt="bgCustomerCare"

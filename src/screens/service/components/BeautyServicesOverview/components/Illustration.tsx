@@ -1,4 +1,8 @@
 import { Button } from "@/components";
+import Description from "@/components/Description";
+import MoreDescription from "@/components/MoreDescription";
+import SubTitle from "@/components/SubTitle";
+import Title from "@/components/Title";
 import Image from "next/image";
 import React from "react";
 interface Props {
@@ -25,21 +29,22 @@ const Illustration: React.FC<Props> = ({
   return (
     <div className={` ${className} flex flex-col  `}>
       <div className={` ${imgClassName} relative w-[80%] mx-auto `}>
-        <Image className=" w-full" src={src} alt={alt} fill />
+        <Image className=" w-full object-contain" src={src} alt={alt} fill />
       </div>
       <div className="flex flex-col tablet:text-left text-center w-full items-center ipadMini:items-start ">
-        <span className="text-vividpink mb-[11px] mt-10 tablet:mt-0 text-base font-semibold leading-5">
-          {subtitle}
-        </span>
-        <span className="text-4xl font-semibold leading-[45px] text-darkblue mb-[15px] desktop:max-w-[411px] max-w-full">
-          {title}
-        </span>
-        <span className=" text-base font-normal  tracking-widest text-darkgray mb-6 max-w-full desktop:max-w-[475px] tablet:max-w-[80%] ">
-          {description}
-        </span>
-        <span className=" text-base font-normal  text-darkgray tracking-widest max-w-full">
-          {moreDescription}
-        </span>
+        <SubTitle
+          subTitle={subtitle}
+          className="mb-[10px]  mt-10 tablet:mt-0"
+        />
+        <Title
+          title={title}
+          className="mb-[15px] desktop:max-w-[411px] max-w-full"
+        />
+        <Description
+          description={description}
+          className=" mb-[22px] max-w-full desktop:max-w-[475px] tablet:max-w-[80%] "
+        />
+        <MoreDescription moreDescription={moreDescription} />
 
         <Button
           type="button"

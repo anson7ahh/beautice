@@ -6,7 +6,7 @@ interface Props {
 const Description: React.FC<Props> = ({ className, description }) => {
   return (
     <p
-      className={`text-base font-normal  tracking-widest text-darkgray  ${className} `}
+      className={`ipadMini:text-base font-normal text-sm tracking-widest text-darkgray  ${className} `}
     >
       {description}
     </p>

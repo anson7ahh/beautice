@@ -16,7 +16,7 @@ import { Datas } from "../constants";
 
 const Slider: React.FC = () => {
   return (
-    <div className="container mt-[176px]">
+    <div className="container mt-[176px] px-5 ipadMini:px-0">
       <Swiper
         navigation
         pagination={{ type: "bullets", clickable: true }}
