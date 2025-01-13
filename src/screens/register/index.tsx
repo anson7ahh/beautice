@@ -14,9 +14,10 @@ const SignupSchema = yup.object().shape({
   age: yup
     .number()
     .required()
-    .positive()
-    .integer()
-    .typeError("Age must be a positive number"),
+    .min(18, "Age must be greater than or equal to 18.")
+    .max(99, "Age must be less than or equal to 99")
+    .integer(),
+
   phoneNumber: yup
     .string()
     .matches(/^(?:\+84|0)(?:\d{9}|\d{8})$/, "Invalid phone number")
@@ -65,7 +66,7 @@ export default function RegisterForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[500px] bg-red-300 p-[40px] mx-auto mt-[200px]  flex flex-col gap-y-[20px]"
+      className="w-[550px] bg-red-300 p-[40px] mx-auto mt-[200px]  flex flex-col gap-y-[20px]"
     >
       <Input
         label="First Name"

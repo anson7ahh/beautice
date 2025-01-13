@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className=" relative  bg-darkblue ipadMini:bg-transparent desktop:bg-inherit  w-full z-20  ">
       <div className="container w-full relative z-20  flex flex-col ">
-        <div className="flex  mb-10 ipadMini:pt-[153px]  tablet:gap-x-[100px] desktop:mb-[140px] ipadMini:mb-[100px] tablet:mb-[140px] desktop:gap-x-0 mobile:mb-10 mobile:mt-10 ">
+        <div className="flex flex-col tablet:flex-row mb-10 ipadMini:pt-[153px]  tablet:gap-x-[100px] desktop:mb-[140px] ipadMini:mb-[100px] tablet:mb-[140px] desktop:gap-x-0 mobile:mb-10 mobile:mt-10 ">
           <div className="desktop:mr-[157px] mobile:mx-auto tablet:mx-0 mobile:pt-[100px] tablet:pt-0 pt-[80px] mx-auto">
             <Image
               className="mb-[34px] mt-4 mobile:mx-auto tablet:mx-0 mx-auto"
@@ -44,25 +44,26 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="desktop:mr-[203.5px]  flex-col gap-y-4   hidden tablet:flex">
-            <span className="text-white text-lg font-semibold tracking-[1.8px] text-left mb-3 ">
-              Pages
-            </span>
-            <div className="flex flex-col gap-y-[11px] items-start ml-1 ">
-              {items.pages.map((item, index) => (
-                <Item key={index} {...item} />
-              ))}
+          <div className="flex  ipadMini:gap-x-[203.5px]  gap-x-[20px] justify-between mt-[40px] ipadMini:mt-0 px-5 ">
+            <div className="desktop:mr-[203.5px]  flex-col gap-y-4    tablet:flex">
+              <span className="text-white text-lg font-semibold tracking-[1.8px] text-left mb-3 ">
+                Pages
+              </span>
+              <div className="flex flex-col gap-y-[11px] items-start ml-1 ">
+                {items.pages.map((item, index) => (
+                  <Item key={index} {...item} />
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="  flex-col gap-y-[28px] hidden tablet:flex  ">
-            <span className="text-white text-lg font-semibold  tracking-[1.8px] text-left ">
-              {" "}
-              Informations
-            </span>
-            <div className="flex flex-col gap-y-[11px] items-start  ml-1">
-              {items.information.map((item, index) => (
-                <Item key={index} {...item} />
-              ))}
+            <div className="  flex-col gap-y-[28px]  tablet:flex  ">
+              <span className="text-white text-lg font-semibold  tracking-[1.8px] text-left ">
+                Informations
+              </span>
+              <div className="flex flex-col gap-y-[11px] items-start  ml-1">
+                {items.information.map((item, index) => (
+                  <Item key={index} {...item} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
