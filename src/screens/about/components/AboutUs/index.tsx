@@ -31,7 +31,7 @@ const AboutUs = () => {
               height={540}
             />
           </div>
-          <div className="absolute z-20 top-[45px] ipadMini:top-[185px] left-[484px]">
+          <div className="absolute z-20 top-[42px] left-[130px] mobile:top-[61px] mobile:left-[203px] tablet:top-[169px] tablet:left-[462px] ipadMini:top-[185px] ipadMini:left-[484px]">
             <Image
               className="object-contain w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[176px] lg:h-[176px]"
               src="/PlayButtonAbout.svg"
