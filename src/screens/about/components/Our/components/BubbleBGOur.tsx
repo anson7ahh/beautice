@@ -3,7 +3,7 @@ import React from "react";
 
 const BubbleBGOur = () => {
   return (
-    <div className="absolute top-[59px] z-0">
+    <div className="absolute top-[59px] z-0 hidden mobile:block">
       <Image
         src="/BubbleBGFooterAbout.png"
         alt="BubbleBGFooterAbout"
