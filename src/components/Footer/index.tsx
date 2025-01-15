@@ -44,8 +44,11 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="flex  ipadMini:gap-x-[203.5px] gap-x-[63px]   mt-[40px] ipadMini:mt-0 ipadMini:px-0 px-5 ">
-            <div className="  flex-col gap-y-4 tablet:flex">
+          <div
+            className="flex flex-col mobile:flex-row items-center mobile:items-start ipadMini:items-start ipadMini:gap-x-[203.5px] 
+          gap-x-[63px] mobile:gap-x-[256px] tablet:gap-x-[100px]  mt-[40px] ipadMini:mt-0 ipadMini:px-0 px-5 "
+          >
+            <div className="  flex-col gap-y-4 tablet:flex text-left ">
               <span className="text-white text-lg font-semibold tracking-[1.8px] text-left mb-3 ">
                 Pages
               </span>
@@ -55,7 +58,7 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <div className="  flex-col gap-y-[28px]  tablet:flex">
+            <div className="  flex-col gap-y-[28px] pl-[81px] mobile:pl-[0px] tablet:flex mt-3 mobile:mt-0">
               <span className="text-white text-lg font-semibold tracking-[1.8px] text-left ">
                 Informations
               </span>

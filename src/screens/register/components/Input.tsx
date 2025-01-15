@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLButtonElement> {
   label: string;
   name: string;
   register: any;
   type?: string;
   error?: string;
+  wrapperClassName?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -15,16 +16,25 @@ const Input: React.FC<InputProps> = ({
   register,
   type = "text",
   error,
+  wrapperClassName,
+  ...rest
 }) => {
   return (
-    <div className="relative">
-      <label className="inline-flex min-w-[150px]">{label}</label>
-      <input {...register(name)} type={type} className="border w-[300px] " />
-      {error && (
-        <div className="absolute text-red-500 left-[150px] text-xs">
-          <p>{error}</p>
-        </div>
-      )}
+    <div className={` w-full ${wrapperClassName}`}>
+      <div className="w-full">
+        <label className="text-sm block">{label}</label>
+        <input
+          {...rest}
+          {...register(name)}
+          type={type}
+          className="border border-gray-200 p-3 text-sm font-semibold text-gray-700 rounded-lg outline-none transition-all duration-300 focus:border-blue-400  w-full"
+        />
+        {error && (
+          <div className=" text-red-500 left-[0px] text-xs ">
+            <p>{error}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

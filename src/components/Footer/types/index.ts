@@ -3,8 +3,10 @@ export interface item {
   alt: string;
   name?: string;
 }
-
+export interface props extends item {
+  link: string;
+}
 export interface groupedItems {
-  pages: item[];
-  information: item[];
+  pages: props[];
+  information: props[];
 }

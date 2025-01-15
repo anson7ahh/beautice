@@ -24,7 +24,7 @@ const OurGallery = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-x-9 gap-y-[38px] mt-[89px]">
+        <div className="grid mobile:grid-cols-2 grid-cols-1 mx-auto mobile:mx-0 ipadMini:grid-cols-3 gap-x-9 gap-y-[38px] mt-[89px]">
           {Images.map((img, index) => (
             <Image
               key={index}

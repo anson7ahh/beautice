@@ -8,6 +8,7 @@ import { Props } from "./types";
 import { FC } from "react";
 
 import { HamburgerIcon } from "../../../public/svg";
+
 export const Header: FC<Props> = ({
   navClassName,
   src,
@@ -83,6 +84,9 @@ export const Header: FC<Props> = ({
             </li>
             <li className="mb-2 ">
               <Link href="/contact">Contact</Link>
+            </li>
+            <li className="mb-2 ">
+              <Link href="/login">Login</Link>
             </li>
           </ul>
         </div>

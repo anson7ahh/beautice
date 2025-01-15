@@ -1,11 +1,11 @@
 import React from "react";
 
-import RegisterForm from "@/screens/register";
+import ModalUserAuth from "@/components/Header/components/ModalUserAuth";
 
 const Register = () => {
   return (
     <>
-      <RegisterForm />
+      <ModalUserAuth />
     </>
   );
 };
