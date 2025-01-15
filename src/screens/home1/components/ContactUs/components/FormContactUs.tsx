@@ -4,7 +4,10 @@ import React from "react";
 export const FormContactUs = () => {
   return (
     <div>
-      <form className="w-full mobile:w-[80%] ipadMini:w-auto mx-auto" action="">
+      <form
+        className="w-full mobile:w-[80%] ipadMini:w-auto mx-auto "
+        action=""
+      >
         <div className="flex flex-col gap-[38.32px] ">
           <div className="flex flex-col gap-y-5 w-auto  justify-between mobile:flex-row  ">
             <input
@@ -34,9 +37,11 @@ export const FormContactUs = () => {
             placeholder="Your inquiry here"
           ></textarea>
         </div>
-        <Button className="shadow-[0px_17px_22px_0px_rgba(255,237,246,1)]  w-[248px] px-[21px] pt-[15px] pb-[18px] bg-[#FF64AE] rounded-full text-white text-center font-semibold text-base leading-[24px] tracking-[1.6px] mt-[53.84px]">
-          Send Message
-        </Button>
+        <div className="flex justify-center ipadMini:justify-start mt-[53.84px]">
+          <Button className="shadow-[0px_17px_22px_0px_rgba(255,237,246,1)] w-[248px] px-[21px] pt-[15px] pb-[18px] bg-vividpink rounded-full text-white text-center font-semibold text-base leading-[24px] tracking-[1.6px]">
+            Send Message
+          </Button>
+        </div>
       </form>
     </div>
   );
