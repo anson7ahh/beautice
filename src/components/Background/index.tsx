@@ -24,7 +24,9 @@ const Background: FC<BackgroundImgProps> = ({
 }) => {
   return (
     <>
-      <div className="relative w-full bg-darkblue ipadMini:bg-inherit px-5 ipadMini:px-0 ">
+      <div
+        className={`relative w-full bg-darkblue ipadMini:bg-inherit px-5 ipadMini:px-0 `}
+      >
         <div className={`relative ${className} w-full `}>{children}</div>
         <div className={`absolute  top-0 w-full ${classNameImg}`}>
           <div className="relative">
