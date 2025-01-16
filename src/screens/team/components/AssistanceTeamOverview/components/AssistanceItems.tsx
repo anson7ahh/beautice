@@ -12,14 +12,14 @@ const AssistanceItems: FC<Props> = ({ src, alt, name, career }) => {
     <div className="flex gap-x-[172px] flex-col ipadMini:flex-row ">
       <div className=" mobile:min-w-[398px] h-[253px]  ">
         <Image
-          className="w-full h-[253px]"
+          className="w-full h-[253px] object-contain"
           src={src}
           alt={alt}
           width={398}
           height={253}
         />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col mx-auto ipadMini:mx-0">
         <p className="text-lg font-semibold leading-[22.5px] mt-[65px]">
           {name}
           <span className="text-sm italic font-normal leading-[17.5px] ">
