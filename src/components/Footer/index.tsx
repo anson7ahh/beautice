@@ -21,7 +21,7 @@ const Footer = () => {
               width={258}
               height={63}
             />
-            <p className="font-normal tracking-[1.6px] text-[16px] text-white ml-[31px] mb-[22px] text-center tablet:text-left mobile:whitespace-nowrap">
+            <p className="font-normal tracking-[1.6px] text-[16px] text-white ml-0 mobile:ml-[31px] mb-[22px] text-center tablet:text-left mobile:whitespace-nowrap">
               <span className="mobile:text-base font-bold  tracking-[0.1em] text-left text-sm">
                 Beautice {""}
               </span>
@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
             <p
               className="text-white text-sm italic  font-medium tracking-[1.6px] ipadMini:text-left 
-            ml-[31px] mb-[5px] mobile:text-center tablet:text-left text-center"
+            ml-0 mobile:ml-[31px] mb-[5px] mobile:text-center tablet:text-left text-center"
             >
               Baker Steet 101, NY, United States.
             </p>
@@ -45,10 +45,10 @@ const Footer = () => {
             </div>
           </div>
           <div
-            className="flex flex-col mobile:flex-row items-center mobile:items-start ipadMini:items-start ipadMini:gap-x-[203.5px] 
-          gap-x-[63px] mobile:gap-x-[256px] tablet:gap-x-[100px]  mt-[40px] ipadMini:mt-0 ipadMini:px-0 px-5 "
+            className="flex mobile:flex-row w-full mobile:items-start ipadMini:items-start ipadMini:gap-x-[203.5px] 
+          gap-x-[63px] mobile:gap-x-[209px] tablet:gap-x-[100px] mx-auto mt-[40px] ipadMini:mt-0 ipadMini:px-0 px-5 "
           >
-            <div className="  flex-col gap-y-4 tablet:flex text-left ">
+            <div className="flex-col gap-y-4 tablet:flex text-left w-full">
               <span className="text-white text-lg font-semibold tracking-[1.8px] text-left mb-3 ">
                 Pages
               </span>
@@ -58,7 +58,7 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <div className="  flex-col gap-y-[28px] pl-[81px] mobile:pl-[0px] tablet:flex mt-3 mobile:mt-0">
+            <div className="flex-col gap-y-[28px] mobile:pl-[46px] pl-0  tablet:flex  mobile:mt-0 w-full">
               <span className="text-white text-lg font-semibold tracking-[1.8px] text-left ">
                 Informations
               </span>
@@ -70,7 +70,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between text-center tablet:text-left ipadMini:mb-0 mb-10 w-full flex-col tablet:flex-row mobile:mx-auto tablet:mx-0 desktop:mb-0  ">
+        <div className="flex justify-between text-center tablet:text-left mt-3 ipadMini:mt-0 ipadMini:mb-0 mb-10 w-full flex-col tablet:flex-row mobile:mx-auto tablet:mx-0 desktop:mb-0  ">
           <div className="flex mx-auto flex-row  gap-x-[45px]  mobile:mx-auto tablet:mx-0 mobile:mb-5">
             {icons.map((icon, index) => (
               <Icon key={index} src={icon.src} alt={icon.alt} />

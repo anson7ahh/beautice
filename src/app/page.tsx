@@ -1,11 +1,13 @@
+"use client";
 import AboutUsService from "@/screens/home1/components/AboutUsService";
 import ContactUs from "@/screens/home1/components/ContactUs";
 import { Banner } from "@/screens/home1/components/Banner";
 import MainService from "@/screens/home1/components/MainService";
 import Professional from "@/screens/home1/components/Professional";
 import Footer from "@/components/Footer";
+// import { WithAuthTokenWrapper } from "@/hoc/auth";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Banner />
@@ -16,4 +18,5 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+export default Home;

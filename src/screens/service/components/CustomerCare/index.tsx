@@ -21,11 +21,11 @@ const CustomerCare = () => {
         }
       >
         <div className="container px-5 ipadMini:px-0 flex flex-col ipadMini:flex-row ipadMini:pl-[62px] desktop:pl-0 ipadMini:pt-[179px] py-20 ipadMini:py-0 items-center gap-x-[123px]">
-          <div className="flex flex-col text-left ">
-            <span className="text-4xl font-semibold leading-[45px] text-white max-w-[600px]">
+          <div className="flex flex-col text-center mobile:text-left ">
+            <span className="text-2xl mobile:text-4xl font-semibold mobile:leading-[45px] text-white max-w-[600px]">
               Best responsibility and service for our customers
             </span>
-            <span className="text-base font-normal leading-6 tracking-[0.1em] text-darkgray max-w-[555px] mt-[20px]">
+            <span className="mobile:text-base text-sm font-normal leading-6 tracking-[0.1em] text-darkgray max-w-[555px] mt-[20px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
               aliquam, purus sit amet luctus venenatis
             </span>

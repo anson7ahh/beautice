@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Input from "./components/Input";
 import { Button } from "@/components";
-import Image from "next/image";
-
+import { ToastContainer, toast } from "react-toastify";
+import HttpRequest from "@/config/httpRequest";
 // Schema validation với Yup
 const SignupSchema = yup.object().shape({
   fullName: yup.string().required("Full name is required"),
@@ -45,10 +46,14 @@ interface FormData {
 }
 
 interface RegisterFormProps {
-  onButtonClick: () => void;
+  handleOpenLogin: () => void;
+  setOpenFormRegister: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function RegisterForm({ onButtonClick }: RegisterFormProps) {
+export default function RegisterForm({
+  handleOpenLogin,
+  setOpenFormRegister,
+}: RegisterFormProps) {
   const {
     register,
     handleSubmit,
@@ -56,114 +61,110 @@ export default function RegisterForm({ onButtonClick }: RegisterFormProps) {
   } = useForm<FormData>({
     resolver: yupResolver(SignupSchema),
   });
+  const [data, setData] = useState<string | null>(null);
+  console.log("data", data);
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    try {
+      console.log(data);
+      const response = await HttpRequest.post("/signup", data);
+      console.log(response.data.message);
+      console.log(typeof response.data.message);
+      setData(response.data.message);
+      toast.success(response.data.message);
+      setOpenFormRegister(true);
+    } catch (error: any) {
+      if (error.response) {
+        if (error.response.status === 409) {
+          // Lỗi 409: tài khoản đã tồn tại
+          toast.error("Account already exists!");
+        } else {
+          // Xử lý các lỗi khác từ server
+          toast.error(
+            error.response.data?.message ||
+              "An error occurred. Please try again."
+          );
+        }
+      } else {
+        // Xử lý lỗi không có phản hồi từ server (network hoặc lỗi khác)
+        toast.error("Failed to connect to the server. Please try again.");
+      }
+    }
+  };
 
-  const onSubmit = (data: FormData) => {
-    alert(JSON.stringify(data));
-  };
-  const [isOpenSignIn, setIsOpenSignIn] = useState<boolean>(false);
-  const handleOpen = () => {
-    setIsOpenSignIn(true);
-  };
-  const handleClose = () => {
-    setIsOpenSignIn(false);
-  };
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-[500px]  shadow-4xl   p-[40px] mx-auto mt-[40px]  gap-y-[17px] "
-    >
-      {isOpenSignIn && (
-        <>
-          <div className="grid grid-cols-2 gap-x-3 gap-y-4">
-            <Input
-              label="Full name"
-              name="fullName"
-              register={register}
-              wrapperClassName="col-span-1"
-              error={errors.fullName?.message}
-            />
-            <Input
-              label="Phone Number"
-              name="phoneNumber"
-              register={register}
-              type="text"
-              wrapperClassName="col-span-1"
-              error={errors.phoneNumber?.message}
-            />
-            <Input
-              label="Password"
-              name="password"
-              register={register}
-              type="password"
-              wrapperClassName="col-span-1"
-              error={errors.password?.message}
-            />
-            <Input
-              label="Confirm Password"
-              name="confirmPassword"
-              register={register}
-              type="password"
-              wrapperClassName="col-span-1"
-              error={errors.confirmPassword?.message}
-            />
-            <Input
-              label="Email"
-              name="email"
-              wrapperClassName="w-full col-span-2"
-              register={register}
-              error={errors.email?.message}
-            />
-          </div>
-          <Button
-            className="w-full py-3 bg-vividpink text-white rounded-xl mt-5"
-            type="submit"
-          >
-            Sign in
-          </Button>
-          <Button
-            type="button"
-            className="w-full py-3 bg-transparent text-black border-2 border-vividpink rounded-xl mt-4"
-            onClick={handleClose}
-          >
-            Already have an account?
-          </Button>
-        </>
-      )}
-
-      {!isOpenSignIn && (
-        <>
-          <div className="flex flex-col gap-y-[25px]">
-            <Input
-              label="Email"
-              name="email"
-              register={register}
-              error={errors.email?.message}
-            />
-            <Input
-              label="Password"
-              name="password"
-              register={register}
-              type="password"
-              error={errors.password?.message}
-            />
-          </div>
-          <Button
-            className="w-full  py-3 bg-vividpink text-white rounded-xl mt-7"
-            type="submit"
-          >
-            Sign Up
-          </Button>
-          <Button
-            className="w-full py-3 bg-transparent text-black border-2 border-vividpink rounded-xl mt-4"
-            onClick={handleOpen}
-          >
-            {`Don't have an account yet?`}
-          </Button>
-        </>
-      )}
-      <div className="absolute top-0 right-0" onClick={onButtonClick}>
-        <Image src="/close.svg" alt="close" width={30} height={30} />
-      </div>
-    </form>
+    <>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-[500px] shadow-4xl p-[40px] mx-auto mt-[40px] gap-y-[17px] "
+      >
+        <div className="grid grid-cols-2 gap-x-3 gap-y-4">
+          <Input
+            label="Full name"
+            name="fullName"
+            register={register}
+            wrapperClassName="col-span-1"
+            error={errors.fullName?.message}
+          />
+          <Input
+            label="Phone Number"
+            name="phoneNumber"
+            register={register}
+            type="text"
+            wrapperClassName="col-span-1"
+            error={errors.phoneNumber?.message}
+          />
+          <Input
+            label="Password"
+            name="password"
+            register={register}
+            type="password"
+            wrapperClassName="col-span-1"
+            error={errors.password?.message}
+          />
+          <Input
+            label="Confirm Password"
+            name="confirmPassword"
+            register={register}
+            type="password"
+            wrapperClassName="col-span-1"
+            error={errors.confirmPassword?.message}
+          />
+          <Input
+            label="Email"
+            name="email"
+            wrapperClassName="w-full col-span-2"
+            register={register}
+            error={errors.email?.message}
+          />
+        </div>
+        <div className="mt-2">
+          {data && <p className="text-sm text-red-300">{data}</p>}
+        </div>
+        <Button
+          className="w-full py-3 bg-vividpink text-white rounded-xl mt-5"
+          type="submit"
+        >
+          Sign Up
+        </Button>
+        <Button
+          type="button"
+          className="w-full py-3 bg-transparent text-black border-2 border-vividpink rounded-xl mt-4"
+          onClick={handleOpenLogin}
+        >
+          Already have an account?
+        </Button>
+      </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </>
   );
 }
