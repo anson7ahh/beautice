@@ -22,7 +22,7 @@ export const Header: FC<Props> = ({
   return (
     <>
       <div
-        className={`ipadMini:mx-20  desktop:max-w-[1440px] ipadMini:max-w-[1100px] tablet:max-w-[980px] mobile:[970px]  ipadMini:pt-[77px] pt-[30px]  flex justify-between  items-center h-[63px] relative z-10 ${className} px-5 ipadMini:px-0 `}
+        className={`ipadMini:mx-20  desktop:max-w-[1440px] ipadMini:max-w-[1100px] max-w-full ipadMini:pt-[77px] pt-[30px] flex justify-between  items-center h-[63px] relative z-10 ${className} px-5 ipadMini:px-0 `}
       >
         <div className="mobile:max-w-[258px] w-[50%] ml-[-5px] ">
           <Image
