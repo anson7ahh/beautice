@@ -17,7 +17,7 @@ export const ProfessionalItems: FC<Props> = ({
 }) => {
   return (
     <div
-      className={`mx-auto flex flex-col text-center ipadMini:min-w-[380px]  pt-[86px] pb-[96px] hover:bg-white   hover:rounded-[42px]  hover:shadow-[0px_25px_50px_25px_rgba(246,247,255,1)] `}
+      className={`mx-auto flex flex-col text-center ipadMini:min-w-[380px] hover:px-20  pt-[86px] pb-[96px] hover:bg-white   hover:rounded-[42px]  hover:shadow-[0px_25px_50px_25px_rgba(246,247,255,1)] `}
     >
       <Image
         className="mx-auto  mb-[53px]"

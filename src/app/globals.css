@@ -71,13 +71,13 @@ input[type="number"] {
   height: 100% !important;
   overflow: visible !important;
 }
-@media only screen and (max-width: 995px) {
+@media only screen and (min-width: 572px) and (max-width: 995px) {
   .swiperCustom .swiper-button-next {
-    right: 45px;
+    right: 6px;
     top: 216px;
   }
   .swiperCustom .swiper-button-prev {
-    left: 47px;
+    left: 0px;
     top: 207px;
   }
 }
