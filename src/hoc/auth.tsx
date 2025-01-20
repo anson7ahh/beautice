@@ -1,4 +1,5 @@
-import tokenAtom from "@/screens/login/stores/token";
+"use client";
+import tokenAtom from "@/screens/login/stores/authData";
 import { useAtom } from "jotai";
 import { NextComponentType, NextPageContext } from "next";
 import { FC, useEffect } from "react";

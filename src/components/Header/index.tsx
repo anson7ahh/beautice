@@ -4,13 +4,21 @@ import { linkItems } from "./constants";
 import LinkItem from "./components/LinkItem";
 import Link from "next/link";
 import { useClickOutSide } from "@/components/Header/hooks";
-import { Props } from "./types";
+
 import { FC } from "react";
+export interface Props {
+  className?: string;
+  src?: string;
+  navClassName?: string;
+  homeClassName?: string;
+  hambergerIconColor?: string;
+}
 
 import { HamburgerIcon } from "../../../public/svg";
+import Register from "./components/Register";
 
 export const Header: FC<Props> = ({
-  navClassName,
+  navClassName = "",
   src,
   className,
   homeClassName = "text-darkblue",
@@ -22,7 +30,7 @@ export const Header: FC<Props> = ({
   return (
     <>
       <div
-        className={`ipadMini:mx-20  desktop:max-w-[1440px] ipadMini:max-w-[1100px] max-w-full ipadMini:pt-[77px] pt-[30px] flex justify-between  items-center h-[63px] relative z-10 ${className} px-5 ipadMini:px-0 `}
+        className={`ipadMini:mx-20  desktop:max-w-[1440px] ipadMini:max-w-[1100px] max-w-full ipadMini:pt-[77px] pt-[30px] flex justify-between  items-center h-[63px]  z-10 ${className} px-5 ipadMini:px-0 `}
       >
         <div className="mobile:max-w-[258px] w-[50%] ml-[-5px] ">
           <Image
@@ -33,13 +41,13 @@ export const Header: FC<Props> = ({
             height={63}
           />
         </div>
-
         <nav
           className={` ipadMini:flex gap-x-[52px] items-center hidden mt-[-9px] ${navClassName}`}
         >
           {linkItems.map((item, index) => (
             <LinkItem key={index} {...item} homeClassName={homeClassName} />
           ))}
+          <Register />
           <div className="bg-vividpink mr-[2px] min-w-[158px] flex items-center h-[52px] justify-center rounded-[50px] mt-[-1px]">
             <Link
               className="text-white text-base font-semibold leading-[24px] tracking-[0.1em]"
@@ -48,14 +56,18 @@ export const Header: FC<Props> = ({
               Contact
             </Link>
           </div>
-        </nav>
+        </nav>{" "}
         <div
-          className="ipadMini:hidden mobile:w-[30px] mobile:h-[30px] w-[20px] h-[20px]"
+          className="ipadMini:hidden mobile:w-[30px] mobile:h-[30px] "
           onClick={() => setIsComponentVisible(true)}
         >
-          <HamburgerIcon width={30} height={30} stroke={hambergerIconColor} />
+          <HamburgerIcon
+            className=" mobile:w-[30px] mobile:h-[30px] w-[20px] h-[20px]"
+            stroke={hambergerIconColor}
+          />
         </div>
       </div>
+
       <div className="w-full relative">
         <div
           ref={ref}

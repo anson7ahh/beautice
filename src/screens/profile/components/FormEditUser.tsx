@@ -1,69 +1,67 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import React, { Dispatch, SetStateAction } from "react";
+
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Button } from "@/components";
-import Input from "../register/components/Input";
 import { toast } from "react-toastify";
 import HttpRequest from "@/config/httpRequest";
 import { useAtom } from "jotai";
-import authAtom from "./stores/authData";
 import { useMutation } from "@tanstack/react-query";
-// Schema validation với Yup
-const LoginSchema = yup.object().shape({
+import Input from "@/screens/register/components/Input";
+import authAtom from "@/screens/login/stores/authData";
+
+const EditSchema = yup.object().shape({
   email: yup
     .string()
+    .nullable()
     .required("Email is required")
     .email("Invalid email")
     .matches(
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
       "Invalid email format"
     ),
-  password: yup
+  fullName: yup.string().nullable().required("Full name is required"),
+  phoneNumber: yup
     .string()
-    .required("Password is required")
-    .min(8, "Password must be at least 8 characters"),
+    .nullable()
+    .required("Phone number is required")
+    .matches(
+      /^((\+\d{1,2}(-| )?(| )\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?)?(\\d{4}(| )(\\-\\d{4})?)?)(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,4}){0,1}|(\+\d{2}(| )\(\d{3}\)(| )\d{3}(| )\d{4})$/,
+      "Invalid phone number"
+    ),
 });
 
 interface FormData {
   email: string;
-  password: string;
+  fullName: string;
+  phoneNumber: string;
 }
-interface Props {
-  handleCloseLogin: () => void;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-}
-export default function LoginForm({ handleCloseLogin, setIsOpen }: Props) {
+
+export default function FormEditUser() {
+  const [data] = useAtom(authAtom);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
-    resolver: yupResolver(LoginSchema),
+    resolver: yupResolver(EditSchema),
   });
-  const [a, setAuth] = useAtom(authAtom);
-
+  const [auth] = useAtom(authAtom);
+  // console.log(auth?.token);
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
-      const response = await HttpRequest.post("/signin", data);
+      const response = await HttpRequest.post("/edit", data, {
+        headers: {
+          Authorization: `Bearer ${auth?.token}`,
+        },
+      });
+      console.log(response.data);
       return response.data;
     },
     onSuccess: (data) => {
       toast.success(data.message);
-
-      console.log("token", data.token);
-      setAuth({
-        token: data.token,
-        user: {
-          fullName: data.fullName,
-          email: data.email,
-          phoneNumber: data.phoneNumber,
-        },
-      });
-
-      setIsOpen(false);
     },
     onError: (error: any) => {
       if (error.response) {
@@ -73,7 +71,7 @@ export default function LoginForm({ handleCloseLogin, setIsOpen }: Props) {
       }
     },
   });
-  console.log("auth", a);
+
   const onSubmit: SubmitHandler<FormData> = (data) => {
     mutation.mutate(data);
   };
@@ -81,35 +79,40 @@ export default function LoginForm({ handleCloseLogin, setIsOpen }: Props) {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[500px]  shadow-4xl  px-10 pt-[40px] mx-auto mt-[40px]  gap-y-[17px] "
+        className="w-[500px]  shadow-4xl  px-10 py-10 mx-auto mt-10  gap-y-[17px]  "
       >
         <div className="flex flex-col gap-y-[25px]">
           <Input
+            labelClassName="font-bold"
+            label="Full Name"
+            name="fullName"
+            defaultValue={data?.user.fullName}
+            register={register}
+            type="text"
+            error={errors.fullName?.message}
+          />
+          <Input
+            labelClassName="font-bold"
             label="Email"
             name="email"
+            defaultValue={data?.user.email}
             register={register}
             error={errors.email?.message}
           />
           <Input
-            label="Password"
-            name="password"
+            labelClassName="font-bold"
+            label="Phone number"
+            name="phoneNumber"
+            defaultValue={data?.user.phoneNumber}
             register={register}
-            type="password"
-            error={errors.password?.message}
+            error={errors.phoneNumber?.message}
           />
         </div>
         <Button
           className="w-full  py-3 bg-vividpink text-white rounded-xl mt-7"
           type="submit"
         >
-          Sign In
-        </Button>
-        <Button
-          type="button"
-          className="w-full py-3 bg-transparent text-black border-2 mb-10 mt-4 border-vividpink rounded-xl"
-          onClick={handleCloseLogin}
-        >
-          Need to create an account?
+          Submit
         </Button>
       </form>
     </>

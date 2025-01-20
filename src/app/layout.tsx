@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 
+import Providers from "@/components/Providers";
 import type { Metadata } from "next";
 
 const geistSans = Geist({
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  /*  */ children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -33,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

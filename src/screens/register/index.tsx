@@ -7,9 +7,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Input from "./components/Input";
 import { Button } from "@/components";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import HttpRequest from "@/config/httpRequest";
-// Schema validation với Yup
+import { useMutation } from "@tanstack/react-query";
+// import { useMutation } from "@tanstack/react-query";
+
 const SignupSchema = yup.object().shape({
   fullName: yup.string().required("Full name is required"),
   phoneNumber: yup
@@ -22,9 +24,9 @@ const SignupSchema = yup.object().shape({
   email: yup
     .string()
     .required("Email is required")
-    .email("Invalid email")
+
     .matches(
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "Invalid email format"
     ),
   password: yup
@@ -62,35 +64,36 @@ export default function RegisterForm({
     resolver: yupResolver(SignupSchema),
   });
   const [data, setData] = useState<string | null>(null);
-  console.log("data", data);
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    try {
-      console.log(data);
+
+  const mutation = useMutation({
+    mutationFn: async (data: FormData) => {
       const response = await HttpRequest.post("/signup", data);
-      console.log(response.data.message);
-      console.log(typeof response.data.message);
-      setData(response.data.message);
-      toast.success(response.data.message);
+      return response.data;
+    },
+    onSuccess: (data) => {
+      toast.success(data.message);
+      setData(data.message);
       setOpenFormRegister(true);
-    } catch (error: any) {
+    },
+    onError: (error: any) => {
       if (error.response) {
         if (error.response.status === 409) {
-          // Lỗi 409: tài khoản đã tồn tại
           toast.error("Account already exists!");
         } else {
-          // Xử lý các lỗi khác từ server
           toast.error(
             error.response.data?.message ||
               "An error occurred. Please try again."
           );
         }
       } else {
-        // Xử lý lỗi không có phản hồi từ server (network hoặc lỗi khác)
         toast.error("Failed to connect to the server. Please try again.");
       }
-    }
-  };
+    },
+  });
 
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    mutation.mutate(data);
+  };
   return (
     <>
       <form
@@ -154,17 +157,6 @@ export default function RegisterForm({
           Already have an account?
         </Button>
       </form>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
     </>
   );
 }

@@ -7,6 +7,7 @@ interface InputProps extends InputHTMLAttributes<HTMLButtonElement> {
   register: any;
   type?: string;
   error?: string;
+  labelClassName?: string;
   wrapperClassName?: string;
 }
 
@@ -17,12 +18,13 @@ const Input: React.FC<InputProps> = ({
   type = "text",
   error,
   wrapperClassName,
+  labelClassName,
   ...rest
 }) => {
   return (
     <div className={` w-full ${wrapperClassName}`}>
       <div className="w-full">
-        <label className="text-sm block">{label}</label>
+        <label className={`text-sm block ${labelClassName}`}>{label}</label>
         <input
           {...rest}
           {...register(name)}
