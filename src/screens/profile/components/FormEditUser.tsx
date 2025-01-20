@@ -15,24 +15,29 @@ import authAtom from "@/screens/login/stores/authData";
 const EditSchema = yup.object().shape({
   email: yup
     .string()
-    .nullable()
-    .required("Email is required")
+    .required("email has not been changed yet")
     .email("Invalid email")
     .matches(
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
       "Invalid email format"
     ),
-  fullName: yup.string().nullable().required("Full name is required"),
+  fullName: yup.string().required("Full name  has not been changed yet"),
   phoneNumber: yup
     .string()
-    .nullable()
-    .required("Phone number is required")
+    .required("Phone number has not been changed yet")
     .matches(
       /^((\+\d{1,2}(-| )?(| )\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?)?(\\d{4}(| )(\\-\\d{4})?)?)(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,4}){0,1}|(\+\d{2}(| )\(\d{3}\)(| )\d{3}(| )\d{4})$/,
       "Invalid phone number"
     ),
 });
-
+interface Response {
+  message: string;
+  user: {
+    fullName: string;
+    email: string;
+    phoneNumber: string;
+  };
+}
 interface FormData {
   email: string;
   fullName: string;
@@ -40,28 +45,42 @@ interface FormData {
 }
 
 export default function FormEditUser() {
-  const [data] = useAtom(authAtom);
+  const [auth, setAuth] = useAtom(authAtom);
+  console.log("auth", auth?.user?.email);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(EditSchema),
+    defaultValues: {
+      email: auth?.user?.email,
+      fullName: auth?.user?.fullName,
+      phoneNumber: auth?.user?.phoneNumber,
+    },
   });
-  const [auth] = useAtom(authAtom);
+
   // console.log(auth?.token);
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
-      const response = await HttpRequest.post("/edit", data, {
+      const response = await HttpRequest.patch("/edit", data, {
         headers: {
-          Authorization: `Bearer ${auth?.token}`,
+          authorization: `Bearer ${auth?.token}`,
         },
       });
-      console.log(response.data);
+
       return response.data;
     },
-    onSuccess: (data) => {
+    onSuccess: (data: Response) => {
       toast.success(data.message);
+      setAuth((prevState: any) => ({
+        ...prevState,
+        user: {
+          fullName: data.user.fullName,
+          email: data.user.email,
+          phoneNumber: data.user.phoneNumber,
+        },
+      }));
     },
     onError: (error: any) => {
       if (error.response) {
@@ -86,24 +105,24 @@ export default function FormEditUser() {
             labelClassName="font-bold"
             label="Full Name"
             name="fullName"
-            defaultValue={data?.user.fullName}
             register={register}
             type="text"
+            defaultValue={auth?.user?.fullName}
             error={errors.fullName?.message}
           />
           <Input
             labelClassName="font-bold"
             label="Email"
             name="email"
-            defaultValue={data?.user.email}
+            defaultValue={auth?.user?.email}
             register={register}
             error={errors.email?.message}
           />
           <Input
             labelClassName="font-bold"
             label="Phone number"
+            defaultValue={auth?.user?.phoneNumber}
             name="phoneNumber"
-            defaultValue={data?.user.phoneNumber}
             register={register}
             error={errors.phoneNumber?.message}
           />

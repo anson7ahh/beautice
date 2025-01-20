@@ -47,7 +47,7 @@ export default function FormResetPassword() {
     mutationFn: async (data: FormData) => {
       const response = await HttpRequest.patch("/edit-password", data, {
         headers: {
-          Authorization: `Bearer ${auth?.token}`,
+          authorization: `Bearer ${auth?.token}`,
         },
       });
       return response.data;
