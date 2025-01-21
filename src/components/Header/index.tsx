@@ -15,7 +15,11 @@ export interface Props {
 }
 
 import { HamburgerIcon } from "../../../public/svg";
-import Register from "./components/Register";
+import { useAtom } from "jotai";
+import { isOpenSignPopupAtom } from "@/stores/dialog";
+import Profile from "../profile";
+import authAtom from "@/screens/login/stores/authData";
+import ModalUserAuth from "./components/ModalUserAuth";
 
 export const Header: FC<Props> = ({
   navClassName = "",
@@ -26,6 +30,17 @@ export const Header: FC<Props> = ({
 }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useClickOutSide(false);
+  const [isOpen, setIsOpen] = useAtom(isOpenSignPopupAtom);
+  const [token] = useAtom(authAtom);
+  console.log(token);
+
+  const handleClickSignInResponsive = () => {
+    setIsComponentVisible(false);
+    setIsOpen(true);
+  };
+  const handleClickSignIn = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -42,12 +57,21 @@ export const Header: FC<Props> = ({
           />
         </div>
         <nav
-          className={` ipadMini:flex gap-x-[52px] items-center hidden mt-[-9px] ${navClassName}`}
+          className={` ipadMini:flex gap-x-[28px] items-center hidden mt-[-9px] ${navClassName}`}
         >
           {linkItems.map((item, index) => (
             <LinkItem key={index} {...item} homeClassName={homeClassName} />
           ))}
-          <Register />
+          {token ? (
+            <Profile />
+          ) : (
+            <button
+              className="whitespace-nowrap font-medium leading-6 tracking-wide ipadMini:text-darkgray text-black"
+              onClick={() => handleClickSignIn()}
+            >
+              Sign In
+            </button>
+          )}
           <div className="bg-vividpink mr-[2px] min-w-[158px] flex items-center h-[52px] justify-center rounded-[50px] mt-[-1px]">
             <Link
               className="text-white text-base font-semibold leading-[24px] tracking-[0.1em]"
@@ -94,11 +118,21 @@ export const Header: FC<Props> = ({
             <li className="mb-2">
               <Link href="/gallery">Gallery</Link>
             </li>
+
             <li className="mb-2 ">
               <Link href="/contact">Contact</Link>
             </li>
-            <li className="mb-2 ">
-              <Link href="/login">Login</Link>
+            <li className="mb-2">
+              {token ? (
+                <Profile />
+              ) : (
+                <button
+                  className="whitespace-nowrap font-medium leading-6 tracking-wide ipadMini:text-darkgray text-black"
+                  onClick={() => handleClickSignInResponsive()}
+                >
+                  Sign In
+                </button>
+              )}
             </li>
           </ul>
         </div>
@@ -108,6 +142,7 @@ export const Header: FC<Props> = ({
           ></div>
         )}
       </div>
+      {isOpen && <ModalUserAuth />}
     </>
   );
 };

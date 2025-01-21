@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -63,7 +63,6 @@ export default function RegisterForm({
   } = useForm<FormData>({
     resolver: yupResolver(SignupSchema),
   });
-  const [data, setData] = useState<string | null>(null);
 
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
@@ -72,7 +71,7 @@ export default function RegisterForm({
     },
     onSuccess: (data) => {
       toast.success(data.message);
-      setData(data.message);
+
       setOpenFormRegister(true);
     },
     onError: (error: any) => {
@@ -98,9 +97,9 @@ export default function RegisterForm({
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[500px] shadow-4xl p-[40px] mx-auto mt-[40px] gap-y-[17px] "
+        className="ipadMini:w-[500px] w-full shadow-4xl ipadMini:p-[40px] pb-5 mx-auto mt-[40px] gap-y-[17px] "
       >
-        <div className="grid grid-cols-2 gap-x-3 gap-y-4">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-4 p-5">
           <Input
             label="Full name"
             name="fullName"
@@ -140,9 +139,9 @@ export default function RegisterForm({
             error={errors.email?.message}
           />
         </div>
-        <div className="mt-2">
+        {/* <div className="mt-2">
           {data && <p className="text-sm text-red-300">{data}</p>}
-        </div>
+        </div> */}
         <Button
           className="w-full py-3 bg-vividpink text-white rounded-xl mt-5"
           type="submit"

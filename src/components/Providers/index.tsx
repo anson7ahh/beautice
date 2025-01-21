@@ -22,6 +22,7 @@ const Providers = ({ children }: Props) => {
           pauseOnFocusLoss
           draggable
           pauseOnHover
+          className="hidden mobile:block"
         />
         {children}
       </QueryClientProvider>

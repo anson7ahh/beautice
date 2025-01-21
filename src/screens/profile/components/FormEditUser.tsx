@@ -59,8 +59,6 @@ export default function FormEditUser() {
       phoneNumber: auth?.user?.phoneNumber,
     },
   });
-
-  // console.log(auth?.token);
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
       const response = await HttpRequest.patch("/edit", data, {

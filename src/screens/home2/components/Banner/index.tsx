@@ -4,8 +4,8 @@ import Image from "next/image";
 const Banner = () => {
   return (
     <header>
-      <div className="relative">
-        <div className="container relative  z-10">
+      <div className="">
+        <div className=" ">
           <Header
             src="/FooterLogo.png"
             homeClassName="text-white"
@@ -47,7 +47,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="absolute z-0 top-0 w-full  tablet:block max-h-[918px]">
+        <div className="absolute -z-10 top-0 w-full  tablet:block max-h-[918px]">
           <Image
             className="w-full max-h-[918px]"
             src="/BackgroundSlider.png"

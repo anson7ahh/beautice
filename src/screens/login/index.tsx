@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import React, { Dispatch, SetStateAction } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -11,6 +10,8 @@ import HttpRequest from "@/config/httpRequest";
 import { useAtom } from "jotai";
 import authAtom from "./stores/authData";
 import { useMutation } from "@tanstack/react-query";
+import { isOpenSignPopupAtom } from "@/stores/dialog";
+
 // Schema validation với Yup
 const LoginSchema = yup.object().shape({
   email: yup
@@ -33,9 +34,10 @@ interface FormData {
 }
 interface Props {
   handleCloseLogin: () => void;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
-export default function LoginForm({ handleCloseLogin, setIsOpen }: Props) {
+
+export default function LoginForm({ handleCloseLogin }: Props) {
+  const [, setIsOpenSignPopupState] = useAtom(isOpenSignPopupAtom);
   const {
     register,
     handleSubmit,
@@ -63,7 +65,7 @@ export default function LoginForm({ handleCloseLogin, setIsOpen }: Props) {
         },
       });
 
-      setIsOpen(false);
+      setIsOpenSignPopupState(false);
     },
     onError: (error: any) => {
       if (error.response) {
@@ -81,7 +83,7 @@ export default function LoginForm({ handleCloseLogin, setIsOpen }: Props) {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[500px]  shadow-4xl  px-10 pt-[40px] mx-auto mt-[40px]  gap-y-[17px] "
+        className="ipadMini:w-[500px] w-full  shadow-4xl px-5 ipadMini:px-10 pt-[40px] mx-auto mt-[40px]  gap-y-[17px] "
       >
         <div className="flex flex-col gap-y-[25px]">
           <Input
