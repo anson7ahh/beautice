@@ -109,7 +109,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
         >
           {isPending ? (
             <div className="inset-0  flex items-center justify-center">
-              <div className="w-6 h-6 border-4 border-white border-opacity-30  rounded-full animate-spin"></div>
+              <div className="w-6 h-6 border-4 border-white border-opacity-30 border-t-[#ffff] rounded-full animate-spin"></div>
             </div>
           ) : (
             "Sign In"
