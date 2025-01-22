@@ -45,7 +45,7 @@ export const Header: FC<Props> = ({
   return (
     <>
       <div
-        className={`desktop:max-w-[1440px] ipadMini:max-w-[1100px] max-w-full ipadMini:pt-[77px] pt-[30px] flex justify-between  items-center h-[63px]  z-10 ${className} px-5 ipadMini:px-0 `}
+        className={`desktop:max-w-[1140px] mx-auto ipadMini:max-w-[1100px] max-w-full ipadMini:pt-[77px] pt-[30px] flex justify-between  items-center h-[63px]  z-10 px-5 ipadMini:px-0 ${className}`}
       >
         <div className="mobile:max-w-[258px] w-[50%] ml-[-5px] ">
           <Link href="/">

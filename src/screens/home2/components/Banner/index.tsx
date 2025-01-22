@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <header>
       <div className="">
-        <div className=" ">
+        <div className=" container">
           <Header
             src="/FooterLogo.png"
             homeClassName="text-white"
