@@ -47,7 +47,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
   });
   const [, setAuth] = useAtom(authAtom);
 
-  const mutation = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: async (data: FormData) => {
       const response = await HttpRequest.post("/signin", data);
       return response.data;
@@ -74,7 +74,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    mutation.mutate(data);
+    mutate(data);
   };
   return (
     <>
@@ -82,6 +82,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
         onSubmit={handleSubmit(onSubmit)}
         className="ipadMini:w-[500px] w-full  shadow-4xl px-5 ipadMini:px-10 pb-[40px] mx-auto mt-[40px]  gap-y-[17px] "
       >
+        <p className="text-2xl font-bold mb-6">Sign in</p>
         <div className="flex flex-col gap-y-[25px]">
           <Input
             label="Email"
@@ -100,15 +101,23 @@ export default function LoginForm({ handleCloseLogin }: Props) {
             error={errors.password?.message}
           />
         </div>
+
         <Button
-          className="w-full py-3 bg-transparent  text-white hover:bg-pink-700 transition-all duration-500 bg-vividpink rounded-xl mt-4"
+          className="w-full py-3 disabled:bg-gray-400 bg-transparent text-white hover:bg-pink-700 transition-all duration-500 bg-vividpink rounded-xl mt-4 relative"
           type="submit"
+          disabled={isPending}
         >
-          Sign In
+          {isPending ? (
+            <div className="inset-0  flex items-center justify-center">
+              <div className="w-6 h-6 border-4 border-white border-opacity-30  rounded-full animate-spin"></div>
+            </div>
+          ) : (
+            "Sign In"
+          )}
         </Button>
         <Button
           type="button"
-          className="w-full py-3 bg-transparent  text-white hover:bg-pink-700 transition-all duration-500 bg-vividpink rounded-xl mt-4"
+          className="w-full py-3 bg-transparent text-black  hover:text-white bg-white border border-1 border-vividpink  hover:bg-pink-700 transition-all duration-500  rounded-xl mt-4"
           onClick={handleCloseLogin}
         >
           Need to create an account?

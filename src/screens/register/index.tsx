@@ -10,7 +10,6 @@ import { Button } from "@/components";
 import { toast } from "react-toastify";
 import HttpRequest from "@/config/httpRequest";
 import { useMutation } from "@tanstack/react-query";
-// import { useMutation } from "@tanstack/react-query";
 
 const SignupSchema = yup.object().shape({
   fullName: yup.string().required("Full name is required"),
@@ -99,6 +98,7 @@ export default function RegisterForm({
         onSubmit={handleSubmit(onSubmit)}
         className="ipadMini:w-[500px] w-full shadow-4xl ipadMini:pb-[40px] px-10 pb-5 mx-auto mt-10  gap-y-[17px] "
       >
+        <p className="text-2xl font-bold mb-6">Sign up</p>
         <div className="grid grid-cols-2 gap-x-3 gap-y-4 ">
           <Input
             label="Full name"
@@ -152,7 +152,7 @@ export default function RegisterForm({
         </Button>
         <Button
           type="button"
-          className="w-full py-3 bg-transparent  text-white hover:bg-pink-700 transition-all duration-500 bg-vividpink rounded-xl mt-4"
+          className="w-full py-3 bg-transparent  text-black  hover:text-white bg-white border border-1 hover:bg-pink-600 border-vividpink transition-all duration-500  rounded-xl mt-4"
           onClick={handleOpenLogin}
         >
           Already have an account?

@@ -32,7 +32,7 @@ const Input: React.FC<InputProps> = ({
           {...rest}
           {...register(name)}
           type={type}
-          className={`border border-gray-200 p-3 text-sm font-normal placeholder:text-xs rounded-lg outline-none transition-all duration-300 focus:border-blue-400 w-full  placeholder:text-black mb-1`}
+          className={`border border-gray-200 p-3 text-sm font-normal placeholder:text-xs placeholder:text-gray-500 rounded-lg outline-none transition-all duration-300 focus:border-blue-400 w-full mb-1`}
         />
         {error && (
           <div className=" text-red-500 left-[0px] text-xs ">
