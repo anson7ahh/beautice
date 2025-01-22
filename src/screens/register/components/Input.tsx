@@ -19,17 +19,20 @@ const Input: React.FC<InputProps> = ({
   error,
   wrapperClassName,
   labelClassName,
+
   ...rest
 }) => {
   return (
     <div className={` w-full ${wrapperClassName}`}>
       <div className="w-full">
-        <label className={`text-sm block ${labelClassName}`}>{label}</label>
+        <label className={`text-sm block mb-1 ${labelClassName}`}>
+          {label}
+        </label>
         <input
           {...rest}
           {...register(name)}
           type={type}
-          className="border border-gray-200 p-3 text-sm font-semibold text-gray-700 rounded-lg outline-none transition-all duration-300 focus:border-blue-400  w-full"
+          className={`border border-gray-200 p-3 text-sm font-normal placeholder:text-xs rounded-lg outline-none transition-all duration-300 focus:border-blue-400 w-full  placeholder:text-black mb-1`}
         />
         {error && (
           <div className=" text-red-500 left-[0px] text-xs ">

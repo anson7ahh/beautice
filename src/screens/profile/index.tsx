@@ -2,7 +2,6 @@
 
 import { useAtom } from "jotai";
 
-// import { WithAuthTokenWrapper } from "@/hoc/auth";
 import React from "react";
 import authAtom from "../login/stores/authData";
 import FormEditUser from "./components/FormEditUser";
@@ -18,13 +17,15 @@ const ProfileUser = () => {
       <div className="desktop:max-w-[1140px] ipadMini:max-w-[1100px] tablet:max-w-[980px] mobile:max-w-[600px] mx-auto ">
         <div className="flex justify-between items-center">
           <div className="mobile:max-w-[258px] ml-[-5px] ">
-            <Image
-              className=""
-              src={"/MainLogo.png"}
-              alt="logo"
-              width={258}
-              height={63}
-            />
+            <Link href="/">
+              <Image
+                className=""
+                src={"/MainLogo.png"}
+                alt="logo"
+                width={258}
+                height={63}
+              />
+            </Link>
           </div>
           <Link href="/">
             <Image src="/House.svg" alt="House" width={30} height={30} />
@@ -50,10 +51,10 @@ const ProfileUser = () => {
             </p>
           </div>
           <div className="flex flex-col ipadMini:flex-row gap-y-5 gap-x-5 mt-5 ">
-            <div className="bg-white ipadMini:w-1/2 w-full">
+            <div className="bg-white ipadMini:w-1/2 w-full rounded-2xl">
               <FormEditUser />
             </div>
-            <div className="bg-white ipadMini:w-1/2 w-full">
+            <div className="bg-white ipadMini:w-1/2 w-full rounded-2xl">
               <FormResetPassword />
             </div>
           </div>

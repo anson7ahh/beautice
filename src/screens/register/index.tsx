@@ -97,13 +97,14 @@ export default function RegisterForm({
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="ipadMini:w-[500px] w-full shadow-4xl ipadMini:p-[40px] pb-5 mx-auto mt-[40px] gap-y-[17px] "
+        className="ipadMini:w-[500px] w-full shadow-4xl ipadMini:pb-[40px] px-10 pb-5 mx-auto mt-10  gap-y-[17px] "
       >
-        <div className="grid grid-cols-2 gap-x-3 gap-y-4 p-5">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-4 ">
           <Input
             label="Full name"
             name="fullName"
             register={register}
+            placeholder="Enter your full name..."
             wrapperClassName="col-span-1"
             error={errors.fullName?.message}
           />
@@ -112,12 +113,14 @@ export default function RegisterForm({
             name="phoneNumber"
             register={register}
             type="text"
+            placeholder="Enter your phone number..."
             wrapperClassName="col-span-1"
             error={errors.phoneNumber?.message}
           />
           <Input
             label="Password"
             name="password"
+            placeholder="Enter your password..."
             register={register}
             type="password"
             wrapperClassName="col-span-1"
@@ -125,6 +128,7 @@ export default function RegisterForm({
           />
           <Input
             label="Confirm Password"
+            placeholder="Confirm password..."
             name="confirmPassword"
             register={register}
             type="password"
@@ -133,6 +137,7 @@ export default function RegisterForm({
           />
           <Input
             label="Email"
+            placeholder="Enter your email..."
             name="email"
             wrapperClassName="w-full col-span-2"
             register={register}
@@ -140,14 +145,14 @@ export default function RegisterForm({
           />
         </div>
         <Button
-          className="w-full py-3 bg-vividpink text-white rounded-xl mt-5"
+          className="w-full py-3 bg-vividpink hover:bg-pink-700 transition-all duration-500 text-white rounded-xl mt-5"
           type="submit"
         >
           Sign Up
         </Button>
         <Button
           type="button"
-          className="w-full py-3 bg-transparent text-black border-2 border-vividpink rounded-xl mt-4"
+          className="w-full py-3 bg-transparent  text-white hover:bg-pink-700 transition-all duration-500 bg-vividpink rounded-xl mt-4"
           onClick={handleOpenLogin}
         >
           Already have an account?

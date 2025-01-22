@@ -101,7 +101,7 @@ export default function FormResetPassword() {
           />
         </div>
         <Button
-          className="w-full  py-3 bg-vividpink text-white rounded-xl mt-7"
+          className="w-full  py-3 bg-vividpink hover:bg-pink-600 transition-all duration-500 text-white rounded-xl mt-7"
           type="submit"
         >
           Submit

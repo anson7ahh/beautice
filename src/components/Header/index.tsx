@@ -46,19 +46,21 @@ export const Header: FC<Props> = ({
   return (
     <>
       <div
-        className={`ipadMini:mx-20  desktop:max-w-[1440px] ipadMini:max-w-[1100px] max-w-full ipadMini:pt-[77px] pt-[30px] flex justify-between  items-center h-[63px]  z-10 ${className} px-5 ipadMini:px-0 `}
+        className={`desktop:max-w-[1440px] ipadMini:max-w-[1100px] max-w-full ipadMini:pt-[77px] pt-[30px] flex justify-between  items-center h-[63px]  z-10 ${className} px-5 ipadMini:px-0 `}
       >
         <div className="mobile:max-w-[258px] w-[50%] ml-[-5px] ">
-          <Image
-            className=""
-            src={src || "/MainLogo.png"}
-            alt="logo"
-            width={258}
-            height={63}
-          />
+          <Link href="/">
+            <Image
+              className=""
+              src={src || "/MainLogo.png"}
+              alt="logo"
+              width={258}
+              height={63}
+            />
+          </Link>
         </div>
         <nav
-          className={` ipadMini:flex gap-x-[28px] items-center hidden mt-[-9px] ${navClassName}`}
+          className={`ipadMini:flex gap-x-[38px] items-center hidden mt-[-9px] ${navClassName}`}
         >
           {linkItems.map((item, index) => (
             <LinkItem key={index} {...item} homeClassName={homeClassName} />

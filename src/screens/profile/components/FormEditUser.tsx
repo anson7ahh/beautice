@@ -46,13 +46,14 @@ interface FormData {
 
 export default function FormEditUser() {
   const [auth, setAuth] = useAtom(authAtom);
-  console.log("auth", auth?.user?.email);
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid, isDirty },
   } = useForm<FormData>({
     resolver: yupResolver(EditSchema),
+
     defaultValues: {
       email: auth?.user?.email,
       fullName: auth?.user?.fullName,
@@ -88,7 +89,7 @@ export default function FormEditUser() {
       }
     },
   });
-
+  console.log("isValid", isValid, isDirty);
   const onSubmit: SubmitHandler<FormData> = (data) => {
     mutation.mutate(data);
   };
@@ -107,7 +108,7 @@ export default function FormEditUser() {
             type="text"
             defaultValue={auth?.user?.fullName}
             error={errors.fullName?.message}
-            className="w-20"
+            className="placeholder:text-black"
           />
           <Input
             labelClassName="font-bold"
@@ -116,6 +117,7 @@ export default function FormEditUser() {
             defaultValue={auth?.user?.email}
             register={register}
             error={errors.email?.message}
+            disabled
           />
           <Input
             labelClassName="font-bold"
@@ -127,8 +129,9 @@ export default function FormEditUser() {
           />
         </div>
         <Button
-          className="w-full  py-3 bg-vividpink text-white rounded-xl mt-7"
+          className="w-full disabled:bg-gray-400  py-3 bg-vividpink hover:bg-pink-600 transition-all duration-500 text-white rounded-xl mt-7"
           type="submit"
+          disabled={!isValid || !isDirty}
         >
           Submit
         </Button>

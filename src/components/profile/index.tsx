@@ -1,3 +1,4 @@
+"use client";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 import Link from "next/link";
@@ -17,7 +18,7 @@ const Profile = () => {
           {name && (
             <>
               <p className="truncate mt-1">
-                <span className="">Hi,</span>
+                <span className="">Hi, </span>
                 {name.user.fullName}
               </p>
             </>
@@ -39,7 +40,9 @@ const Profile = () => {
             </Link>
           </MenuItem>
           <MenuItem>
-            <SignOut />
+            <div className="block  text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none">
+              <SignOut />
+            </div>
           </MenuItem>
         </div>
       </MenuItems>

@@ -53,9 +53,6 @@ export default function LoginForm({ handleCloseLogin }: Props) {
       return response.data;
     },
     onSuccess: (data) => {
-      toast.success(data.message);
-
-      console.log("token", data.token);
       setAuth({
         token: data.token,
         user: {
@@ -83,7 +80,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="ipadMini:w-[500px] w-full  shadow-4xl px-5 ipadMini:px-10 pt-[40px] mx-auto mt-[40px]  gap-y-[17px] "
+        className="ipadMini:w-[500px] w-full  shadow-4xl px-5 ipadMini:px-10 pb-[40px] mx-auto mt-[40px]  gap-y-[17px] "
       >
         <div className="flex flex-col gap-y-[25px]">
           <Input
@@ -91,24 +88,27 @@ export default function LoginForm({ handleCloseLogin }: Props) {
             name="email"
             register={register}
             error={errors.email?.message}
+            className="placeholder:text-black"
+            placeholder="Email address..."
           />
           <Input
             label="Password"
             name="password"
+            placeholder="Password..."
             register={register}
             type="password"
             error={errors.password?.message}
           />
         </div>
         <Button
-          className="w-full  py-3 bg-vividpink text-white rounded-xl mt-7"
+          className="w-full py-3 bg-transparent  text-white hover:bg-pink-700 transition-all duration-500 bg-vividpink rounded-xl mt-4"
           type="submit"
         >
           Sign In
         </Button>
         <Button
           type="button"
-          className="w-full py-3 bg-transparent text-black border-2 mb-10 mt-4 border-vividpink rounded-xl"
+          className="w-full py-3 bg-transparent  text-white hover:bg-pink-700 transition-all duration-500 bg-vividpink rounded-xl mt-4"
           onClick={handleCloseLogin}
         >
           Need to create an account?
