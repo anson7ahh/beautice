@@ -12,12 +12,12 @@ const Profile = () => {
       as="div"
       className="relative  inline-block text-left order-last ipadMini:order-none"
     >
-      <MenuButton className="w-full max-w-[150px] gap-x-1.5 rounded-md  ipadMini:px-3 py-1 text-sm font-medium text-gray-400">
+      <MenuButton className="w-full max-w-[150px] gap-x-1.5 rounded-md  ipadMini:px-3 py-1 text-base font-medium leading-6 tracking-wide text-darkgray">
         <div>
           {name && (
             <>
-              <p className="truncate text-base">
-                <span className="">hi,</span>
+              <p className="truncate mt-1">
+                <span className="">Hi,</span>
                 {name.user.fullName}
               </p>
             </>
