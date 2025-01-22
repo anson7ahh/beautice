@@ -45,7 +45,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
   } = useForm<FormData>({
     resolver: yupResolver(LoginSchema),
   });
-  const [a, setAuth] = useAtom(authAtom);
+  const [, setAuth] = useAtom(authAtom);
 
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
@@ -72,7 +72,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
       }
     },
   });
-  console.log("auth", a);
+
   const onSubmit: SubmitHandler<FormData> = (data) => {
     mutation.mutate(data);
   };

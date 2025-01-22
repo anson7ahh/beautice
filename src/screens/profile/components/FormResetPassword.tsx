@@ -42,7 +42,7 @@ export default function FormResetPassword() {
     resolver: yupResolver(resetPasswordSchema),
   });
   const [auth] = useAtom(authAtom);
-  console.log(auth?.token);
+
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
       const response = await HttpRequest.patch("/edit-password", data, {

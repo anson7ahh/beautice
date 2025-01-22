@@ -89,7 +89,7 @@ export default function FormEditUser() {
       }
     },
   });
-  console.log("isValid", isValid, isDirty);
+
   const onSubmit: SubmitHandler<FormData> = (data) => {
     mutation.mutate(data);
   };

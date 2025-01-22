@@ -33,7 +33,6 @@ export const Header: FC<Props> = ({
     useClickOutSide(false);
   const [isOpen, setIsOpen] = useAtom(isOpenSignPopupAtom);
   const [token] = useAtom(authAtom);
-  console.log(token);
 
   const handleClickSignInResponsive = () => {
     setIsComponentVisible(false);

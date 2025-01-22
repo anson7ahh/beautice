@@ -3,18 +3,17 @@
 import tokenAtom from "@/screens/login/stores/authData";
 import { useAtom } from "jotai";
 import { useRouter } from "next/navigation";
-import { FC, useEffect } from "react";
-import { NextComponentType, NextPageContext } from "next";
+import React, { useEffect } from "react";
 
 export interface AuthProps {
   authToken?: string;
 }
 
-export const WithAuthTokenWrapper = (
-  Component: NextComponentType<NextPageContext, unknown, AuthProps>
-): FC<AuthProps> => {
-  const WrappedComponent: FC<AuthProps> = (props) => {
-    const [token] = useAtom(tokenAtom); // Hooks are now inside the functional component
+export const WithAuthTokenWrapper = <P extends object>(
+  Component: React.ComponentType<P>
+): React.FC<P> => {
+  const WrappedComponent: React.FC<P> = (props) => {
+    const [token] = useAtom(tokenAtom); // Hooks used correctly inside the functional component
     const router = useRouter();
 
     useEffect(() => {
