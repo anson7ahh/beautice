@@ -16,7 +16,7 @@ const ProfileUser = () => {
   return (
     <div className="bg-gray-200 h-full w-full  pt-10 px-5 ipadMini:px-0 pb-5 ipadMini:pb-0">
       <div className="desktop:max-w-[1140px] ipadMini:max-w-[1100px] tablet:max-w-[980px] mobile:max-w-[600px] mx-auto ">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div className="mobile:max-w-[258px] ml-[-5px] ">
             <Image
               className=""
