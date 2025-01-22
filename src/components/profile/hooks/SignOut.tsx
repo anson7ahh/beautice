@@ -11,7 +11,7 @@ export function SignOut() {
 
   return (
     <button
-      className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
+      className="block w-full px-0 py-0 text-base text-black ipadMini:py-2 ipadMini:px-4 text-left ipadMini:text-sm ipadMini:text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
       onClick={handleReset}
     >
       Sign out

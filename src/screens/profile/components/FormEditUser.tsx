@@ -96,7 +96,7 @@ export default function FormEditUser() {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[500px]  shadow-4xl  px-10 py-10 mx-auto mt-10  gap-y-[17px]  "
+        className="ipadMini:w-[500px]  shadow-4xl  px-10 py-10 mx-auto mt-10  gap-y-[17px] w-full  "
       >
         <div className="flex flex-col gap-y-[25px]">
           <Input
@@ -107,6 +107,7 @@ export default function FormEditUser() {
             type="text"
             defaultValue={auth?.user?.fullName}
             error={errors.fullName?.message}
+            className="w-20"
           />
           <Input
             labelClassName="font-bold"

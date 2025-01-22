@@ -71,7 +71,7 @@ export default function FormResetPassword() {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[500px]  shadow-4xl  px-10 py-10 mx-auto mt-10  gap-y-[17px] "
+        className="ipadMini:w-[500px]  shadow-4xl  px-10 py-10 mx-auto mt-10  gap-y-[17px] w-full "
       >
         <div className="flex flex-col gap-y-[25px]">
           <Input

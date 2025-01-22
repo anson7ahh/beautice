@@ -20,6 +20,7 @@ import { isOpenSignPopupAtom } from "@/stores/dialog";
 import Profile from "../profile";
 import authAtom from "@/screens/login/stores/authData";
 import ModalUserAuth from "./components/ModalUserAuth";
+import { SignOut } from "../profile/hooks/SignOut";
 
 export const Header: FC<Props> = ({
   navClassName = "",
@@ -122,18 +123,26 @@ export const Header: FC<Props> = ({
             <li className="mb-2 ">
               <Link href="/contact">Contact</Link>
             </li>
-            <li className="mb-2">
-              {token ? (
-                <Profile />
-              ) : (
+
+            {token ? (
+              <>
+                <li className="mb-2">
+                  <Link href="/profile">profile</Link>
+                </li>
+                <li className="mb-2">
+                  <SignOut />
+                </li>
+              </>
+            ) : (
+              <li className="mb-2">
                 <button
                   className="whitespace-nowrap font-medium leading-6 tracking-wide ipadMini:text-darkgray text-black"
                   onClick={() => handleClickSignInResponsive()}
                 >
                   Sign In
                 </button>
-              )}
-            </li>
+              </li>
+            )}
           </ul>
         </div>
         {isComponentVisible && (

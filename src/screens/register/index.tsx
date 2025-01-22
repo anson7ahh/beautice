@@ -139,9 +139,6 @@ export default function RegisterForm({
             error={errors.email?.message}
           />
         </div>
-        {/* <div className="mt-2">
-          {data && <p className="text-sm text-red-300">{data}</p>}
-        </div> */}
         <Button
           className="w-full py-3 bg-vividpink text-white rounded-xl mt-5"
           type="submit"

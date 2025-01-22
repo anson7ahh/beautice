@@ -38,10 +38,10 @@ const ModalUserAuth = () => {
           )}
           <div>
             <div
-              className="absolute top-[-36px] right-0 cursor-pointer "
+              className="absolute top-[-34px] right-[6px] cursor-pointer "
               onClick={closeModal}
             >
-              <Image src="/close.svg" alt="close" width={30} height={30} />
+              <Image src="/close.svg" alt="close" width={20} height={20} />
             </div>
           </div>
         </div>
