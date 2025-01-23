@@ -1,6 +1,6 @@
 export interface AuthData {
   token: string;
-  user: {
+  user?: {
     fullName: string;
     email?: string;
     phoneNumber?: string;

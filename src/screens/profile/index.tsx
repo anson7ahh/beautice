@@ -46,7 +46,7 @@ const ProfileUser = () => {
             <p className="text-xl  max-w-[70%]  truncate">
               Howdy,{" "}
               <span className="text-xl font-bold  ">
-                {auth?.user.fullName}!
+                {auth?.user?.fullName}!
               </span>
             </p>
           </div>

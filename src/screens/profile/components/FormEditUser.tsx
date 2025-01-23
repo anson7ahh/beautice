@@ -53,12 +53,6 @@ export default function FormEditUser() {
     formState: { errors, isValid, isDirty },
   } = useForm<FormData>({
     resolver: yupResolver(EditSchema),
-
-    defaultValues: {
-      email: auth?.user?.email,
-      fullName: auth?.user?.fullName,
-      phoneNumber: auth?.user?.phoneNumber,
-    },
   });
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
@@ -129,7 +123,7 @@ export default function FormEditUser() {
           />
         </div>
         <Button
-          className="w-full disabled:bg-gray-400  py-3 bg-vividpink hover:bg-pink-600 transition-all duration-500 text-white rounded-xl mt-7"
+          className="w-full disabled:bg-gray-400 disabled:cursor-not-allowed  py-3 bg-vividpink hover:bg-pink-600 transition-all duration-500 text-white rounded-xl mt-7"
           type="submit"
           disabled={!isValid || !isDirty}
         >

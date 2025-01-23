@@ -13,18 +13,19 @@ export const WithAuthTokenWrapper = <P extends object>(
   Component: React.ComponentType<P>
 ): React.FC<P> => {
   const WrappedComponent: React.FC<P> = (props) => {
-    const [token] = useAtom(tokenAtom); // Hooks used correctly inside the functional component
+    // const [auth] = useAtom(tokenAtom); // Hooks used correctly inside the functional component
     const router = useRouter();
+    const auth = localStorage.getItem("authData");
+    const parsedAuth = auth && JSON.parse(auth);
+    console.log("token===", parsedAuth);
 
     useEffect(() => {
-      if (!token) {
+      console.log("dsd", parsedAuth);
+
+      if (!parsedAuth?.token) {
         router.push("/"); // Redirect if no token
       }
-    }, [token, router]);
-
-    if (!token) {
-      return null; // Optionally show a loading state while redirecting
-    }
+    }, [parsedAuth, router]);
 
     return <Component {...props} />;
   };

@@ -31,11 +31,11 @@ export const Header: FC<Props> = ({
 }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useClickOutSide(false);
+
   const [isOpen, setIsOpen] = useAtom(isOpenSignPopupAtom);
-  const [token] = useAtom(authAtom);
+  const [auth] = useAtom(authAtom);
 
   const handleClickSignInResponsive = () => {
-    setIsComponentVisible(false);
     setIsOpen(true);
   };
   const handleClickSignIn = () => {
@@ -64,7 +64,7 @@ export const Header: FC<Props> = ({
           {linkItems.map((item, index) => (
             <LinkItem key={index} {...item} homeClassName={homeClassName} />
           ))}
-          {token ? (
+          {auth?.token ? (
             <Profile />
           ) : (
             <button
@@ -125,7 +125,7 @@ export const Header: FC<Props> = ({
               <Link href="/contact">Contact</Link>
             </li>
 
-            {token ? (
+            {auth?.token ? (
               <>
                 <li className="mb-2">
                   <Link href="/profile">profile</Link>

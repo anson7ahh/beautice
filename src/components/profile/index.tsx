@@ -19,7 +19,7 @@ const Profile = () => {
             <>
               <p className="truncate mt-1">
                 <span className="">Hi, </span>
-                {name.user.fullName}
+                {name?.user?.fullName}
               </p>
             </>
           )}
