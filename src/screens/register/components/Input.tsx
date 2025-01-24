@@ -19,7 +19,6 @@ const Input: React.FC<InputProps> = ({
   error,
   wrapperClassName,
   labelClassName,
-
   ...rest
 }) => {
   return (
