@@ -12,13 +12,18 @@ export const WithAuthTokenWrapper = <P extends object>(
 ): React.FC<P> => {
   const WrappedComponent: React.FC<P> = (props) => {
     const router = useRouter();
-    const auth = localStorage.getItem("authData");
-    const parsedAuth = auth && JSON.parse(auth);
+
     useEffect(() => {
-      if (!parsedAuth?.token) {
-        router.push("/");
+      // Kiểm tra môi trường client trước khi sử dụng localStorage
+      if (typeof window !== "undefined") {
+        const auth = localStorage.getItem("authData");
+        const parsedAuth = auth && JSON.parse(auth);
+
+        if (!parsedAuth?.token) {
+          router.push("/"); // Chuyển hướng nếu không có token
+        }
       }
-    }, [parsedAuth, router]);
+    }, [router]);
 
     return <Component {...props} />;
   };
