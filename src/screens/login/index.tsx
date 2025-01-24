@@ -117,6 +117,7 @@ export default function LoginForm({ handleCloseLogin }: Props) {
         </Button>
         <Button
           type="button"
+          disabled={isPending}
           className="w-full py-3 bg-transparent text-black  hover:text-white bg-white border border-1 border-vividpink  hover:bg-pink-700 transition-all duration-500  rounded-xl mt-4"
           onClick={handleCloseLogin}
         >

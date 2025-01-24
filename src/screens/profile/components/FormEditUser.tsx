@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -53,8 +54,13 @@ export default function FormEditUser() {
     formState: { errors, isValid, isDirty },
   } = useForm<FormData>({
     resolver: yupResolver(EditSchema),
+    values: {
+      fullName: auth?.user?.fullName!,
+      email: auth?.user?.email!,
+      phoneNumber: auth?.user?.phoneNumber!,
+    },
   });
-  const mutation = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: async (data: FormData) => {
       const response = await HttpRequest.patch("/edit", data, {
         headers: {
@@ -85,7 +91,7 @@ export default function FormEditUser() {
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    mutation.mutate(data);
+    mutate(data);
   };
   return (
     <>
@@ -100,7 +106,6 @@ export default function FormEditUser() {
             name="fullName"
             register={register}
             type="text"
-            defaultValue={auth?.user?.fullName}
             error={errors.fullName?.message}
             className="placeholder:text-black"
           />
@@ -108,7 +113,6 @@ export default function FormEditUser() {
             labelClassName="font-bold"
             label="Email"
             name="email"
-            defaultValue={auth?.user?.email}
             register={register}
             error={errors.email?.message}
             disabled
@@ -116,7 +120,6 @@ export default function FormEditUser() {
           <Input
             labelClassName="font-bold"
             label="Phone number"
-            defaultValue={auth?.user?.phoneNumber}
             name="phoneNumber"
             register={register}
             error={errors.phoneNumber?.message}
@@ -125,9 +128,15 @@ export default function FormEditUser() {
         <Button
           className="w-full disabled:bg-gray-400 disabled:cursor-not-allowed  py-3 bg-vividpink hover:bg-pink-600 transition-all duration-500 text-white rounded-xl mt-7"
           type="submit"
-          disabled={!isValid || !isDirty}
+          disabled={!isValid || !isDirty || isPending}
         >
-          Submit
+          {isPending ? (
+            <div className="inset-0  flex items-center justify-center">
+              <div className="w-6 h-6 border-4 border-white border-opacity-30 border-t-[#ffff] rounded-full animate-spin"></div>
+            </div>
+          ) : (
+            "Submit"
+          )}
         </Button>
       </form>
     </>
