@@ -11,6 +11,7 @@ import { useMutation } from "@tanstack/react-query";
 import Input from "@/screens/register/components/Input";
 import { useAtom } from "jotai";
 import authAtom from "@/screens/login/stores/authData";
+import { useSession } from "next-auth/react";
 
 const resetPasswordSchema = yup.object().shape({
   newPassword: yup
@@ -41,13 +42,13 @@ export default function FormResetPassword() {
   } = useForm<FormData>({
     resolver: yupResolver(resetPasswordSchema),
   });
-  const [auth] = useAtom(authAtom);
+  const { data: session } = useSession();
 
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
       const response = await HttpRequest.patch("/edit-password", data, {
         headers: {
-          authorization: `Bearer ${auth?.token}`,
+          authorization: `Bearer ${session?.accessToken}`,
         },
       });
       return response.data;

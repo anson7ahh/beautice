@@ -4,7 +4,14 @@ import { linkItems } from "./constants";
 import LinkItem from "./components/LinkItem";
 import Link from "next/link";
 import { useClickOutSide } from "@/components/Header/hooks";
-
+import { HamburgerIcon } from "../../../public/svg";
+import { useAtom } from "jotai";
+import { isOpenSignPopupAtom } from "@/stores/dialog";
+import Profile from "../profile";
+import authAtom from "@/screens/login/stores/authData";
+import ModalUserAuth from "./components/ModalUserAuth";
+import { SignOut } from "../profile/hooks/SignOut";
+import { useSession } from "next-auth/react";
 import { FC } from "react";
 export interface Props {
   className?: string;
@@ -13,14 +20,6 @@ export interface Props {
   homeClassName?: string;
   hambergerIconColor?: string;
 }
-
-import { HamburgerIcon } from "../../../public/svg";
-import { useAtom } from "jotai";
-import { isOpenSignPopupAtom } from "@/stores/dialog";
-import Profile from "../profile";
-import authAtom from "@/screens/login/stores/authData";
-import ModalUserAuth from "./components/ModalUserAuth";
-import { SignOut } from "../profile/hooks/SignOut";
 
 export const Header: FC<Props> = ({
   navClassName = "",
@@ -31,6 +30,7 @@ export const Header: FC<Props> = ({
 }) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useClickOutSide(false);
+  const { data: session } = useSession();
 
   const [isOpen, setIsOpen] = useAtom(isOpenSignPopupAtom);
   const [auth] = useAtom(authAtom);
@@ -64,7 +64,7 @@ export const Header: FC<Props> = ({
           {linkItems.map((item, index) => (
             <LinkItem key={index} {...item} homeClassName={homeClassName} />
           ))}
-          {auth?.token ? (
+          {session ? (
             <Profile />
           ) : (
             <button

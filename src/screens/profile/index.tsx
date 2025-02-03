@@ -1,17 +1,13 @@
 "use client";
-
-import { useAtom } from "jotai";
-
 import React from "react";
-import authAtom from "../login/stores/authData";
 import FormEditUser from "./components/FormEditUser";
 import FormResetPassword from "./components/FormResetPassword";
 import Image from "next/image";
-
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const ProfileUser = () => {
-  const [auth] = useAtom(authAtom);
+  const { data: session } = useSession();
   return (
     <div className="bg-gray-200 h-full w-full  pt-10 px-5 ipadMini:px-0 pb-5 ipadMini:pb-0">
       <div className="desktop:max-w-[1140px] ipadMini:max-w-[1100px] tablet:max-w-[980px] mobile:max-w-[600px] mx-auto ">
@@ -46,7 +42,7 @@ const ProfileUser = () => {
             <p className="text-xl  max-w-[70%]  truncate">
               Howdy,{" "}
               <span className="text-xl font-bold  ">
-                {auth?.user?.fullName}!
+                {session?.user?.fullName}!
               </span>
             </p>
           </div>

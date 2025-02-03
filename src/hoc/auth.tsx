@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -12,18 +13,18 @@ export const WithAuthTokenWrapper = <P extends object>(
 ): React.FC<P> => {
   const WrappedComponent: React.FC<P> = (props) => {
     const router = useRouter();
-
+    const { status } = useSession();
     useEffect(() => {
       // Kiểm tra môi trường client trước khi sử dụng localStorage
       if (typeof window !== "undefined") {
-        const auth = localStorage.getItem("authData");
-        const parsedAuth = auth && JSON.parse(auth);
+        // const auth = localStorage.getItem("authData");
+        // const parsedAuth = auth && JSON.parse(auth);
 
-        if (!parsedAuth?.token) {
+        if (status === "unauthenticated") {
           router.push("/"); // Chuyển hướng nếu không có token
         }
       }
-    }, [router]);
+    }, [router, status]);
 
     return <Component {...props} />;
   };

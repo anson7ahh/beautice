@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,11 +5,13 @@ import * as yup from "yup";
 import { Button } from "@/components";
 import Input from "../register/components/Input";
 import { toast } from "react-toastify";
-import HttpRequest from "@/config/httpRequest";
+
 import { useAtom } from "jotai";
-import authAtom from "./stores/authData";
-import { useMutation } from "@tanstack/react-query";
+// import authAtom from "./stores/authData";
+// import { useMutation } from "@tanstack/react-query";
 import { isOpenSignPopupAtom } from "@/stores/dialog";
+import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 // Schema validation với Yup
 const LoginSchema = yup.object().shape({
@@ -38,6 +39,8 @@ interface Props {
 
 export default function LoginForm({ handleCloseLogin }: Props) {
   const [, setIsOpenSignPopupState] = useAtom(isOpenSignPopupAtom);
+
+  const [isPending, setIsPending] = useState(false);
   const {
     register,
     handleSubmit,
@@ -45,37 +48,53 @@ export default function LoginForm({ handleCloseLogin }: Props) {
   } = useForm<FormData>({
     resolver: yupResolver(LoginSchema),
   });
-  const [, setAuth] = useAtom(authAtom);
+  // const { mutate, isPending } = useMutation({
+  //   mutationFn: async (data: FormData) => {
+  //     const response = await HttpRequest.post("/signin", data);
+  //     return response.data;
+  //   },
+  //   onSuccess: (data) => {
+  //     setAuth({
+  //       token: data.token,
+  //       user: {
+  //         fullName: data.fullName,
+  //         email: data.email,
+  //         phoneNumber: data.phoneNumber,
+  //       },
+  //     });
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: async (data: FormData) => {
-      const response = await HttpRequest.post("/signin", data);
-      return response.data;
-    },
-    onSuccess: (data) => {
-      setAuth({
-        token: data.token,
-        user: {
-          fullName: data.fullName,
-          email: data.email,
-          phoneNumber: data.phoneNumber,
-        },
-      });
+  //     setIsOpenSignPopupState(false);
+  //   },
+  //   onError: (error: any) => {
+  //     if (error.response) {
+  //       toast.error(error.response.data.message);
+  //     } else {
+  //       toast.error("Failed to connect to the server. Please try again.");
+  //     }
+  //   },
+  // });
 
+  // const onSubmit: SubmitHandler<FormData> = (data) => {
+  //   mutate(data);
+  // };
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    setIsPending(true);
+    const signInResult = await signIn("credentials", {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
+
+    if (!signInResult?.ok || signInResult?.error) {
+      return toast.error("Your sign in request failed. Please try again.");
+    } else {
       setIsOpenSignPopupState(false);
-    },
-    onError: (error: any) => {
-      if (error.response) {
-        toast.error(error.response.data.message);
-      } else {
-        toast.error("Failed to connect to the server. Please try again.");
-      }
-    },
-  });
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    mutate(data);
+      toast.success("Login Success");
+    }
+    setIsPending(false);
   };
+
   return (
     <>
       <form

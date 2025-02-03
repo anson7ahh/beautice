@@ -8,10 +8,9 @@ import * as yup from "yup";
 import { Button } from "@/components";
 import { toast } from "react-toastify";
 import HttpRequest from "@/config/httpRequest";
-import { useAtom } from "jotai";
 import { useMutation } from "@tanstack/react-query";
 import Input from "@/screens/register/components/Input";
-import authAtom from "@/screens/login/stores/authData";
+import { useSession } from "next-auth/react";
 
 const EditSchema = yup.object().shape({
   email: yup
@@ -44,9 +43,13 @@ interface FormData {
   fullName: string;
   phoneNumber: string;
 }
-
+declare module "next-auth" {
+  interface Session {
+    accessToken: string;
+  }
+}
 export default function FormEditUser() {
-  const [auth, setAuth] = useAtom(authAtom);
+  const { data: session, update } = useSession();
 
   const {
     register,
@@ -55,31 +58,32 @@ export default function FormEditUser() {
   } = useForm<FormData>({
     resolver: yupResolver(EditSchema),
     values: {
-      fullName: auth?.user?.fullName!,
-      email: auth?.user?.email!,
-      phoneNumber: auth?.user?.phoneNumber!,
+      fullName: session?.user?.fullName!,
+      email: session?.user?.email!,
+      phoneNumber: session?.user?.phoneNumber!,
     },
   });
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: FormData) => {
       const response = await HttpRequest.patch("/edit", data, {
         headers: {
-          authorization: `Bearer ${auth?.token}`,
+          authorization: `Bearer ${session?.accessToken}`,
         },
       });
 
       return response.data;
     },
-    onSuccess: (data: Response) => {
+    onSuccess: async (data: Response) => {
       toast.success(data.message);
-      setAuth((prevState: any) => ({
-        ...prevState,
+
+      // 🆕 Cập nhật session với thông tin user mới
+      await update({
         user: {
           fullName: data.user.fullName,
           email: data.user.email,
           phoneNumber: data.user.phoneNumber,
         },
-      }));
+      });
     },
     onError: (error: any) => {
       if (error.response) {

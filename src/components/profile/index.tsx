@@ -3,11 +3,20 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 import Link from "next/link";
 import { SignOut } from "./hooks/SignOut";
-import { useAtom } from "jotai";
-import authAtom from "@/screens/login/stores/authData";
-
+import { useSession } from "next-auth/react";
+import { DefaultSession } from "next-auth";
+declare module "next-auth" {
+  interface Session {
+    user: {
+      fullName: string;
+      phoneNumber: string;
+      email: string;
+    } & DefaultSession["user"];
+  }
+}
 const Profile = () => {
-  const [name] = useAtom(authAtom);
+  const { data: session } = useSession();
+
   return (
     <Menu
       as="div"
@@ -15,11 +24,11 @@ const Profile = () => {
     >
       <MenuButton className="w-full max-w-[150px] gap-x-1.5 rounded-md  ipadMini:px-3 py-1 text-base font-medium leading-6 tracking-wide text-darkgray">
         <div>
-          {name && (
+          {session && (
             <>
               <p className="truncate mt-1">
                 <span className="">Hi, </span>
-                {name?.user?.fullName}
+                {session?.user?.fullName}
               </p>
             </>
           )}

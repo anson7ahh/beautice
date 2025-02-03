@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "jotai";
 import React from "react";
 import { ToastContainer } from "react-toastify";
+import { SessionProvider } from "next-auth/react";
 interface Props {
   children: React.ReactNode;
 }
@@ -30,4 +31,4 @@ const Providers = ({ children }: Props) => {
   );
 };
 
-export default Providers;
+export { Providers, SessionProvider };
