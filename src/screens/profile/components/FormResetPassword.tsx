@@ -9,8 +9,7 @@ import { toast } from "react-toastify";
 import HttpRequest from "@/config/httpRequest";
 import { useMutation } from "@tanstack/react-query";
 import Input from "@/screens/register/components/Input";
-import { useAtom } from "jotai";
-import authAtom from "@/screens/login/stores/authData";
+
 import { useSession } from "next-auth/react";
 
 const resetPasswordSchema = yup.object().shape({

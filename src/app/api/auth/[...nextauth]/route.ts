@@ -1,7 +1,7 @@
-import NextAuth, { NextAuthOptions, Session } from "next-auth";
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const AuthOptions: NextAuthOptions = {
+const handler = NextAuth({
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -44,8 +44,6 @@ export const AuthOptions: NextAuthOptions = {
   ],
   callbacks: {
     async session({ session, token }) {
-      // console.log("session", session);
-      // console.log("token", token);
       const sessionInfo = {
         user: {
           fullName: token.fullName,
@@ -55,9 +53,7 @@ export const AuthOptions: NextAuthOptions = {
         expires: session.expires,
         accessToken: token.token,
       };
-      console.log("🚀 ~ session ~ sessionInfo:", sessionInfo);
-
-      return sessionInfo as Session;
+      return sessionInfo;
     },
     async jwt({ token, user, session, trigger }) {
       if (trigger === "update") {
@@ -65,7 +61,6 @@ export const AuthOptions: NextAuthOptions = {
       }
 
       if (user) {
-        console.log("🚀 ~ jwt ~ user:", user);
         return { ...token, ...user };
       }
       return token;
@@ -74,8 +69,6 @@ export const AuthOptions: NextAuthOptions = {
       return baseUrl;
     },
   },
-};
-
-const handler = NextAuth(AuthOptions);
+});
 
 export { handler as GET, handler as POST };
