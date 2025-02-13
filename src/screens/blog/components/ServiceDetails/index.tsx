@@ -37,7 +37,7 @@ const ServiceDetails = ({ totalPage, data }: ServiceDetailsProps) => {
             );
           })}
         </div>
-        <div className="ipadMini:mt-[58px] mt-[10px] ipadMini:ml-[465px] ml-[43px] w-[175px] h-[85px]">
+        <div className="ipadMini:mt-[58px] mt-[10px]  ml-[43px]  h-[85px]">
           <PageIndexButton totalPage={totalPage} />
         </div>
       </div>

@@ -4,7 +4,7 @@ import ServiceDetails from "@/screens/blog/components/ServiceDetails";
 import axios from "axios";
 
 interface BlogProps {
-  searchParams: { page?: string }; // Đúng kiểu dữ liệu Next.js truyền vào
+  searchParams: { page?: string };
 }
 
 export default async function Blog({ searchParams }: BlogProps) {
@@ -14,9 +14,7 @@ export default async function Blog({ searchParams }: BlogProps) {
     const res = await axios(
       `http://localhost:3080/auth/recordsPost?page=${encodeURIComponent(page)}`
     );
-    const todos = res.data; // Giữ nguyên nếu API trả về dữ liệu đúng
-
-    console.log("todos", todos);
+    const todos = res.data;
     return (
       <div>
         <Banner />
