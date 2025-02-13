@@ -13,7 +13,7 @@ const handler = NextAuth({
         try {
           if (credentials) {
             const res = await fetch(
-              "https://authentication-umb0.onrender.com/signin",
+              "https://beutice-nestjs-production.up.railway.app/auth/signin",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

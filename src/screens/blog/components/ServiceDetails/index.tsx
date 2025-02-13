@@ -1,30 +1,44 @@
 import React from "react";
 import Information from "./components/Information";
-import { Categories, Images, Items, Posts, Tags } from "./constants";
+import { Categories, Images, Posts, Tags } from "./constants";
 import SearchInput from "./components/SearchInput";
-import Image from "next/image";
 import RecentPosts from "./components/RecentPosts";
 import Category from "./components/Category";
 import CloudTags from "./components/CloudTags";
 import Social from "./components/Social";
 import Card from "./components/Card";
-
-const ServiceDetails = () => {
+import PageIndexButton from "./components/PageIndexButton";
+interface ServiceDetailsProps {
+  totalPage: number;
+  data: [
+    {
+      img: string;
+      alt: string;
+      title: string;
+      description: string;
+    }
+  ];
+}
+const ServiceDetails = ({ totalPage, data }: ServiceDetailsProps) => {
   return (
     <div className="container flex flex-col ipadMini:flex-row mt-[107px] mb-[75px] gap-x-[62px] px-5 ipadMini:px-0 tablet:items-center ipadMini:items-start">
       <div>
         <div className="flex flex-col gap-y-[131px]">
-          {Items.map((item, index) => (
-            <Information key={index} {...item} />
-          ))}
+          {data.map((item, index) => {
+            const { title, img, description } = item;
+            return (
+              <Information
+                key={index}
+                title={title}
+                src={img}
+                alt={img}
+                subTitle={description}
+              />
+            );
+          })}
         </div>
         <div className="ipadMini:mt-[58px] mt-[10px] ipadMini:ml-[465px] ml-[43px] w-[175px] h-[85px]">
-          <Image
-            src="\PageNavigation.svg"
-            alt="PageNavigation"
-            width={175}
-            height={85}
-          />
+          <PageIndexButton totalPage={totalPage} />
         </div>
       </div>
       <div className="flex flex-col gap-y-[87px]">

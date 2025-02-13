@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+    domains: ["media-cdn-v2.laodong.vn"],
+  },
 };
 
 export default nextConfig;

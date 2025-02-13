@@ -15,13 +15,9 @@ export const WithAuthTokenWrapper = <P extends object>(
     const router = useRouter();
     const { status } = useSession();
     useEffect(() => {
-      // Kiểm tra môi trường client trước khi sử dụng localStorage
       if (typeof window !== "undefined") {
-        // const auth = localStorage.getItem("authData");
-        // const parsedAuth = auth && JSON.parse(auth);
-
         if (status === "unauthenticated") {
-          router.push("/"); // Chuyển hướng nếu không có token
+          router.push("/");
         }
       }
     }, [router, status]);

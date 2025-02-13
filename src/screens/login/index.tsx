@@ -39,7 +39,6 @@ interface Props {
 
 export default function LoginForm({ handleCloseLogin }: Props) {
   const [, setIsOpenSignPopupState] = useAtom(isOpenSignPopupAtom);
-
   const [isPending, setIsPending] = useState(false);
   const {
     register,
@@ -62,7 +61,6 @@ export default function LoginForm({ handleCloseLogin }: Props) {
   //         phoneNumber: data.phoneNumber,
   //       },
   //     });
-
   //     setIsOpenSignPopupState(false);
   //   },
   //   onError: (error: any) => {
@@ -73,7 +71,6 @@ export default function LoginForm({ handleCloseLogin }: Props) {
   //     }
   //   },
   // });
-
   // const onSubmit: SubmitHandler<FormData> = (data) => {
   //   mutate(data);
   // };

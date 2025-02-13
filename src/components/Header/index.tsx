@@ -13,6 +13,7 @@ import ModalUserAuth from "./components/ModalUserAuth";
 import { SignOut } from "../profile/hooks/SignOut";
 import { useSession } from "next-auth/react";
 import { FC } from "react";
+
 export interface Props {
   className?: string;
   src?: string;

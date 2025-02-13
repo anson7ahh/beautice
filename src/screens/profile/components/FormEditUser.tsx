@@ -75,8 +75,6 @@ export default function FormEditUser() {
     },
     onSuccess: async (data: Response) => {
       toast.success(data.message);
-
-      // 🆕 Cập nhật session với thông tin user mới
       await update({
         user: {
           fullName: data.user.fullName,

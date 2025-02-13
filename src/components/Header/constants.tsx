@@ -3,7 +3,6 @@ import { LinkItem } from "./types";
 export const linkItems: LinkItem[] = [
   {
     name: "Home",
-    active: true,
     redirect: "/home2",
   },
   { name: "About", active: false, redirect: "/about" },
